@@ -1,33 +1,61 @@
 # include <iostream>
 # include <stdio.h>
+# include <string>
 
 enum lureTypes {JIG, SPINNER, PLUG, FLY, SOFTPLASTIC};
 
 // Declaration of a factory class to create fishing lure objects
 class Lure {
     public:
-        static Lure *setLure(lureTypes type);
+        //Lure(std::string characteristic1, std::string characteristic2, std::string characteristic3);
+        static Lure *setLure(lureTypes type, const std::string& char1, const std::string& char2, const std::string& char3);
         virtual void getLure() = 0;
 };
 
-// Declaration of lure child classes
+// Declaration of lure child classes of various types
 class Jig : public Lure {
-    void getLure();
+    public:
+        Jig(std::string characteristic1, std::string characteristic2, std::string characteristic3);
+        void getLure();
+    private:
+        // Jig characteristics
+        std::string weight, head_type, trailer_type;
 };
 
 class Spinner : public Lure {
-    void getLure();
+    public:
+        Spinner(std::string characteristic1, std::string characteristic2, std::string characteristic3);
+        void getLure();
+    private:
+        // Spinner characteristics
+        std::string weight, blade_type, blade_pattern;
 };
 
 class Plug : public Lure {
-    void getLure();
+    public:
+        Plug(std::string characteristic1, std::string characteristic2, std::string characteristic3);
+        void getLure();
+    private:
+        // Plug characteristics
+        std::string length, plug_type, color_pattern;
 };
 
 class Fly : public Lure {
-    void getLure();
+    public:
+        Fly(std::string characteristic1, std::string characteristic2, std::string characteristic3);
+        void getLure();
+    private:
+        // Fly characteristics
+        std::string length, tied_pattern, color_pattern;
 };
 
 class SoftPlastic : public Lure {
-    void getLure();
+    public:
+        SoftPlastic(std::string characteristic1, std::string characteristic2, std::string characteristic3);
+        void getLure();
+    private:
+        // Soft plastic characteristics
+        std::string length, style, color_pattern;
 };
+
 

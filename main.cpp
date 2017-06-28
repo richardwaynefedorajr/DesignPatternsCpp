@@ -14,11 +14,11 @@ int main(int argc, char *argv[]) {
 
     // Add several lures to tacklebox to test Factory class implementation
     std::vector<Lure*> tackleBox;
-    tackleBox.push_back(Lure::setLure(JIG));
-    tackleBox.push_back(Lure::setLure(SPINNER));
-    tackleBox.push_back(Lure::setLure(PLUG));
-    tackleBox.push_back(Lure::setLure(FLY));
-    tackleBox.push_back(Lure::setLure(SOFTPLASTIC));
+    tackleBox.push_back(Lure::setLure(JIG, "3/8th oz.","football head","Rage Craw"));
+    tackleBox.push_back(Lure::setLure(SPINNER,"1/4 oz.","willow leaf","gold"));
+    tackleBox.push_back(Lure::setLure(PLUG,"6 inch","Rapala","Fire Tiger"));
+    tackleBox.push_back(Lure::setLure(FLY,"3 inch","streamer","blue over white"));
+    tackleBox.push_back(Lure::setLure(SOFTPLASTIC,"6 inch","stick bait","watermelon flake"));
 
     for (int i = 0; i < tackleBox.size(); ++i){
         tackleBox.at(i)->getLure();
