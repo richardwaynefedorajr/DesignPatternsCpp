@@ -2,6 +2,7 @@
 # include <stdio.h>
 # include <vector>
 # include "Factory.h"
+# include "Adapter.h"
 
 int main(int argc, char *argv[]) {
 
@@ -13,21 +14,31 @@ int main(int argc, char *argv[]) {
     // FACTORY CLASS TEST
 
     // Add several lures to tacklebox to test Factory class implementation
-    std::vector<Lure*> tackleBox;
-    tackleBox.push_back(Lure::setLure(JIG, "3/8th oz.","football head","Rage Craw"));
-    tackleBox.push_back(Lure::setLure(SPINNER,"1/4 oz.","willow leaf","gold"));
-    tackleBox.push_back(Lure::setLure(PLUG,"6 inch","Rapala","Fire Tiger"));
-    tackleBox.push_back(Lure::setLure(FLY,"3 inch","streamer","blue over white"));
-    tackleBox.push_back(Lure::setLure(SOFTPLASTIC,"6 inch","stick bait","watermelon flake"));
+    //std::vector<Lure*> tackleBox;
+    //tackleBox.push_back(Lure::setLure(JIG, "3/8th oz.","football head","Rage Craw"));
+    //tackleBox.push_back(Lure::setLure(SPINNER,"1/4 oz.","willow leaf","gold"));
+    //tackleBox.push_back(Lure::setLure(PLUG,"6 inch","Rapala","Fire Tiger"));
+    //tackleBox.push_back(Lure::setLure(FLY,"3 inch","streamer","blue over white"));
+    //tackleBox.push_back(Lure::setLure(SOFTPLASTIC,"6 inch","stick bait","watermelon flake"));
 
-    for (int i = 0; i < tackleBox.size(); ++i){
-        tackleBox.at(i)->getLure();
-    }
+    //for (int i = 0; i < tackleBox.size(); ++i){
+    //    tackleBox.at(i)->getLure();
+    //}
 
-    for (int i = 0; i < tackleBox.size(); ++i){
-        delete tackleBox[i];
-    }
+    //for (int i = 0; i < tackleBox.size(); ++i){
+    //    delete tackleBox[i];
+    //}
     
+    // --- ######################################## --- 
+    
+    // ADAPTER CLASS TEST
+   
+    // Client interacts with Weight interface through weightAdapter initilized with weight in lbs. 
+    Weight *w = new weightAdapter(30); // lbs.
+    
+    // Calling the getWeight function shows that a mass value is now available to the incompatible Mass interface
+    w->getWeight();    
+
     // --- ######################################## --- 
 
     return 0;
