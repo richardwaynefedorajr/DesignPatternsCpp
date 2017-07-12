@@ -7,7 +7,6 @@ enum lureTypes {JIG, SPINNER, PLUG, FLY, SOFTPLASTIC};
 // Declaration of a factory class to create fishing lure objects
 class Lure {
     public:
-        //Lure(std::string characteristic1, std::string characteristic2, std::string characteristic3);
         static Lure *setLure(lureTypes type, const std::string& char1, const std::string& char2, const std::string& char3);
         virtual void getLure() = 0;
 };

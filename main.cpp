@@ -3,6 +3,7 @@
 # include <vector>
 # include "Factory.h"
 # include "Adapter.h"
+# include "Builder.h"
 
 int main(int argc, char *argv[]) {
 
@@ -34,13 +35,26 @@ int main(int argc, char *argv[]) {
     // ADAPTER CLASS TEST
    
     // Client interacts with Weight interface through weightAdapter initilized with weight in lbs. 
-    Weight *w = new weightAdapter(30); // lbs.
+    //Weight *w = new weightAdapter(30); // lbs.
     
     // Calling the getWeight function shows that a mass value is now available to the incompatible Mass interface
-    w->getWeight();    
+    //w->getWeight();    
 
     // --- ######################################## --- 
 
+    // BUILDER CLASS TEST
+    
+    //TruckDealership dealer;
+    //RamBuilder ram;
+    //FordBuilder ford;
+
+    //dealer.makeTruck(&ram);
+    //dealer.lookAtTruck();
+
+    //dealer.makeTruck(&ford);
+    //dealer.lookAtTruck();
+
+    // --- ######################################## --- 
     return 0;
 
 }
