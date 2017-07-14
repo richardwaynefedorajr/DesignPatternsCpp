@@ -4,6 +4,7 @@
 # include "Factory.h"
 # include "Adapter.h"
 # include "Builder.h"
+# include "AbstractFactory.h"
 
 int main(int argc, char *argv[]) {
 
@@ -55,6 +56,27 @@ int main(int argc, char *argv[]) {
     //dealer.lookAtTruck();
 
     // --- ######################################## --- 
+
+    // ABSTRACT FACTORY CLASS TEST
+    bankType whichBank = BOA;
+    double savingsDeposit = 1000;
+    double checkingDeposit = 2500;
+    double creditLine = 2500;
+    
+    Bank *bank;
+    
+    if (whichBank == WF) { bank = new WellsFargo; }
+    else { bank = new BankOfAmerica; }
+
+    BankPatron *patron = new BankPatron(bank, savingsDeposit, checkingDeposit, creditLine);
+    patron->viewAccounts();
+    
+    delete patron;
+    delete bank;
+
+    // --- ######################################## --- 
+
+
     return 0;
 
 }
