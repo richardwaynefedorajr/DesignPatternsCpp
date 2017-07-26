@@ -5,10 +5,12 @@
 # include "Adapter.h"
 # include "Builder.h"
 # include "AbstractFactory.h"
+# include "Memento.h"
+# include "Singleton.h"
 
 int main(int argc, char *argv[]) {
 
-    std::cout << "Main point of entry for use of Gang of Four design pattern implementations" << std::endl;
+    std::cout << "Main point of entry for testing Gang of Four design pattern implementations" << std::endl;
 
     
     // --- ######################################## --- 
@@ -58,24 +60,65 @@ int main(int argc, char *argv[]) {
     // --- ######################################## --- 
 
     // ABSTRACT FACTORY CLASS TEST
-    bankType whichBank = BOA;
-    double savingsDeposit = 1000;
-    double checkingDeposit = 2500;
-    double creditLine = 2500;
     
-    Bank *bank;
+    //bankType whichBank = BOA;
+    //double savingsDeposit = 1000;
+    //double checkingDeposit = 2500;
+    //double creditLine = 2500;
     
-    if (whichBank == WF) { bank = new WellsFargo; }
-    else { bank = new BankOfAmerica; }
+    //Bank *bank;
+    
+    //if (whichBank == WF) { bank = new WellsFargo; }
+    //else { bank = new BankOfAmerica; }
 
-    BankPatron *patron = new BankPatron(bank, savingsDeposit, checkingDeposit, creditLine);
-    patron->viewAccounts();
+    //BankPatron *patron = new BankPatron(bank, savingsDeposit, checkingDeposit, creditLine);
+    //patron->viewAccounts();
     
-    delete patron;
-    delete bank;
+    //delete patron;
+    //delete bank;
 
     // --- ######################################## --- 
+    
+    // MEMENTO CLASS TEST
 
+    // PROBLEM IS NOW THAT INDEXING LEADS TO VECTOR INDEX -1 ON FINAL UNDO...
+    // NEED TO UPDATE USING CODE BLOCKS TO DEBUG, THEN BRANCH REPO, COPY PASTE FROM CODE BLOCKS WORKSPACE, AND MERGE BEFORE PUSHING TO GITHUB
+
+    //std::string input;
+    //std::cout << "Input string: ";
+    //std::getline(std::cin,input);
+    //InputString *string_in = new InputString(input);
+    //
+    //InputReceiver *directive = new InputReceiver(string_in, &InputString::concatString);
+    //
+    //std::cout << "Exit: exit, Undo: undo, Redo: redo, Concatenate: enter any other string: ";
+    //std::getline(std::cin,input);
+    //string_in->setInput(input);
+
+
+    //while (input != "exit") {
+    //    if (input == "undo") { directive->undo(); }
+    //    else if (input == "redo") { directive->redo(); }
+    //    else { directive->execute(); }
+    //    std::cout << "   " << string_in->getString() << std::endl;
+    //    std::cout << "Exit: exit, Undo: undo, Redo: redo, Concatenate: enter any other string: ";
+    //    std::getline(std::cin,input);
+    //    string_in->setInput(input);
+    //}
+
+   
+    //delete directive;
+    //delete string_in;
+
+    // --- ######################################## --- 
+    
+    // SINGLETON CLASS TEST
+    
+    SingletonClass::getInstance()->setString("Hello world");
+    std::cout << "Singleton class member string initialized as: " << SingletonClass::getInstance()->getString() << std::endl; 
+    std::cout << "Singleton class member string set to: " << SingletonClass::getInstance()->getString() << std::endl; 
+
+    // --- ######################################## --- 
 
     return 0;
 

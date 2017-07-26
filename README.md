@@ -11,3 +11,8 @@
 
 # AbstractFactory.h/cpp
 # Implementation of the abstract factory design pattern, in which a bank base class is overloaded for various branch names and produces a set of accounts
+
+# Singleton.h/cpp
+# Implementation of singleton design pattern, in which a single instance of class SingletonClass is ensured and provides "read/write" access to member string
+
+# Try Singleton implementations of Abstract Factory, Builder, Prototype, Facade, and State
