@@ -13,6 +13,11 @@
 # Implementation of the abstract factory design pattern, in which a bank base class is overloaded for various branch names and produces a set of accounts
 
 # Singleton.h/cpp
-# Implementation of singleton design pattern, in which a single instance of class SingletonClass is ensured and provides "read/write" access to member string
+# Implementation of the singleton design pattern, in which a single instance of class SingletonClass is ensured and provides "read/write" access to member string
+
+# Facade.h/cpp
+# Implementation of the facade design pattern, in which an instance of the FacadeClass provides a single interface to subsystems which provide the current date and time
 
 # Try Singleton implementations of Abstract Factory, Builder, Prototype, Facade, and State
+
+# Run through and update comments after finishing all design patterns to review implementation specifics

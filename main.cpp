@@ -7,6 +7,7 @@
 # include "AbstractFactory.h"
 # include "Memento.h"
 # include "Singleton.h"
+# include "Facade.h"
 
 int main(int argc, char *argv[]) {
 
@@ -105,7 +106,6 @@ int main(int argc, char *argv[]) {
     //    std::getline(std::cin,input);
     //    string_in->setInput(input);
     //}
-
    
     //delete directive;
     //delete string_in;
@@ -114,9 +114,16 @@ int main(int argc, char *argv[]) {
     
     // SINGLETON CLASS TEST
     
-    SingletonClass::getInstance()->setString("Hello world");
-    std::cout << "Singleton class member string initialized as: " << SingletonClass::getInstance()->getString() << std::endl; 
-    std::cout << "Singleton class member string set to: " << SingletonClass::getInstance()->getString() << std::endl; 
+    //SingletonClass::getInstance()->setString("Hello world");
+    //std::cout << "Singleton class member string initialized as: " << SingletonClass::getInstance()->getString() << std::endl; 
+    //std::cout << "Singleton class member string set to: " << SingletonClass::getInstance()->getString() << std::endl; 
+
+    // --- ######################################## --- 
+    
+    // FACADE CLASS TEST
+    
+    FacadeClass DateAndTimeInterface;
+    DateAndTimeInterface.getDateAndTime();
 
     // --- ######################################## --- 
 
