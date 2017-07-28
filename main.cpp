@@ -9,6 +9,7 @@
 # include "Singleton.h"
 # include "Facade.h"
 # include "Mediator.h"
+# include "Decorator.h"
 
 int main(int argc, char *argv[]) {
 
@@ -130,29 +131,55 @@ int main(int argc, char *argv[]) {
     
     // MEDIATOR CLASS TEST
     
-    InteractionMediator *im; 
-    InteractionMediator i; 
-    im = &i;
+    //InteractionMediator *im; 
+    //InteractionMediator i; 
+    //im = &i;
 
-    Larry *larry; 
-    Curly *curly; 
-    Moe *moe;
+    //Larry *larry; 
+    //Curly *curly; 
+    //Moe *moe;
+    //
+    //Larry l(im); 
+    //Curly c(im);
+    //Moe m(im);
+    //
+    //larry = &l; 
+    //curly = &c; 
+    //moe = &m;
+
+    //im->getStooges(larry, curly, moe);
+
+    //larry->accidentallyHitMoe();
+    //curly->accidentallyHitMoe();
+    //moe->pokeCurlysEyes();
+    //moe->slapLarrysHead();
+
+    // --- ######################################## --- 
     
-    Larry l(im); 
-    Curly c(im);
-    Moe m(im);
+    // DECORATOR DESIGN PATTERN
     
-    larry = &l; 
-    curly = &c; 
-    moe = &m;
+    WeaponSystem *base_platform = new AssaultRifle("M4 ");
+    WeaponSystem *with_scope = new Scope(new AssaultRifle("M4 "), "red dot ");
+    WeaponSystem *with_scope_and_foregrip = new Foregrip(new Scope(new AssaultRifle("M4 "), "red dot "),"vertical foregrip ");
+    WeaponSystem *with_scope_and_foregrip_and_suppressor = new Suppressor(new Foregrip(new Scope(new AssaultRifle("M4 "), "red dot "),"vertical foregrip "),"AAC M4-2000 ");
+    
+    base_platform->getWeaponSystem();
+    std::cout << std::endl; 
 
-    im->getStooges(larry, curly, moe);
+    with_scope->getWeaponSystem();
+    std::cout << std::endl; 
 
-    larry->accidentallyHitMoe();
-    curly->accidentallyHitMoe();
-    moe->pokeCurlysEyes();
-    moe->slapLarrysHead();
+    with_scope_and_foregrip->getWeaponSystem();
+    std::cout << std::endl; 
 
+    with_scope_and_foregrip_and_suppressor->getWeaponSystem();
+    std::cout << std::endl; 
+
+    delete base_platform;
+    delete with_scope;
+    delete with_scope_and_foregrip;
+    delete with_scope_and_foregrip_and_suppressor;
+    
     // --- ######################################## --- 
 
     return 0;

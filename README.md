@@ -21,6 +21,9 @@
 # Mediator.h/cpp
 # Implementation of the mediator design pattern, in which the interaction between "stooge" objects, representing the classic slapstick comics The Three Stooges, is encapsulated in a mediator class
 
+# Decorator.h/cpp
+# Implementation of the decorator design pattern, in which assault rifle accessories are added to a base class dynamically
+
 # Try Singleton implementations of Abstract Factory, Builder, Prototype, Facade, and State
 
 # Run through and update comments after finishing all design patterns to review implementation specifics
