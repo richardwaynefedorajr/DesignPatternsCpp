@@ -8,6 +8,7 @@
 # include "Memento.h"
 # include "Singleton.h"
 # include "Facade.h"
+# include "Mediator.h"
 
 int main(int argc, char *argv[]) {
 
@@ -122,8 +123,35 @@ int main(int argc, char *argv[]) {
     
     // FACADE CLASS TEST
     
-    FacadeClass DateAndTimeInterface;
-    DateAndTimeInterface.getDateAndTime();
+    //FacadeClass DateAndTimeInterface;
+    //DateAndTimeInterface.getDateAndTime();
+
+    // --- ######################################## --- 
+    
+    // MEDIATOR CLASS TEST
+    
+    InteractionMediator *im; 
+    InteractionMediator i; 
+    im = &i;
+
+    Larry *larry; 
+    Curly *curly; 
+    Moe *moe;
+    
+    Larry l(im); 
+    Curly c(im);
+    Moe m(im);
+    
+    larry = &l; 
+    curly = &c; 
+    moe = &m;
+
+    im->getStooges(larry, curly, moe);
+
+    larry->accidentallyHitMoe();
+    curly->accidentallyHitMoe();
+    moe->pokeCurlysEyes();
+    moe->slapLarrysHead();
 
     // --- ######################################## --- 
 

@@ -18,6 +18,11 @@
 # Facade.h/cpp
 # Implementation of the facade design pattern, in which an instance of the FacadeClass provides a single interface to subsystems which provide the current date and time
 
+# Mediator.h/cpp
+# Implementation of the mediator design pattern, in which the interaction between "stooge" objects, representing the classic slapstick comics The Three Stooges, is encapsulated in a mediator class
+
 # Try Singleton implementations of Abstract Factory, Builder, Prototype, Facade, and State
 
 # Run through and update comments after finishing all design patterns to review implementation specifics
+
+# Update with Rule of 5 and test
