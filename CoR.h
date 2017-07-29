@@ -12,17 +12,17 @@ class BaseWorker {
         virtual void service(FastFood in_request);
 };
 
-class Cashier {
+class Cashier : public BaseWorker {
     public:
         void service(FastFood in_request);
 };
 
-class Cook {
+class Cook : public BaseWorker {
     public:
         void service(FastFood in_request);
 };
 
-class Runner {
+class Runner : public BaseWorker {
     public:
         void service(FastFood in_request);
 };

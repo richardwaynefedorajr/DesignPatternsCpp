@@ -10,7 +10,8 @@
 //# include "Facade.h"
 //# include "Mediator.h"
 //# include "Decorator.h"
-# include "Bridge.h"
+//# include "Bridge.h"
+# include "CoR.h"
 
 int main(int argc, char *argv[]) {
 
@@ -185,48 +186,55 @@ int main(int argc, char *argv[]) {
     
     // BRIDGE DESIGN PATTERN TEST
     
-    LureCharacteristic* black = new Color("black");
-    LureCharacteristic* pearl = new Color("pearl");
-    LureCharacteristic* firetiger = new Color("firetiger");
+    //LureCharacteristic* black = new Color("black");
+    //LureCharacteristic* pearl = new Color("pearl");
+    //LureCharacteristic* firetiger = new Color("firetiger");
 
-    LureCharacteristic* quarter_oz = new Weight("1/4 oz."); 
-    LureCharacteristic* half_oz = new Weight("1/2 oz."); 
-    LureCharacteristic* three_quarter_oz = new Weight("3/4 oz."); 
+    //LureCharacteristic* quarter_oz = new Weight("1/4 oz."); 
+    //LureCharacteristic* half_oz = new Weight("1/2 oz."); 
+    //LureCharacteristic* three_quarter_oz = new Weight("3/4 oz."); 
 
-    LureCharacteristic* four_inch = new Length("4\"");
-    LureCharacteristic* five_inch = new Length("5\"");
-    LureCharacteristic* six_inch = new Length("6\"");
+    //LureCharacteristic* four_inch = new Length("4\"");
+    //LureCharacteristic* five_inch = new Length("5\"");
+    //LureCharacteristic* six_inch = new Length("6\"");
 
-    LureCharacteristic* shallow = new Depth ("0-4\'");
-    LureCharacteristic* medium_depth = new Depth ("4-8\'");
-    LureCharacteristic* deep_diver = new Depth ("8-12\'");
+    //LureCharacteristic* shallow = new Depth ("0-4\'");
+    //LureCharacteristic* medium_depth = new Depth ("4-8\'");
+    //LureCharacteristic* deep_diver = new Depth ("8-12\'");
 
-    LureType* big_bass_jig = new Jig(black, three_quarter_oz);
-    LureType* finesse_jig = new Jig(pearl, quarter_oz);
+    //LureType* big_bass_jig = new Jig(black, three_quarter_oz);
+    //LureType* finesse_jig = new Jig(pearl, quarter_oz);
 
-    LureType* big_plastic = new SoftPlastic(black, six_inch);
-    LureType* small_plastic = new SoftPlastic(pearl, four_inch);
+    //LureType* big_plastic = new SoftPlastic(black, six_inch);
+    //LureType* small_plastic = new SoftPlastic(pearl, four_inch);
 
-    LureType* power_crank = new Crankbait(firetiger, six_inch, deep_diver);
+    //LureType* power_crank = new Crankbait(firetiger, six_inch, deep_diver);
+    //
+    //LureType* classic_spinnerbait = new Spinnerbait(pearl, half_oz);
+
+    //big_bass_jig->getLure();
+    //finesse_jig->getLure();
+    //big_plastic->getLure();
+    //small_plastic->getLure();
+    //power_crank->getLure();
+    //classic_spinnerbait->getLure();
+
+    //delete big_bass_jig, delete finesse_jig;
+    //delete big_plastic, delete small_plastic;
+    //delete power_crank;
+    //delete classic_spinnerbait;
+
+    //delete black, delete pearl, delete firetiger;
+    //delete quarter_oz, delete half_oz, delete three_quarter_oz;
+    //delete four_inch, delete five_inch, delete six_inch;
+    //delete shallow, delete medium_depth, delete deep_diver; 
     
-    LureType* classic_spinnerbait = new Spinnerbait(pearl, half_oz);
-
-    big_bass_jig->getLure();
-    finesse_jig->getLure();
-    big_plastic->getLure();
-    small_plastic->getLure();
-    power_crank->getLure();
-    classic_spinnerbait->getLure();
-
-    delete big_bass_jig, delete finesse_jig;
-    delete big_plastic, delete small_plastic;
-    delete power_crank;
-    delete classic_spinnerbait;
-
-    delete black, delete pearl, delete firetiger;
-    delete quarter_oz, delete half_oz, delete three_quarter_oz;
-    delete four_inch, delete five_inch, delete six_inch;
-    delete shallow, delete medium_depth, delete deep_diver; 
+    // --- ######################################## --- 
+    
+    // CHAIN OF RESPONSIBILITY DESIGN PATTERN TEST
+    
+    
+    
     
     // --- ######################################## --- 
 
