@@ -27,6 +27,9 @@
 # Bridge.h/cpp
 # Implementation of the bridge design pattern, in which the interface and implementation specifics for creating fishing lures are abstracted behind LureType and LureCharacteristic base classes
 
+# CoR.h/cpp
+# Implementation of the chain of responsibility design pattern, in which a base class manages a pointer to the next object instance in the chain of responsibiity for processing fast food orders
+
 # Try Singleton implementations of Abstract Factory, Builder, Prototype, Facade, and State
 
 # Run through and update comments after finishing all design patterns to review implementation specifics

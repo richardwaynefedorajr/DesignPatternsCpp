@@ -233,9 +233,24 @@ int main(int argc, char *argv[]) {
     
     // CHAIN OF RESPONSIBILITY DESIGN PATTERN TEST
     
-    
-    
-    
+    Cashier cashier;
+    Cook cook;
+    Runner runner;
+
+    cashier.addWorker(&cook);
+    cashier.addWorker(&runner);
+    runner.setNext(&cashier);
+
+    FastFood request1 = burger;
+    FastFood request2 = drink;
+    FastFood request3 = fries;
+    FastFood request4 = change;
+
+    cashier.service(request1);
+    cashier.service(request2);
+    cashier.service(request3);
+    cashier.service(request4);
+
     // --- ######################################## --- 
 
     return 0;

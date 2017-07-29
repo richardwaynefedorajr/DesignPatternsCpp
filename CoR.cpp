@@ -3,7 +3,7 @@
 BaseWorker::BaseWorker() { m_next_worker = 0; } 
 void BaseWorker::setNext(BaseWorker *in_worker) { m_next_worker = in_worker; }
 void BaseWorker::addWorker(BaseWorker *in_worker) {
-    if (in_worker) { m_next_worker->addWorker(in_worker); }
+    if (m_next_worker) { m_next_worker->addWorker(in_worker); }
     else { m_next_worker = in_worker; }
 }
 
