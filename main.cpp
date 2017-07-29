@@ -1,15 +1,16 @@
 # include <iostream>
 # include <stdio.h>
 # include <vector>
-# include "Factory.h"
-# include "Adapter.h"
-# include "Builder.h"
-# include "AbstractFactory.h"
-# include "Memento.h"
-# include "Singleton.h"
-# include "Facade.h"
-# include "Mediator.h"
-# include "Decorator.h"
+//# include "Factory.h"
+//# include "Adapter.h"
+//# include "Builder.h"
+//# include "AbstractFactory.h"
+//# include "Memento.h"
+//# include "Singleton.h"
+//# include "Facade.h"
+//# include "Mediator.h"
+//# include "Decorator.h"
+# include "Bridge.h"
 
 int main(int argc, char *argv[]) {
 
@@ -18,7 +19,7 @@ int main(int argc, char *argv[]) {
     
     // --- ######################################## --- 
    
-    // FACTORY CLASS TEST
+    // FACTORY DESIGN PATTERN TEST
 
     // Add several lures to tacklebox to test Factory class implementation
     //std::vector<Lure*> tackleBox;
@@ -38,7 +39,7 @@ int main(int argc, char *argv[]) {
     
     // --- ######################################## --- 
     
-    // ADAPTER CLASS TEST
+    // ADAPTER DESIGN PATTERN TEST
    
     // Client interacts with Weight interface through weightAdapter initilized with weight in lbs. 
     //Weight *w = new weightAdapter(30); // lbs.
@@ -48,7 +49,7 @@ int main(int argc, char *argv[]) {
 
     // --- ######################################## --- 
 
-    // BUILDER CLASS TEST
+    // BUILDER DESIGN PATTERN TEST
     
     //TruckDealership dealer;
     //RamBuilder ram;
@@ -62,7 +63,7 @@ int main(int argc, char *argv[]) {
 
     // --- ######################################## --- 
 
-    // ABSTRACT FACTORY CLASS TEST
+    // ABSTRACT FACTORY DESIGN PATTERN TEST
     
     //bankType whichBank = BOA;
     //double savingsDeposit = 1000;
@@ -82,7 +83,7 @@ int main(int argc, char *argv[]) {
 
     // --- ######################################## --- 
     
-    // MEMENTO CLASS TEST
+    // MEMENTO DESIGN PATTERN TEST
 
     // PROBLEM IS NOW THAT INDEXING LEADS TO VECTOR INDEX -1 ON FINAL UNDO...
     // NEED TO UPDATE USING CODE BLOCKS TO DEBUG, THEN BRANCH REPO, COPY PASTE FROM CODE BLOCKS WORKSPACE, AND MERGE BEFORE PUSHING TO GITHUB
@@ -114,7 +115,7 @@ int main(int argc, char *argv[]) {
 
     // --- ######################################## --- 
     
-    // SINGLETON CLASS TEST
+    // SINGLETON DESIGN PATTERN TEST
     
     //SingletonClass::getInstance()->setString("Hello world");
     //std::cout << "Singleton class member string initialized as: " << SingletonClass::getInstance()->getString() << std::endl; 
@@ -122,14 +123,14 @@ int main(int argc, char *argv[]) {
 
     // --- ######################################## --- 
     
-    // FACADE CLASS TEST
+    // FACADE DESIGN PATTERN TEST
     
     //FacadeClass DateAndTimeInterface;
     //DateAndTimeInterface.getDateAndTime();
 
     // --- ######################################## --- 
     
-    // MEDIATOR CLASS TEST
+    // MEDIATOR DESIGN PATTERN TEST
     
     //InteractionMediator *im; 
     //InteractionMediator i; 
@@ -156,29 +157,76 @@ int main(int argc, char *argv[]) {
 
     // --- ######################################## --- 
     
-    // DECORATOR DESIGN PATTERN
+    // DECORATOR DESIGN PATTERN TEST
     
-    WeaponSystem *base_platform = new AssaultRifle("M4 ");
-    WeaponSystem *with_scope = new Scope(new AssaultRifle("M4 "), "red dot ");
-    WeaponSystem *with_scope_and_foregrip = new Foregrip(new Scope(new AssaultRifle("M4 "), "red dot "),"vertical foregrip ");
-    WeaponSystem *with_scope_and_foregrip_and_suppressor = new Suppressor(new Foregrip(new Scope(new AssaultRifle("M4 "), "red dot "),"vertical foregrip "),"AAC M4-2000 ");
+    //WeaponSystem *base_platform = new AssaultRifle("M4 ");
+    //WeaponSystem *with_scope = new Scope(new AssaultRifle("M4 "), "red dot ");
+    //WeaponSystem *with_scope_and_foregrip = new Foregrip(new Scope(new AssaultRifle("M4 "), "red dot "),"vertical foregrip ");
+    //WeaponSystem *with_scope_and_foregrip_and_suppressor = new Suppressor(new Foregrip(new Scope(new AssaultRifle("M4 "), "red dot "),"vertical foregrip "),"AAC M4-2000 ");
+    //
+    //base_platform->getWeaponSystem();
+    //std::cout << std::endl; 
+
+    //with_scope->getWeaponSystem();
+    //std::cout << std::endl; 
+
+    //with_scope_and_foregrip->getWeaponSystem();
+    //std::cout << std::endl; 
+
+    //with_scope_and_foregrip_and_suppressor->getWeaponSystem();
+    //std::cout << std::endl; 
+
+    //delete base_platform;
+    //delete with_scope;
+    //delete with_scope_and_foregrip;
+    //delete with_scope_and_foregrip_and_suppressor;
     
-    base_platform->getWeaponSystem();
-    std::cout << std::endl; 
+    // --- ######################################## --- 
+    
+    // BRIDGE DESIGN PATTERN TEST
+    
+    LureCharacteristic* black = new Color("black");
+    LureCharacteristic* pearl = new Color("pearl");
+    LureCharacteristic* firetiger = new Color("firetiger");
 
-    with_scope->getWeaponSystem();
-    std::cout << std::endl; 
+    LureCharacteristic* quarter_oz = new Weight("1/4 oz."); 
+    LureCharacteristic* half_oz = new Weight("1/2 oz."); 
+    LureCharacteristic* three_quarter_oz = new Weight("3/4 oz."); 
 
-    with_scope_and_foregrip->getWeaponSystem();
-    std::cout << std::endl; 
+    LureCharacteristic* four_inch = new Length("4\"");
+    LureCharacteristic* five_inch = new Length("5\"");
+    LureCharacteristic* six_inch = new Length("6\"");
 
-    with_scope_and_foregrip_and_suppressor->getWeaponSystem();
-    std::cout << std::endl; 
+    LureCharacteristic* shallow = new Depth ("0-4\'");
+    LureCharacteristic* medium_depth = new Depth ("4-8\'");
+    LureCharacteristic* deep_diver = new Depth ("8-12\'");
 
-    delete base_platform;
-    delete with_scope;
-    delete with_scope_and_foregrip;
-    delete with_scope_and_foregrip_and_suppressor;
+    LureType* big_bass_jig = new Jig(black, three_quarter_oz);
+    LureType* finesse_jig = new Jig(pearl, quarter_oz);
+
+    LureType* big_plastic = new SoftPlastic(black, six_inch);
+    LureType* small_plastic = new SoftPlastic(pearl, four_inch);
+
+    LureType* power_crank = new Crankbait(firetiger, six_inch, deep_diver);
+    
+    LureType* classic_spinnerbait = new Spinnerbait(pearl, half_oz);
+
+    big_bass_jig->getLure();
+    finesse_jig->getLure();
+    big_plastic->getLure();
+    small_plastic->getLure();
+    power_crank->getLure();
+    classic_spinnerbait->getLure();
+
+    delete big_bass_jig, delete finesse_jig;
+    delete big_plastic, delete small_plastic;
+    delete power_crank;
+    delete classic_spinnerbait;
+
+    delete black, delete pearl, delete firetiger;
+    delete quarter_oz, delete half_oz, delete three_quarter_oz;
+    delete four_inch, delete five_inch, delete six_inch;
+    delete shallow, delete medium_depth, delete deep_diver; 
     
     // --- ######################################## --- 
 
