@@ -16,4 +16,4 @@ void SoftPlastic::getLure() { std::cout << m_color->getCharacteristic() << " " <
 
 void Crankbait::getLure() { std::cout << m_length->getCharacteristic() << " " << m_color->getCharacteristic() << " " << m_depth->getCharacteristic() << " " << "crankbait" << std::endl; }
 
-void Spinnerbait::getLure() { std::cout << m_weight->getCharacteristic() << " " << m_color->getCharacteristic() << " " << "jig" << std::endl; }
+void Spinnerbait::getLure() { std::cout << m_weight->getCharacteristic() << " " << m_color->getCharacteristic() << " " << "spinnerbait" << std::endl; }

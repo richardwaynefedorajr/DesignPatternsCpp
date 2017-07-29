@@ -1,12 +1,12 @@
 # include <string>
 # include <iostream>
 
-class LureCharacteristics {
+class LureCharacteristic {
     public:
         virtual std::string getCharacteristic() = 0;
 };
 
-class Color : public LureCharacteristics {
+class Color : public LureCharacteristic {
     public:
         Color(std::string in_color);
         std::string getCharacteristic();
@@ -14,7 +14,7 @@ class Color : public LureCharacteristics {
         std::string m_color;
 };
 
-class Weight : public LureCharacteristics {
+class Weight : public LureCharacteristic {
     public:
         Weight(std::string in_weight);
         std::string getCharacteristic();
@@ -22,7 +22,7 @@ class Weight : public LureCharacteristics {
         std::string m_weight;
 };
 
-class Length : public LureCharacteristics {
+class Length : public LureCharacteristic {
     public:
         Length(std::string in_length);
         std::string getCharacteristic();
@@ -30,7 +30,7 @@ class Length : public LureCharacteristics {
         std::string m_length;
 };
 
-class Depth : public LureCharacteristics {
+class Depth : public LureCharacteristic {
     public:
         Depth(std::string in_depth);
         std::string getCharacteristic();
@@ -44,34 +44,34 @@ class LureType {
 };
 
 class Jig : public LureType {
-    Color* m_color;
-    Weight* m_weight;
+    LureCharacteristic* m_color;
+    LureCharacteristic* m_weight;
     public:
-        Jig(Color *in_color, Weight *in_weight) : m_color(in_color), m_weight(in_weight) { }
+        Jig(LureCharacteristic *in_color, LureCharacteristic *in_weight) : m_color(in_color), m_weight(in_weight) { }
         void getLure();
 };
 
 class SoftPlastic : public LureType {
-    Color* m_color;
-    Length* m_length;
+    LureCharacteristic* m_color;
+    LureCharacteristic* m_length;
     public:
-        SoftPlastic(Color* in_color, Length* in_length) : m_color(in_color), m_length(in_length) { }
+        SoftPlastic(LureCharacteristic* in_color, LureCharacteristic* in_length) : m_color(in_color), m_length(in_length) { }
         void getLure();
 };
 
 class Crankbait : public LureType {
-    Color* m_color;
-    Length* m_length;
-    Depth* m_depth;
+    LureCharacteristic* m_color;
+    LureCharacteristic* m_length;
+    LureCharacteristic* m_depth;
     public:
-        Crankbait(Color* in_color, Length* in_length, Depth* in_depth) : m_color(in_color), m_length(in_length), m_depth(in_depth) { }
+        Crankbait(LureCharacteristic* in_color, LureCharacteristic* in_length, LureCharacteristic* in_depth) : m_color(in_color), m_length(in_length), m_depth(in_depth) { }
         void getLure();
 };
 
 class Spinnerbait : public LureType {
-    Color* m_color;
-    Weight* m_weight;
+    LureCharacteristic* m_color;
+    LureCharacteristic* m_weight;
     public:
-        Spinnerbait(Color *in_color, Weight *in_weight) : m_color(in_color), m_weight(in_weight) { }
+        Spinnerbait(LureCharacteristic *in_color, LureCharacteristic *in_weight) : m_color(in_color), m_weight(in_weight) { }
         void getLure();
 };

@@ -24,6 +24,9 @@
 # Decorator.h/cpp
 # Implementation of the decorator design pattern, in which assault rifle accessories are added to a base class dynamically
 
+# Bridge.h/cpp
+# Implementation of the bridge design pattern, in which the interface and implementation specifics for creating fishing lures are abstracted behind LureType and LureCharacteristic base classes
+
 # Try Singleton implementations of Abstract Factory, Builder, Prototype, Facade, and State
 
 # Run through and update comments after finishing all design patterns to review implementation specifics
