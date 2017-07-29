@@ -56,5 +56,3 @@ class SoftPlastic : public Lure {
         // Soft plastic characteristics
         std::string length, style, color_pattern;
 };
-
-
