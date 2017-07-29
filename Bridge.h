@@ -40,7 +40,7 @@ class Depth : public LureCharacteristics {
 
 class LureType {
     public:
-        virtual std::string getLureType() = 0;
+        virtual void getLure() = 0;
 };
 
 class Jig : public LureType {
@@ -48,6 +48,7 @@ class Jig : public LureType {
     Weight* m_weight;
     public:
         Jig(Color *in_color, Weight *in_weight) : m_color(in_color), m_weight(in_weight) { }
+        void getLure();
 };
 
 class SoftPlastic : public LureType {
@@ -55,6 +56,7 @@ class SoftPlastic : public LureType {
     Length* m_length;
     public:
         SoftPlastic(Color* in_color, Length* in_length) : m_color(in_color), m_length(in_length) { }
+        void getLure();
 };
 
 class Crankbait : public LureType {
@@ -63,6 +65,7 @@ class Crankbait : public LureType {
     Depth* m_depth;
     public:
         Crankbait(Color* in_color, Length* in_length, Depth* in_depth) : m_color(in_color), m_length(in_length), m_depth(in_depth) { }
+        void getLure();
 };
 
 class Spinnerbait : public LureType {
@@ -70,6 +73,5 @@ class Spinnerbait : public LureType {
     Weight* m_weight;
     public:
         Spinnerbait(Color *in_color, Weight *in_weight) : m_color(in_color), m_weight(in_weight) { }
+        void getLure();
 };
-
-
