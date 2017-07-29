@@ -31,4 +31,4 @@
 
 # Run through and update comments after finishing all design patterns to review implementation specifics
 
-# Update with Rule of 5 and test it
+# Update with Rule of 5 and test
