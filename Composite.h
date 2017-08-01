@@ -2,8 +2,6 @@
 # include <iostream>
 # include <string>
 
-enum LureType { JIG, SOFTPLASTIC, SPINNERBAIT, CRANKBAIT };
-
 class Lure {
     public:
         virtual void getLure() = 0;
