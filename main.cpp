@@ -272,8 +272,22 @@ int main(int argc, char *argv[]) {
     
     // COMPOSITE DESIGN PATTERN TEST
     
-    
-    
+    std::vector<std::string> names;
+    names.push_back("Jig");
+    names.push_back("Soft plastic");
+    names.push_back("Spinnerbait");
+    names.push_back("Crankbait");
+
+    int num_lure_types = names.size();
+
+    std::vector<TackleBox> box;
+    TackleBox tb;
+
+    for (int i = 0; i < num_lure_types; ++i) { box.push_back(tb); }
+    for (int i = 0; i < num_lure_types; ++i) { box.at(i).addLure(new SingleLure(names.at(i))); }
+    for (int i = 1; i < num_lure_types; ++i) { box.at(0).addLure(&(box.at(i))); }
+    for (int i = 0; i < num_lure_types; ++i) { box.at(i).getLure(); std::cout << std::endl; }
+
     // --- ######################################## --- 
 
     return 0;

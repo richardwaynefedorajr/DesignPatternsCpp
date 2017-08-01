@@ -8,15 +8,15 @@ class Lure {
 };
 
 class SingleLure : public Lure {
-    std::string m_name;
     public:
+        std::string m_name;
         SingleLure(std::string name);
         void getLure();
 };
 
 class TackleBox : public Lure {
-    std::vector < Lure* > m_tacklebox;
     public:
+        std::vector < Lure* > m_tacklebox;
         void addLure(Lure* lure);
         void getLure();
 };

@@ -1,7 +1,7 @@
 # include "Composite.h"
 
 SingleLure::SingleLure(std::string name) : m_name(name) { }
-void SingleLure::getLure() { std::cout << "Lure type: " << m_name << std::endl; }
+void SingleLure::getLure() { std::cout << "Lure type: " << m_name << " "; }
 
 void TackleBox::addLure(Lure* lure) { m_tacklebox.push_back(lure); }
 void TackleBox::getLure() { 
