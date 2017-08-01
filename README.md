@@ -32,6 +32,10 @@
 
 # Try Singleton implementations of Abstract Factory, Builder, Prototype, Facade, and State
 
+# Try Chain of Responsibility using Command to represent requests as objects
+
+# Try Command using Memento to maintain state required to undo an operation
+
 # Run through and update comments after finishing all design patterns to review implementation specifics
 
 # Update with Rule of 5 and test it
