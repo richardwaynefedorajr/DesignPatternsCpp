@@ -12,7 +12,8 @@
 //# include "Decorator.h"
 //# include "Bridge.h"
 //# include "CoR.h"
-# include "Command.h"
+//# include "Command.h"
+# include "Composite.h"
 
 int main(int argc, char *argv[]) {
 
@@ -256,17 +257,23 @@ int main(int argc, char *argv[]) {
     
     // COMMAND DESIGN PATTERN TEST
     
-    TeamMember db("Defensive back", Command());
-    TeamMember rb("Running back", Command());
-    TeamMember ol("Offensive line", Command());
-    TeamMember db_coach("Defensive backs coach", Command(&db, &TeamMember::runDBDrills));
-    TeamMember rb_coach("Running backs coach", Command(&rb, &TeamMember::runLaps));
-    TeamMember ol_coach("Offensive line coach", Command(&ol, &TeamMember::runLinemanDrills));
+    //TeamMember db("Defensive back", Command());
+    //TeamMember rb("Running back", Command());
+    //TeamMember ol("Offensive line", Command());
+    //TeamMember db_coach("Defensive backs coach", Command(&db, &TeamMember::runDBDrills));
+    //TeamMember rb_coach("Running backs coach", Command(&rb, &TeamMember::runLaps));
+    //TeamMember ol_coach("Offensive line coach", Command(&ol, &TeamMember::runLinemanDrills));
 
-    db_coach.commandDrills();
-    rb_coach.commandDrills();
-    ol_coach.commandDrills();
+    //db_coach.commandDrills();
+    //rb_coach.commandDrills();
+    //ol_coach.commandDrills();
      
+    // --- ######################################## --- 
+    
+    // COMPOSITE DESIGN PATTERN TEST
+    
+    
+    
     // --- ######################################## --- 
 
     return 0;

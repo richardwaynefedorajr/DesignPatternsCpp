@@ -43,8 +43,11 @@
 
 # Update with Rule of 5 and test it
 
+# Try combining Factory, Abstract Factory, and Bridge design classes with Composite to allow for access to various lure attributes in collection
+
 # Update with standard naming conventions:
 # ClassName - class
 # functionName - function
 # m_variable - member variable
 # variable - input variable
+# ENUM - enum member
