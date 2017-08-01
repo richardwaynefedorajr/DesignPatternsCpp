@@ -253,6 +253,21 @@ int main(int argc, char *argv[]) {
     //cashier.service(request4);
 
     // --- ######################################## --- 
+    
+    // COMMAND DESIGN PATTERN TEST
+    
+    TeamMember db("Defensive back", Command());
+    TeamMember rb("Running back", Command());
+    TeamMember ol("Offensive line", Command());
+    TeamMember db_coach("Defensive backs coach", Command(&db, &TeamMember::runDBDrills));
+    TeamMember rb_coach("Running backs coach", Command(&rb, &TeamMember::runLaps));
+    TeamMember ol_coach("Offensive line coach", Command(&ol, &TeamMember::runLinemanDrills));
+
+    db_coach.commandDrills();
+    rb_coach.commandDrills();
+    ol_coach.commandDrills();
+     
+    // --- ######################################## --- 
 
     return 0;
 

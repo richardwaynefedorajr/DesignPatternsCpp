@@ -30,6 +30,9 @@
 # CoR.h/cpp
 # Implementation of the chain of responsibility design pattern, in which a base class manages a pointer to the next object instance in the chain of responsibiity for processing fast food orders
 
+# Command.h/cpp
+# Implementation of the command design pattern, in which the functionality for football players running drills and the coach's call to make them run is encapsulated in a TeamMember class, and a Command class is used to encapsulte the request itself 
+
 # Try Singleton implementations of Abstract Factory, Builder, Prototype, Facade, and State
 
 # Try Chain of Responsibility using Command to represent requests as objects
@@ -39,3 +42,9 @@
 # Run through and update comments after finishing all design patterns to review implementation specifics
 
 # Update with Rule of 5 and test it
+
+# Update with standard naming conventions:
+# ClassName - class
+# functionName - function
+# m_variable - member variable
+# variable - input variable

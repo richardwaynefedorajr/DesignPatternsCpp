@@ -4,36 +4,20 @@
 class TeamMember;
 
 class Command {
-    TeamMember *m_teammember;
-    void(TeamMember::*method)();
     public:
-        Command(TeamMember *in_teammember = 0, void(TeamMember::*in_method)() = 0);
+        TeamMember *m_teammember;
+        void(TeamMember::*m_action)();
+        Command(TeamMember *teammember = 0, void(TeamMember::*in_action)() = 0);
         void execute();
 };
 
 class TeamMember {
     public:
         std::string m_name;
-        virtual void command() = 0;
-        virtual void action() = 0;
-};
-
-class Coach : public TeamMember {
-    public:
-        void command();
-};
-
-class DefensiveBack : public TeamMember {
-    public:
-        void action();
-};
-
-class RunningBack : public TeamMember {
-    public:
-        void action();
-};
-
-class Lineman : public TeamMember {
-    public:
-        void action();
+        Command m_command;
+        TeamMember(std::string name, Command command);
+        void commandDrills();
+        void runLaps(); 
+        void runDBDrills();
+        void runLinemanDrills();
 };
