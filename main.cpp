@@ -14,7 +14,8 @@
 //# include "CoR.h"
 //# include "Command.h"
 //# include "Composite.h"
-# include "Flyweight.h"
+//# include "Flyweight.h"
+# include "Interpreter.h"
 
 int main(int argc, char *argv[]) {
 
@@ -295,13 +296,21 @@ int main(int argc, char *argv[]) {
    
     // UPDATE USING POINTERS
 
-    RectangleFactory rf;
-    Rectangle *rect1 = rf.getRectangle(3,2);
-    Rectangle *rect2 = rf.getRectangle(2,2);
-    rect1->draw(0,0);    
-    rect2->draw(1,1);    
+    //RectangleFactory rf;
+    //Rectangle *rect1 = rf.getRectangle(3,2);
+    //Rectangle *rect2 = rf.getRectangle(2,2);
+    //rect1->draw(0,0);    
+    //rect2->draw(1,1);    
 
     //std::cout << "Check pointers: rect1 - " << rect1 << " rect2 - " << rect2 << std::endl;
+    
+    // --- ######################################## --- 
+    
+    // INTERPRETER DESIGN CLASS TEST
+    
+    Interpreter i;
+    i.setInput(0);
+    i.interpret();
     
     // --- ######################################## --- 
 

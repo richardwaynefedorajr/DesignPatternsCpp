@@ -36,6 +36,9 @@
 # Flyweight.h/cpp
 # Implementation of the flyweight design pattern, in which a factory is used to create and store instances of a rectangle class, with intrinsic dimensions and an extrinsic location to be drawn in the terminal
 
+# Interpreter.h/cpp
+# Implementation of the interpreter design pattern, in which the rules to translate an integer into text are distributed accross derived interpreter subclasses
+
 # Try Singleton implementations of Abstract Factory, Builder, Prototype, Facade, and State
 
 # Try Chain of Responsibility using Command to represent requests as objects
