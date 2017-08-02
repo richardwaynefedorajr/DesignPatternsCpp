@@ -15,7 +15,8 @@
 //# include "Command.h"
 //# include "Composite.h"
 //# include "Flyweight.h"
-# include "Interpreter.h"
+//# include "Interpreter.h"
+# include "Observer.h"
 
 int main(int argc, char *argv[]) {
 
@@ -306,11 +307,20 @@ int main(int argc, char *argv[]) {
     
     // --- ######################################## --- 
     
-    // INTERPRETER DESIGN CLASS TEST
+    // INTERPRETER DESIGN PATTERN TEST
     
-    Interpreter i;
-    i.setInput(0);
-    i.interpret();
+    //Interpreter i;
+    //i.setInput(0);
+    //i.interpret();
+    
+    // --- ######################################## --- 
+    
+    // OBSERVER DESIGN PATTERN TEST
+    
+    Subject s("Hi", "Hello", 6.5, 5.0, 1, 3);
+    Observer(&s, STRING1);
+    Observer(&s, INT1);
+    s.publishState();
     
     // --- ######################################## --- 
 

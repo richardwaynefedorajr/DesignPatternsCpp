@@ -39,6 +39,9 @@
 # Interpreter.h/cpp
 # Implementation of the interpreter design pattern, in which the rules to translate an integer into text are distributed accross derived interpreter subclasses
 
+# Observer.h/cpp
+# Implementation of the observer design pattern, in which a subject class uses an object class interface to provide updates on the state of its members
+
 # Try Singleton implementations of Abstract Factory, Builder, Prototype, Facade, and State
 
 # Try Chain of Responsibility using Command to represent requests as objects
