@@ -17,7 +17,8 @@
 //# include "Flyweight.h"
 //# include "Interpreter.h"
 //# include "Observer.h"
-# include "Prototype.h"
+//# include "Prototype.h"
+# include "Proxy.h"
 
 int main(int argc, char *argv[]) {
 
@@ -327,24 +328,32 @@ int main(int argc, char *argv[]) {
     
     // PROTOTYPE DESIGN PATTERN TEST
     
-    Factory f;
-    std::vector<A*> instances_A;
+    //Factory f;
+    //std::vector<A*> instances_A;
 
-    Type t1 = TYPEA1;
-    instances_A.push_back(f.getA(t1));
-    t1 = TYPEA2;
-    instances_A.push_back(f.getA(t1));
-    t1 = TYPEA3;
-    instances_A.push_back(f.getA(t1));
+    //Type t1 = TYPEA1;
+    //instances_A.push_back(f.getA(t1));
+    //t1 = TYPEA2;
+    //instances_A.push_back(f.getA(t1));
+    //t1 = TYPEA3;
+    //instances_A.push_back(f.getA(t1));
 
-    for (int i = 0; i < instances_A.size(); ++i) {
-        instances_A.at(i)->action();
-    }
+    //for (int i = 0; i < instances_A.size(); ++i) {
+    //    instances_A.at(i)->action();
+    //}
 
-    for (int i = 0; i < instances_A.size(); ++i) {
-        delete instances_A.at(i);
-    }
-
+    //for (int i = 0; i < instances_A.size(); ++i) {
+    //    delete instances_A.at(i);
+    //}
+    
+    // --- ######################################## --- 
+    
+    // PROXY DESIGN PATTERN TEST
+    
+    Proxy p;
+    std::cout << "Subject state after lazy initialization: " << p.getSubjectState() << std::endl;
+    p.setSubjectState(5);
+    std::cout << "Subject state after setting state: " << p.getSubjectState() << std::endl;
     
     // --- ######################################## --- 
 

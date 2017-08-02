@@ -45,23 +45,29 @@
 # Prototype.h/cpp
 # Implementation of the prototype design pattern, in which a factory class maintains a set of prototype instances of a derived class which clone themselves to produce additional instances
 
+# Proxy.h/cpp
+# Implementation of the proxy design pattern, in which a proxy provides the client "read/write" access to a subject
+
+# Run through and update comments after finishing all design patterns to review implementation specifics
+
+# Update with Rule of 5 and test it
+
+# Check all code for memory leaks (clean up memory management in destructors)
+
 # Try Singleton implementations of Abstract Factory, Builder, Prototype, Facade, and State
 
 # Try Chain of Responsibility using Command to represent requests as objects
 
 # Try Command using Memento to maintain state required to undo an operation
 
-# Run through and update comments after finishing all design patterns to review implementation specifics
-
-# Update with Rule of 5 and test it
-
 # Try combining Factory, Abstract Factory, and Bridge design classes with Composite to allow for access to various lure attributes in collection
 
 # Update Prototype with Singleton to replace static in Source Making example
 
 # Update with standard naming conventions:
-# ClassName - class
-# functionName - function
+# class ClassName { ... }  - class
+# functionName(arg1, arg2, arg3) - function (same syntax for function calls)
 # m_variable - member variable
 # variable - input variable
 # ENUM - enum member
+# keyword ( arg, arg, arg ) - for, if, while, switch, etc.
