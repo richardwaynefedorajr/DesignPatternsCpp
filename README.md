@@ -33,6 +33,9 @@
 # Command.h/cpp
 # Implementation of the command design pattern, in which the functionality for football players running drills and the coach's call to make them run is encapsulated in a TeamMember class, and a Command class is used to encapsulte the request itself 
 
+# Flyweight.h/cpp
+# Implementation of the flyweight design pattern, in which a factory is used to create and store instances of a rectangle class, with intrinsic dimensions and an extrinsic location to be drawn in the terminal
+
 # Try Singleton implementations of Abstract Factory, Builder, Prototype, Facade, and State
 
 # Try Chain of Responsibility using Command to represent requests as objects

@@ -13,7 +13,8 @@
 //# include "Bridge.h"
 //# include "CoR.h"
 //# include "Command.h"
-# include "Composite.h"
+//# include "Composite.h"
+# include "Flyweight.h"
 
 int main(int argc, char *argv[]) {
 
@@ -272,22 +273,36 @@ int main(int argc, char *argv[]) {
     
     // COMPOSITE DESIGN PATTERN TEST
     
-    std::vector<std::string> names;
-    names.push_back("Jig");
-    names.push_back("Soft plastic");
-    names.push_back("Spinnerbait");
-    names.push_back("Crankbait");
+    //std::vector<std::string> names;
+    //names.push_back("Jig");
+    //names.push_back("Soft plastic");
+    //names.push_back("Spinnerbait");
+    //names.push_back("Crankbait");
 
-    int num_lure_types = names.size();
+    //int num_lure_types = names.size();
 
-    std::vector<TackleBox> box;
-    TackleBox tb;
+    //std::vector<TackleBox> box;
+    //TackleBox tb;
 
-    for (int i = 0; i < num_lure_types; ++i) { box.push_back(tb); }
-    for (int i = 0; i < num_lure_types; ++i) { box.at(i).addLure(new SingleLure(names.at(i))); }
-    for (int i = 1; i < num_lure_types; ++i) { box.at(0).addLure(&(box.at(i))); }
-    for (int i = 0; i < num_lure_types; ++i) { box.at(i).getLure(); std::cout << std::endl; }
+    //for (int i = 0; i < num_lure_types; ++i) { box.push_back(tb); }
+    //for (int i = 0; i < num_lure_types; ++i) { box.at(i).addLure(new SingleLure(names.at(i))); }
+    //for (int i = 1; i < num_lure_types; ++i) { box.at(0).addLure(&(box.at(i))); }
+    //for (int i = 0; i < num_lure_types; ++i) { box.at(i).getLure(); std::cout << std::endl; }
 
+    // --- ######################################## --- 
+    
+    // FLYWEIGHT DESIGN PATTERN TEST
+   
+    // UPDATE USING POINTERS
+
+    RectangleFactory rf;
+    Rectangle *rect1 = rf.getRectangle(3,2);
+    Rectangle *rect2 = rf.getRectangle(2,2);
+    rect1->draw(0,0);    
+    rect2->draw(1,1);    
+
+    //std::cout << "Check pointers: rect1 - " << rect1 << " rect2 - " << rect2 << std::endl;
+    
     // --- ######################################## --- 
 
     return 0;
