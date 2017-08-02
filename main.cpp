@@ -18,7 +18,8 @@
 //# include "Interpreter.h"
 //# include "Observer.h"
 //# include "Prototype.h"
-# include "Proxy.h"
+//# include "Proxy.h"
+# include "State.h"
 
 int main(int argc, char *argv[]) {
 
@@ -350,10 +351,20 @@ int main(int argc, char *argv[]) {
     
     // PROXY DESIGN PATTERN TEST
     
-    Proxy p;
-    std::cout << "Subject state after lazy initialization: " << p.getSubjectState() << std::endl;
-    p.setSubjectState(5);
-    std::cout << "Subject state after setting state: " << p.getSubjectState() << std::endl;
+    //Proxy p;
+    //std::cout << "Subject state after lazy initialization: " << p.getSubjectState() << std::endl;
+    //p.setSubjectState(5);
+    //std::cout << "Subject state after setting state: " << p.getSubjectState() << std::endl;
+    
+    // --- ######################################## --- 
+    
+    // STATE DESIGN PATTERN TEST
+    
+    Subject *s = new Subject();
+    s->setState(new State1());
+    s->m_state->state1(s);
+    s->m_state->state2(s);
+    delete s;
     
     // --- ######################################## --- 
 

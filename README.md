@@ -48,6 +48,9 @@
 # Proxy.h/cpp
 # Implementation of the proxy design pattern, in which a proxy provides the client "read/write" access to a subject
 
+# State.h/cpp
+# Implementation of the state design pattern, in which states are represented in derived classes owned by a member pointer of the subject class
+
 # Run through and update comments after finishing all design patterns to review implementation specifics
 
 # Update with Rule of 5 and test it
