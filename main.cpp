@@ -16,7 +16,8 @@
 //# include "Composite.h"
 //# include "Flyweight.h"
 //# include "Interpreter.h"
-# include "Observer.h"
+//# include "Observer.h"
+# include "Prototype.h"
 
 int main(int argc, char *argv[]) {
 
@@ -317,10 +318,33 @@ int main(int argc, char *argv[]) {
     
     // OBSERVER DESIGN PATTERN TEST
     
-    Subject s("Hi", "Hello", 6.5, 5.0, 1, 3);
-    Observer(&s, STRING1);
-    Observer(&s, INT1);
-    s.publishState();
+    //Subject s("Hi", "Hello", 6.5, 5.0, 1, 3);
+    //Observer(&s, STRING1);
+    //Observer(&s, INT1);
+    //s.publishState();
+    
+    // --- ######################################## --- 
+    
+    // PROTOTYPE DESIGN PATTERN TEST
+    
+    Factory f;
+    std::vector<A*> instances_A;
+
+    Type t1 = TYPEA1;
+    instances_A.push_back(f.getA(t1));
+    t1 = TYPEA2;
+    instances_A.push_back(f.getA(t1));
+    t1 = TYPEA3;
+    instances_A.push_back(f.getA(t1));
+
+    for (int i = 0; i < instances_A.size(); ++i) {
+        instances_A.at(i)->action();
+    }
+
+    for (int i = 0; i < instances_A.size(); ++i) {
+        delete instances_A.at(i);
+    }
+
     
     // --- ######################################## --- 
 

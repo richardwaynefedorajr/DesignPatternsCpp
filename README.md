@@ -42,6 +42,9 @@
 # Observer.h/cpp
 # Implementation of the observer design pattern, in which a subject class uses an object class interface to provide updates on the state of its members
 
+# Prototype.h/cpp
+# Implementation of the prototype design pattern, in which a factory class maintains a set of prototype instances of a derived class which clone themselves to produce additional instances
+
 # Try Singleton implementations of Abstract Factory, Builder, Prototype, Facade, and State
 
 # Try Chain of Responsibility using Command to represent requests as objects
@@ -53,6 +56,8 @@
 # Update with Rule of 5 and test it
 
 # Try combining Factory, Abstract Factory, and Bridge design classes with Composite to allow for access to various lure attributes in collection
+
+# Update Prototype with Singleton to replace static in Source Making example
 
 # Update with standard naming conventions:
 # ClassName - class
