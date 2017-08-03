@@ -20,7 +20,8 @@
 //# include "Prototype.h"
 //# include "Proxy.h"
 //# include "State.h"
-# include "Strategy.h"
+//# include "Strategy.h"
+# include "Visitor.h"
 
 int main(int argc, char *argv[]) {
 
@@ -371,12 +372,35 @@ int main(int argc, char *argv[]) {
     
     // STRATEGY DESIGN PATTERN TEST
     
-    Interface i;
-    Fibonacci f;
-    Triangle t;
-    Square s;
-    i.setStrategy(&s);
-    i.getSequence(10); 
+    //Interface i;
+    //Fibonacci f;
+    //Triangle t;
+    //Square s;
+    //i.setStrategy(&s);
+    //i.getSequence(10); 
+    
+    // --- ######################################## --- 
+    
+    // VISITOR DESIGN PATTERN TEST
+    
+    std::vector<Fish*> fish;
+    fish.push_back(new Bass); 
+    fish.push_back(new Trout); 
+    fish.push_back(new Musky);
+
+    Jig jig;
+    Fly fly;
+    Plug plug;
+
+    for ( int i = 0; i < fish.size(); ++i ) {
+        fish.at(i)->seeLure(jig);
+        fish.at(i)->seeLure(fly);
+        fish.at(i)->seeLure(plug);
+    } 
+
+    for ( int i = 0; i < fish.size(); ++i ) {
+        delete fish.at(i);
+    }
     
     // --- ######################################## --- 
 

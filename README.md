@@ -52,7 +52,10 @@
 # Implementation of the state design pattern, in which states are represented in derived classes owned by a member pointer of the subject class
 
 # Strategy.h/cpp
-# Implementation of the strategt design pattern, in which the algorithms for generating common mathematical sequences are encapsulated in derived classes and passed to a client interface class
+# Implementation of the strategy design pattern, in which the algorithms for generating common mathematical sequences are encapsulated in derived classes and passed to a client interface class
+
+# Visitor.h/cpp
+# Implementation of the visitor design pattern, in which a visitor lure class "visits" a fish class and either catches or does not catch them depending on the derived class of each
 
 # Run through and update comments after finishing all design patterns to review implementation specifics
 
