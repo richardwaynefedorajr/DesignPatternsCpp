@@ -19,7 +19,8 @@
 //# include "Observer.h"
 //# include "Prototype.h"
 //# include "Proxy.h"
-# include "State.h"
+//# include "State.h"
+# include "Strategy.h"
 
 int main(int argc, char *argv[]) {
 
@@ -360,11 +361,22 @@ int main(int argc, char *argv[]) {
     
     // STATE DESIGN PATTERN TEST
     
-    Subject *s = new Subject();
-    s->setState(new State1());
-    s->m_state->state1(s);
-    s->m_state->state2(s);
-    delete s;
+    //Subject *s = new Subject();
+    //s->setState(new State1());
+    //s->m_state->state1(s);
+    //s->m_state->state2(s);
+    //delete s;
+    
+    // --- ######################################## --- 
+    
+    // STRATEGY DESIGN PATTERN TEST
+    
+    Interface i;
+    Fibonacci f;
+    Triangle t;
+    Square s;
+    i.setStrategy(&s);
+    i.getSequence(10); 
     
     // --- ######################################## --- 
 

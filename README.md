@@ -51,11 +51,18 @@
 # State.h/cpp
 # Implementation of the state design pattern, in which states are represented in derived classes owned by a member pointer of the subject class
 
+# Strategy.h/cpp
+# Implementation of the strategt design pattern, in which the algorithms for generating common mathematical sequences are encapsulated in derived classes and passed to a client interface class
+
 # Run through and update comments after finishing all design patterns to review implementation specifics
 
 # Update with Rule of 5 and test it
 
 # Check all code for memory leaks (clean up memory management in destructors)
+
+# Look at std::function for pointers to methods
+
+# Make sure public/private is correct, find places to use static, virtual, etc.
 
 # Try Singleton implementations of Abstract Factory, Builder, Prototype, Facade, and State
 
