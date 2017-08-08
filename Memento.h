@@ -2,40 +2,34 @@
 # include <iostream>
 # include <vector>
 
-class InputString;
+struct State {
+    int m_height;
+    int m_weight;
+    double m_bmi;
+    double m_bodyfat;
+};
+
+class Memento;
+
+class Person {
+    public:
+        Person();
+        ~Person();
+        void setMemento();
+        void backState();
+        void forwardState();
+        void setState(int height, int weight, double bmi, double bodyfat);
+        void printState(); 
+    private:
+        State m_state;
+        std::vector<Memento*> m_history;
+        int m_index;
+};
 
 class Memento {
     public:
-        Memento(std::string StringState);
+        Memento(State state);
+        State getState();
     private:
-        friend class InputString;
-        std::string m_state;
-};
-
-class InputString {
-    public:
-        InputString(std::string init_string);
-        void concatString();
-        void setInput(std::string concat_string);
-        std::string getString();
-        Memento *setMemento();
-        void resetState(Memento *m);
-    private:
-        std::string m_string, m_concat_string;
-};
-
-class InputReceiver {
-    public:
-        typedef void(InputString::*Action)();
-        InputReceiver(InputString *receiver, Action action);
-        virtual void execute();
-        void undo();
-        void redo();
-    protected:
-        InputString *m_receiver;
-        Action m_action;
-        std::vector<InputReceiver*> m_input_list;
-        std::vector<Memento*> m_memento_list;
-        int m_num_inputs;
-        int m_limit;
+        State m_state;
 };

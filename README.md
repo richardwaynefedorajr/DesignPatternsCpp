@@ -57,6 +57,9 @@
 # Visitor.h/cpp
 # Implementation of the visitor design pattern, in which a visitor lure class "visits" a fish class and either catches or does not catch them depending on the derived class of each
 
+# Memento.h/cc
+# Implementation of the memento design pattern, in which a Memento class encapsulates a "snapshot" of on object's state and provides access to previous states 
+
 # Run through and update comments after finishing all design patterns to review implementation specifics
 
 # Update with Rule of 5 and test it
@@ -66,6 +69,8 @@
 # Look at std::function for pointers to methods
 
 # Make sure public/private is correct, find places to use static, virtual, etc.
+
+# Use templates whenever possible
 
 # Try Singleton implementations of Abstract Factory, Builder, Prototype, Facade, and State
 

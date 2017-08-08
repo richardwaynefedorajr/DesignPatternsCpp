@@ -1,42 +1,54 @@
 # include "Memento.h"
 
-Memento::Memento(std::string StringState) { m_state = StringState; } 
+Memento::Memento(State state) { m_state = state; }
+State Memento::getState() { return m_state; }
 
-InputString::InputString(std::string init_string) { m_string = init_string; }
-
-InputReceiver::InputReceiver(InputString *receiver, Action action) {
-    m_receiver = receiver;
-    m_action = action;
-    m_num_inputs = 0;
-    m_limit = 0;
+Person::Person() { 
+    m_index = -1;
+    m_state.m_height = 0;
+    m_state.m_weight = 0;
+    m_state.m_bmi = 0.0;
+    m_state.m_bodyfat = 0.0;
+    setMemento();
 }
 
-void InputString::setInput(std::string concat_string) { m_concat_string = concat_string; }
-
-void InputString::concatString() { m_string += m_concat_string; }
-
-std::string InputString::getString() { return m_string; }
-        
-Memento *InputString::setMemento() { return new Memento(m_string); }
-
-void InputString::resetState(Memento *m) { m_string = m->m_state; }
-
-void InputReceiver::execute() {
-    m_memento_list.push_back(m_receiver->setMemento());
-    m_input_list.push_back(this);
-    if (m_num_inputs > m_limit) { m_limit = m_num_inputs; }
-    m_num_inputs++;
-    (m_receiver->*m_action)();
+Person::~Person() {
+    for ( int i = 0; i < m_history.size(); ++i ) { delete m_history.at(i); }
 }
 
-void InputReceiver::undo() {
-    if (m_num_inputs == 0) { std::cout << "Overrun input directives!" << std::endl; return; }
-    m_input_list.at(m_num_inputs - 1)->m_receiver->resetState(m_memento_list.at(m_num_inputs - 1));
-    m_num_inputs--;
+void Person::setMemento() { m_history.push_back( new Memento(m_state) ); ++m_index; }
+void Person::backState() { 
+    if ( m_index > 1 ) { m_state = m_history.at(--m_index)->getState(); }
+    else { std::cout << "Attempt to back overrun stored states!" << std::endl; }
+
+}
+void Person::forwardState() { 
+    if ( m_index < m_history.size() - 1 ) { m_state = m_history.at(++m_index)->getState(); }
+    else { std::cout << "Attempt to forward overrun stored states!" << std::endl; }
 }
 
-void InputReceiver::redo() {
-    if (m_num_inputs > m_limit) { std::cout << "Overrun input directives!" << std::endl; return; }
-    (m_input_list.at(m_num_inputs)->m_receiver->*(m_input_list.at(m_num_inputs)->m_action))();
-    m_num_inputs++;
+void Person::setState(int height, int weight, double bmi, double bodyfat) {
+    m_state.m_height = height;
+    m_state.m_weight = weight;
+    m_state.m_bmi = bmi;
+    m_state.m_bodyfat = bodyfat;
+    while ( m_history.size() > m_index + 1 ) { m_history.pop_back(); }
+    setMemento();
 }
+
+void Person::printState() {
+    std::cout << "Height: " << m_state.m_height << " ";
+    std::cout << "Weight: " << m_state.m_weight << " ";
+    std::cout << "BMI: " << m_state.m_bmi << " ";
+    std::cout << "Bodyfat: " << m_state.m_bodyfat << std::endl;
+    std::cout << "Index: " << m_index << " Mementos: " << m_history.size() << std::endl;
+}
+
+// ADD OVERRUN CONDITIONS
+//
+// ctor -> -        index -1 size 1
+// set  -> * -      index 0 size 2
+// res  -> - *      index -1 size 2
+// set  -> * *      index 0 size 2
+// set  -> * * *    index 1 size 3
+// res  -> * *      index 0 size 2

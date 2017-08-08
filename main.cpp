@@ -5,7 +5,7 @@
 //# include "Adapter.h"
 //# include "Builder.h"
 //# include "AbstractFactory.h"
-//# include "Memento.h"
+# include "Memento.h"
 //# include "Singleton.h"
 //# include "Facade.h"
 //# include "Mediator.h"
@@ -21,7 +21,7 @@
 //# include "Proxy.h"
 //# include "State.h"
 //# include "Strategy.h"
-# include "Visitor.h"
+//# include "Visitor.h"
 
 int main(int argc, char *argv[]) {
 
@@ -96,33 +96,35 @@ int main(int argc, char *argv[]) {
     
     // MEMENTO DESIGN PATTERN TEST
 
-    // PROBLEM IS NOW THAT INDEXING LEADS TO VECTOR INDEX -1 ON FINAL UNDO...
-    // NEED TO UPDATE USING CODE BLOCKS TO DEBUG, THEN BRANCH REPO, COPY PASTE FROM CODE BLOCKS WORKSPACE, AND MERGE BEFORE PUSHING TO GITHUB
+    Person person;
+    person.printState();
+    person.setState(70, 200, 25.0, 30.0);
+    person.printState();
+    person.setState(70, 210, 25.0, 30.0);
+    person.printState();
+    person.setState(70, 220, 25.0, 30.0);
+    person.printState();
+    person.setState(70, 230, 25.0, 30.0);
+    person.printState();
+    person.backState();
+    person.printState();
+    person.backState();
+    person.printState();
+    person.forwardState();
+    person.printState();
+    person.setState(70, 180, 25.0, 30.0);
+    person.printState();
+    person.forwardState();
+    person.printState();
+    person.forwardState();
+    person.printState();
+    person.forwardState();
+    person.printState();
+    person.backState();
+    person.printState();
+    person.forwardState();
+    person.printState();
 
-    //std::string input;
-    //std::cout << "Input string: ";
-    //std::getline(std::cin,input);
-    //InputString *string_in = new InputString(input);
-    //
-    //InputReceiver *directive = new InputReceiver(string_in, &InputString::concatString);
-    //
-    //std::cout << "Exit: exit, Undo: undo, Redo: redo, Concatenate: enter any other string: ";
-    //std::getline(std::cin,input);
-    //string_in->setInput(input);
-
-
-    //while (input != "exit") {
-    //    if (input == "undo") { directive->undo(); }
-    //    else if (input == "redo") { directive->redo(); }
-    //    else { directive->execute(); }
-    //    std::cout << "   " << string_in->getString() << std::endl;
-    //    std::cout << "Exit: exit, Undo: undo, Redo: redo, Concatenate: enter any other string: ";
-    //    std::getline(std::cin,input);
-    //    string_in->setInput(input);
-    //}
-   
-    //delete directive;
-    //delete string_in;
 
     // --- ######################################## --- 
     
@@ -383,24 +385,24 @@ int main(int argc, char *argv[]) {
     
     // VISITOR DESIGN PATTERN TEST
     
-    std::vector<Fish*> fish;
-    fish.push_back(new Bass); 
-    fish.push_back(new Trout); 
-    fish.push_back(new Musky);
+    //std::vector<Fish*> fish;
+    //fish.push_back(new Bass); 
+    //fish.push_back(new Trout); 
+    //fish.push_back(new Musky);
 
-    Jig jig;
-    Fly fly;
-    Plug plug;
+    //Jig jig;
+    //Fly fly;
+    //Plug plug;
 
-    for ( int i = 0; i < fish.size(); ++i ) {
-        fish.at(i)->seeLure(jig);
-        fish.at(i)->seeLure(fly);
-        fish.at(i)->seeLure(plug);
-    } 
+    //for ( int i = 0; i < fish.size(); ++i ) {
+    //    fish.at(i)->seeLure(jig);
+    //    fish.at(i)->seeLure(fly);
+    //    fish.at(i)->seeLure(plug);
+    //} 
 
-    for ( int i = 0; i < fish.size(); ++i ) {
-        delete fish.at(i);
-    }
+    //for ( int i = 0; i < fish.size(); ++i ) {
+    //    delete fish.at(i);
+    //}
     
     // --- ######################################## --- 
 
