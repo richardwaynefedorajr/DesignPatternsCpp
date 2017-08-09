@@ -1,17 +1,18 @@
 # include <iostream>
 # include <stdio.h>
 # include <string>
+# include <memory>
 
 enum lureTypes {JIG, SPINNER, PLUG, FLY, SOFTPLASTIC};
 
-// Declaration of a factory class to create fishing lure objects
+// Declaration of a lure base class to create derived class instances
 class Lure {
     public:
-        static Lure *setLure(lureTypes type, const std::string& char1, const std::string& char2, const std::string& char3);
+        static std::unique_ptr<Lure> setLure(lureTypes type, const std::string& char1, const std::string& char2, const std::string& char3);
         virtual void getLure() = 0;
 };
 
-// Declaration of lure child classes of various types
+// Declaration of derived lure classes of various types
 class Jig : public Lure {
     public:
         Jig(std::string characteristic1, std::string characteristic2, std::string characteristic3);

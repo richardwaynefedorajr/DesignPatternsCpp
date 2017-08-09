@@ -57,7 +57,7 @@
 # Visitor.h/cpp
 # Implementation of the visitor design pattern, in which a visitor lure class "visits" a fish class and either catches or does not catch them depending on the derived class of each
 
-# Memento.h/cc
+# Memento.h/cpp
 # Implementation of the memento design pattern, in which a Memento class encapsulates a "snapshot" of on object's state and provides access to previous states 
 
 # Run through and update comments after finishing all design patterns to review implementation specifics
@@ -85,7 +85,8 @@
 # Update with standard naming conventions:
 # class ClassName { ... }  - class
 # functionName(arg1, arg2, arg3) - function (same syntax for function calls)
-# m_variable - member variable
+# m_variable - member variablebstract Factory, Builder, Prototype, Facade, and State
+
 # variable - input variable
 # ENUM - enum member
 # keyword ( arg, arg, arg ) - for, if, while, switch, etc.

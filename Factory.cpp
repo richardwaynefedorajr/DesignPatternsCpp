@@ -1,6 +1,6 @@
 # include "Factory.h"
 
-// Construct child lure classes given input characteristics
+// Construct derived lure class instances given input characteristics
 Jig::Jig(std::string char1, std::string char2, std::string char3){
     weight = char1;
     head_type = char2;
@@ -39,15 +39,15 @@ void Fly::getLure() { std::cout << length << " " << color_pattern << " " << tied
 void SoftPlastic::getLure() { std::cout << length << " " << color_pattern << " " << style << std::endl; }
 
 // Lure class factory method to fill tackle box with different lures
-Lure *Lure::setLure(lureTypes type, const std::string& char1, const std::string& char2, const std::string& char3) { 
-    if (type == JIG) { return new Jig(char1, char2, char3); }
-    else if (type == SPINNER) { return new Spinner(char1, char2, char3); }
-    else if (type == PLUG)  { return new Plug(char1, char2, char3); }
-    else if (type == FLY)  { return new Fly(char1, char2, char3); }
-    else if (type == SOFTPLASTIC)  { return new SoftPlastic(char1, char2, char3); }
+std::unique_ptr<Lure> Lure::setLure(lureTypes type, const std::string& char1, const std::string& char2, const std::string& char3) { 
+    if (type == JIG) { return std::unique_ptr<Lure> ( new Jig(char1, char2, char3) ); }
+    else if (type == SPINNER) { return std::unique_ptr<Lure>( new Spinner(char1, char2, char3) ); }
+    else if (type == PLUG)  { return std::unique_ptr<Lure>( new Plug(char1, char2, char3) ); }
+    else if (type == FLY)  { return std::unique_ptr<Lure>( new Fly(char1, char2, char3) ); }
+    else if (type == SOFTPLASTIC)  { return std::unique_ptr<Lure>( new SoftPlastic(char1, char2, char3) ); }
     else { 
         std::cout << "Warning: lure type is not supported, default to SoftPlastic" << std::endl; 
-        return new SoftPlastic(char1, char2, char3);
+        return std::unique_ptr<Lure>( new SoftPlastic(char1, char2, char3) );
     }
 }
 

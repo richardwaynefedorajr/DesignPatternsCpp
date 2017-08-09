@@ -1,11 +1,12 @@
 # include <iostream>
 # include <stdio.h>
 # include <vector>
+# include <memory>
 //# include "Factory.h"
-//# include "Adapter.h"
+# include "Adapter.h"
 //# include "Builder.h"
 //# include "AbstractFactory.h"
-# include "Memento.h"
+//# include "Memento.h"
 //# include "Singleton.h"
 //# include "Facade.h"
 //# include "Mediator.h"
@@ -33,7 +34,7 @@ int main(int argc, char *argv[]) {
     // FACTORY DESIGN PATTERN TEST
 
     // Add several lures to tacklebox to test Factory class implementation
-    //std::vector<Lure*> tackleBox;
+    //std::vector< std::unique_ptr<Lure> > tackleBox;
     //tackleBox.push_back(Lure::setLure(JIG, "3/8th oz.","football head","Rage Craw"));
     //tackleBox.push_back(Lure::setLure(SPINNER,"1/4 oz.","willow leaf","gold"));
     //tackleBox.push_back(Lure::setLure(PLUG,"6 inch","Rapala","Fire Tiger"));
@@ -44,19 +45,17 @@ int main(int argc, char *argv[]) {
     //    tackleBox.at(i)->getLure();
     //}
 
-    //for (int i = 0; i < tackleBox.size(); ++i){
-    //    delete tackleBox[i];
-    //}
-    
     // --- ######################################## --- 
     
     // ADAPTER DESIGN PATTERN TEST
-   
+  
+    // UPDATE WITH FINISHED TEMPLATES
+
     // Client interacts with Weight interface through weightAdapter initilized with weight in lbs. 
-    //Weight *w = new weightAdapter(30); // lbs.
-    
+    int value = 30;
+    std::unique_ptr<Weight> w(new weightAdapter(value)); 
     // Calling the getWeight function shows that a mass value is now available to the incompatible Mass interface
-    //w->getWeight();    
+    w->getWeight();    
 
     // --- ######################################## --- 
 
@@ -96,34 +95,34 @@ int main(int argc, char *argv[]) {
     
     // MEMENTO DESIGN PATTERN TEST
 
-    Person person;
-    person.printState();
-    person.setState(70, 200, 25.0, 30.0);
-    person.printState();
-    person.setState(70, 210, 25.0, 30.0);
-    person.printState();
-    person.setState(70, 220, 25.0, 30.0);
-    person.printState();
-    person.setState(70, 230, 25.0, 30.0);
-    person.printState();
-    person.backState();
-    person.printState();
-    person.backState();
-    person.printState();
-    person.forwardState();
-    person.printState();
-    person.setState(70, 180, 25.0, 30.0);
-    person.printState();
-    person.forwardState();
-    person.printState();
-    person.forwardState();
-    person.printState();
-    person.forwardState();
-    person.printState();
-    person.backState();
-    person.printState();
-    person.forwardState();
-    person.printState();
+    //Person person;
+    //person.printState();
+    //person.setState(70, 200, 25.0, 30.0);
+    //person.printState();
+    //person.setState(70, 210, 25.0, 30.0);
+    //person.printState();
+    //person.setState(70, 220, 25.0, 30.0);
+    //person.printState();
+    //person.setState(70, 230, 25.0, 30.0);
+    //person.printState();
+    //person.backState();
+    //person.printState();
+    //person.backState();
+    //person.printState();
+    //person.forwardState();
+    //person.printState();
+    //person.setState(70, 180, 25.0, 30.0);
+    //person.printState();
+    //person.forwardState();
+    //person.printState();
+    //person.forwardState();
+    //person.printState();
+    //person.forwardState();
+    //person.printState();
+    //person.backState();
+    //person.printState();
+    //person.forwardState();
+    //person.printState();
 
 
     // --- ######################################## --- 
