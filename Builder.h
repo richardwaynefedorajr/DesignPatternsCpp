@@ -17,7 +17,7 @@ class Truck {
 class TruckBuilder {
     public:
         virtual ~TruckBuilder() { };
-        Truck* getTruck();
+        std::unique_ptr<Truck> getTruck();
         void createNewTruck();
         virtual void buildMake() = 0;
         virtual void buildDoors() = 0;
@@ -48,7 +48,7 @@ class FordBuilder : public TruckBuilder {
 class TruckDealership {
     public:
         void lookAtTruck();
-        void makeTruck(TruckBuilder* tb);
-    private:
-        TruckBuilder* m_truckBuilder;
+        void makeTruck(std::unique_ptr<TruckBuilder> tb);
+        private:
+            std::unique_ptr<TruckBuilder> m_truckBuilder;
 };

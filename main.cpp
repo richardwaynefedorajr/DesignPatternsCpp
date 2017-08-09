@@ -2,8 +2,8 @@
 # include <stdio.h>
 # include <vector>
 # include <memory>
-//# include "Factory.h"
-# include "Adapter.h"
+# include "Factory.h"
+//# include "Adapter.h"
 //# include "Builder.h"
 //# include "AbstractFactory.h"
 //# include "Memento.h"
@@ -28,22 +28,21 @@ int main(int argc, char *argv[]) {
 
     std::cout << "Main point of entry for testing Gang of Four design pattern implementations" << std::endl;
 
-    
     // --- ######################################## --- 
    
     // FACTORY DESIGN PATTERN TEST
 
     // Add several lures to tacklebox to test Factory class implementation
-    //std::vector< std::unique_ptr<Lure> > tackleBox;
-    //tackleBox.push_back(Lure::setLure(JIG, "3/8th oz.","football head","Rage Craw"));
-    //tackleBox.push_back(Lure::setLure(SPINNER,"1/4 oz.","willow leaf","gold"));
-    //tackleBox.push_back(Lure::setLure(PLUG,"6 inch","Rapala","Fire Tiger"));
-    //tackleBox.push_back(Lure::setLure(FLY,"3 inch","streamer","blue over white"));
-    //tackleBox.push_back(Lure::setLure(SOFTPLASTIC,"6 inch","stick bait","watermelon flake"));
+    std::vector< std::unique_ptr<Lure> > tackleBox;
+    tackleBox.push_back(Lure::setLure(JIG, "3/8th oz.","football head","Rage Craw"));
+    tackleBox.push_back(Lure::setLure(SPINNER,"1/4 oz.","willow leaf","gold"));
+    tackleBox.push_back(Lure::setLure(PLUG,"6 inch","Rapala","Fire Tiger"));
+    tackleBox.push_back(Lure::setLure(FLY,"3 inch","streamer","blue over white"));
+    tackleBox.push_back(Lure::setLure(SOFTPLASTIC,"6 inch","stick bait","watermelon flake"));
 
-    //for (int i = 0; i < tackleBox.size(); ++i){
-    //    tackleBox.at(i)->getLure();
-    //}
+    for (int i = 0; i < tackleBox.size(); ++i){
+        tackleBox.at(i)->getLure();
+    }
 
     // --- ######################################## --- 
     
@@ -52,23 +51,23 @@ int main(int argc, char *argv[]) {
     // UPDATE WITH FINISHED TEMPLATES
 
     // Client interacts with Weight interface through weightAdapter initilized with weight in lbs. 
-    int value = 30;
-    std::unique_ptr<Weight> w(new weightAdapter(value)); 
+    //int value = 30;
+    //std::unique_ptr<Weight> w(new weightAdapter(value)); 
     // Calling the getWeight function shows that a mass value is now available to the incompatible Mass interface
-    w->getWeight();    
+    //w->getWeight();    
 
     // --- ######################################## --- 
 
     // BUILDER DESIGN PATTERN TEST
     
     //TruckDealership dealer;
-    //RamBuilder ram;
-    //FordBuilder ford;
+    //std::unique_ptr<RamBuilder> ram( new RamBuilder() );
+    //std::unique_ptr<FordBuilder> ford( new FordBuilder() );
 
-    //dealer.makeTruck(&ram);
+    //dealer.makeTruck(std::move(ram));
     //dealer.lookAtTruck();
 
-    //dealer.makeTruck(&ford);
+    //dealer.makeTruck(std::move(ford));
     //dealer.lookAtTruck();
 
     // --- ######################################## --- 

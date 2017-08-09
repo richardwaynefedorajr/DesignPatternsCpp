@@ -64,7 +64,7 @@
 
 # Update with Rule of 5 and test it
 
-# Check all code for memory leaks (clean up memory management in destructors)
+# Check all code for memory leaks -> figure out the specifics of std::unique_ptr, especially syntax (does return type from functions need to be explicitly std::unique_ptr?) and copy/move specifics
 
 # Look at std::function for pointers to methods
 

@@ -8,7 +8,7 @@ void Truck::printStats(){
     std::cout << m_drive << " " << m_make << " with " << m_engine << " and " << m_doors << std::endl; 
 }
 
-Truck* TruckBuilder::getTruck() { return m_truck.release(); }
+std::unique_ptr<Truck> TruckBuilder::getTruck() { return std::move(m_truck); }
 void TruckBuilder::createNewTruck() { m_truck = std::unique_ptr<Truck>(new Truck); }
 
 void RamBuilder::buildMake() { m_truck->setMake("RAM"); }
@@ -22,8 +22,8 @@ void FordBuilder::buildEngine() { m_truck->setEngine("V8 EcoBoost"); }
 void FordBuilder::buildDrive() { m_truck->setDrive("4WD"); }
 
 void TruckDealership::lookAtTruck() { m_truckBuilder->getTruck()->printStats(); }
-void TruckDealership::makeTruck(TruckBuilder* tb){
-    m_truckBuilder = tb;
+void TruckDealership::makeTruck(std::unique_ptr<TruckBuilder> tb) {
+    m_truckBuilder = std::move(tb);
     m_truckBuilder->createNewTruck();
     m_truckBuilder->buildMake();
     m_truckBuilder->buildDoors();
