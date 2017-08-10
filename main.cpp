@@ -143,7 +143,7 @@ int main(int argc, char *argv[]) {
 
     std::shared_ptr<Larry> larry( new Larry(im) ); 
     std::shared_ptr<Curly> curly( new Curly(im) );
-    std::shared_ptr<Moe> moe( new Moe(im) );
+    std::shared_ptr<Moe> moe( new Moe(im) t head ahead of master);
     
     im->setStooges(larry, curly, moe);
 
