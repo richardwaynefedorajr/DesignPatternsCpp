@@ -2,14 +2,14 @@
 # include <stdio.h>
 # include <vector>
 # include <memory>
-# include "Factory.h"
+//# include "Factory.h"
 //# include "Adapter.h"
 //# include "Builder.h"
 //# include "AbstractFactory.h"
 //# include "Memento.h"
 //# include "Singleton.h"
 //# include "Facade.h"
-//# include "Mediator.h"
+# include "Mediator.h"
 //# include "Decorator.h"
 //# include "Bridge.h"
 //# include "CoR.h"
@@ -33,16 +33,16 @@ int main(int argc, char *argv[]) {
     // FACTORY DESIGN PATTERN TEST
 
     // Add several lures to tacklebox to test Factory class implementation
-    std::vector< std::unique_ptr<Lure> > tackleBox;
-    tackleBox.push_back(Lure::setLure(JIG, "3/8th oz.","football head","Rage Craw"));
-    tackleBox.push_back(Lure::setLure(SPINNER,"1/4 oz.","willow leaf","gold"));
-    tackleBox.push_back(Lure::setLure(PLUG,"6 inch","Rapala","Fire Tiger"));
-    tackleBox.push_back(Lure::setLure(FLY,"3 inch","streamer","blue over white"));
-    tackleBox.push_back(Lure::setLure(SOFTPLASTIC,"6 inch","stick bait","watermelon flake"));
+    //std::vector< std::unique_ptr<Lure> > tackleBox;
+    //tackleBox.push_back(Lure::setLure(JIG, "3/8th oz.","football head","Rage Craw"));
+    //tackleBox.push_back(Lure::setLure(SPINNER,"1/4 oz.","willow leaf","gold"));
+    //tackleBox.push_back(Lure::setLure(PLUG,"6 inch","Rapala","Fire Tiger"));
+    //tackleBox.push_back(Lure::setLure(FLY,"3 inch","streamer","blue over white"));
+    //tackleBox.push_back(Lure::setLure(SOFTPLASTIC,"6 inch","stick bait","watermelon flake"));
 
-    for (int i = 0; i < tackleBox.size(); ++i){
-        tackleBox.at(i)->getLure();
-    }
+    //for (int i = 0; i < tackleBox.size(); ++i){
+    //    tackleBox.at(i)->getLure();
+    //}
 
     // --- ######################################## --- 
     
@@ -78,18 +78,15 @@ int main(int argc, char *argv[]) {
     //double savingsDeposit = 1000;
     //double checkingDeposit = 2500;
     //double creditLine = 2500;
-    
-    //Bank *bank;
-    
-    //if (whichBank == WF) { bank = new WellsFargo; }
-    //else { bank = new BankOfAmerica; }
+    //
+    //std::unique_ptr<Bank> bank;
+    //
+    //if (whichBank == WF) { bank = std::unique_ptr<Bank>( new WellsFargo ); }
+    //else { bank = std::unique_ptr<Bank>( new BankOfAmerica ); }
 
-    //BankPatron *patron = new BankPatron(bank, savingsDeposit, checkingDeposit, creditLine);
-    //patron->viewAccounts();
+    //BankPatron patron(std::move(bank), savingsDeposit, checkingDeposit, creditLine);
+    //patron.viewAccounts();
     
-    //delete patron;
-    //delete bank;
-
     // --- ######################################## --- 
     
     // MEMENTO DESIGN PATTERN TEST
@@ -123,13 +120,12 @@ int main(int argc, char *argv[]) {
     //person.forwardState();
     //person.printState();
 
-
     // --- ######################################## --- 
     
     // SINGLETON DESIGN PATTERN TEST
     
-    //SingletonClass::getInstance()->setString("Hello world");
     //std::cout << "Singleton class member string initialized as: " << SingletonClass::getInstance()->getString() << std::endl; 
+    //SingletonClass::getInstance()->setString("Hello world");
     //std::cout << "Singleton class member string set to: " << SingletonClass::getInstance()->getString() << std::endl; 
 
     // --- ######################################## --- 
@@ -143,28 +139,18 @@ int main(int argc, char *argv[]) {
     
     // MEDIATOR DESIGN PATTERN TEST
     
-    //InteractionMediator *im; 
-    //InteractionMediator i; 
-    //im = &i;
+    std::shared_ptr<InteractionMediator> im( new InteractionMediator() );
 
-    //Larry *larry; 
-    //Curly *curly; 
-    //Moe *moe;
-    //
-    //Larry l(im); 
-    //Curly c(im);
-    //Moe m(im);
-    //
-    //larry = &l; 
-    //curly = &c; 
-    //moe = &m;
+    std::shared_ptr<Larry> larry( new Larry(im) ); 
+    std::shared_ptr<Curly> curly( new Curly(im) );
+    std::shared_ptr<Moe> moe( new Moe(im) );
+    
+    im->setStooges(larry, curly, moe);
 
-    //im->getStooges(larry, curly, moe);
-
-    //larry->accidentallyHitMoe();
-    //curly->accidentallyHitMoe();
-    //moe->pokeCurlysEyes();
-    //moe->slapLarrysHead();
+    larry->accidentallyHitMoe();
+    curly->accidentallyHitMoe();
+    moe->pokeCurlysEyes();
+    moe->slapLarrysHead();
 
     // --- ######################################## --- 
     

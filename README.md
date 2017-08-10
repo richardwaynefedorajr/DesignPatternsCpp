@@ -21,6 +21,7 @@
 # Mediator.h/cpp
 # Implementation of the mediator design pattern, in which the interaction between "stooge" objects, representing the classic slapstick comics The Three Stooges, is encapsulated in a mediator class
 
+# FINISHED MEMORY MANAGMENT AND RECOMMENTING UPDATES UP TO HERE
 # Decorator.h/cpp
 # Implementation of the decorator design pattern, in which assault rifle accessories are added to a base class dynamically
 
@@ -60,11 +61,13 @@
 # Memento.h/cpp
 # Implementation of the memento design pattern, in which a Memento class encapsulates a "snapshot" of on object's state and provides access to previous states 
 
-# Run through and update comments after finishing all design patterns to review implementation specifics
-
 # Update with Rule of 5 and test it
 
-# Check all code for memory leaks -> figure out the specifics of std::unique_ptr, especially syntax (does return type from functions need to be explicitly std::unique_ptr?) and copy/move specifics
+# Figure out if there is a better way to manage singleton memory, and if destructor needs to explicitly delete instance
+
+# Anything else we can do with Facade?
+
+# Update with std::memory_management, recomment
 
 # Look at std::function for pointers to methods
 

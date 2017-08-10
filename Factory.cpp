@@ -39,7 +39,7 @@ void Fly::getLure() { std::cout << length << " " << color_pattern << " " << tied
 void SoftPlastic::getLure() { std::cout << length << " " << color_pattern << " " << style << std::endl; }
 
 // Lure class factory method to fill tackle box with different lures
-std::unique_ptr<Lure> setLure(lureTypes type, const std::string& char1, const std::string& char2, const std::string& char3) {
+std::unique_ptr<Lure> Lure::setLure(lureTypes type, const std::string& char1, const std::string& char2, const std::string& char3) {
     if (type == JIG) { return std::unique_ptr<Lure> ( new Jig(char1, char2, char3) ); }
     else if (type == SPINNER) { return std::unique_ptr<Lure>( new Spinner(char1, char2, char3) ); }
     else if (type == PLUG)  { return std::unique_ptr<Lure>( new Plug(char1, char2, char3) ); }

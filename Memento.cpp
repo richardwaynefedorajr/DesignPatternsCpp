@@ -1,8 +1,10 @@
 # include "Memento.h"
 
+// Set and get mementos of state
 Memento::Memento(State state) { m_state = state; }
 State Memento::getState() { return m_state; }
 
+// Initialize state in constructor
 Person::Person() { 
     m_index = -1;
     m_state.m_height = 0;
@@ -12,11 +14,9 @@ Person::Person() {
     setMemento();
 }
 
-Person::~Person() {
-    for ( int i = 0; i < m_history.size(); ++i ) { delete m_history.at(i); }
-}
-
-void Person::setMemento() { m_history.push_back( new Memento(m_state) ); ++m_index; }
+// Traverse stored mementos, set and get state
+// Note: if previous states are returned to and a new state is set, states which were saved before the regression will be deleted
+void Person::setMemento() { m_history.push_back( std::unique_ptr<Memento>( new Memento(m_state) ) ); ++m_index; }
 void Person::backState() { 
     if ( m_index > 1 ) { m_state = m_history.at(--m_index)->getState(); }
     else { std::cout << "Attempt to back overrun stored states!" << std::endl; }
@@ -43,12 +43,3 @@ void Person::printState() {
     std::cout << "Bodyfat: " << m_state.m_bodyfat << std::endl;
     std::cout << "Index: " << m_index << " Mementos: " << m_history.size() << std::endl;
 }
-
-// ADD OVERRUN CONDITIONS
-//
-// ctor -> -        index -1 size 1
-// set  -> * -      index 0 size 2
-// res  -> - *      index -1 size 2
-// set  -> * *      index 0 size 2
-// set  -> * * *    index 1 size 3
-// res  -> * *      index 0 size 2

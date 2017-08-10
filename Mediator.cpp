@@ -1,9 +1,11 @@
 # include "Mediator.h"
 
-Larry::Larry(InteractionMediator* mediator) { name = "Larry"; m_mediator = mediator; head_slapped = false; } 
-Curly::Curly(InteractionMediator* mediator) { name = "Curly"; m_mediator = mediator; eyes_water = false; } 
-Moe::Moe(InteractionMediator* mediator) { name = "Moe"; m_mediator = mediator; accidentally_hit = false; } 
+// Constructors for stooge objects: states and mediator initialized
+Larry::Larry(std::shared_ptr<InteractionMediator> mediator) { name = "Larry"; m_mediator = mediator; head_slapped = false; } 
+Curly::Curly(std::shared_ptr<InteractionMediator> mediator) { name = "Curly"; m_mediator = mediator; eyes_water = false; } 
+Moe::Moe(std::shared_ptr<InteractionMediator> mediator) { name = "Moe"; m_mediator = mediator; accidentally_hit = false; } 
 
+// Stooge interaction definitions and set/get utilities
 void Larry::accidentallyHitMoe() { m_mediator->LarryHitsMoe(this); }
 void Larry::getState() {
     if (head_slapped) { std::cout << name << "'s head slapped" << std::endl; }
@@ -29,32 +31,34 @@ void Moe::getState() {
 std::string Moe::getName() { return name; }
 void Moe::setState(bool state) { accidentally_hit = state; }
 
-void InteractionMediator::getStooges(Larry* in_larry, Curly* in_curly, Moe* in_moe) {
-    m_larry = in_larry;
-    m_curly = in_curly;
-    m_moe = in_moe;
+// Definition of functionality to set managed stooges
+void InteractionMediator::setStooges(std::shared_ptr<Larry> larry, std::shared_ptr<Curly> curly, std::shared_ptr<Moe> moe) {
+    m_larry = larry;
+    m_curly = curly;
+    m_moe = moe;
 }
 
-void InteractionMediator::LarryHitsMoe(Larry* in_larry) { 
-    std::cout << "Instigator: " << in_larry->getName() << std::endl;
+// Definitions of mediator interactions
+void InteractionMediator::LarryHitsMoe(Larry* larry) { 
+    std::cout << "Instigator: " << larry->getName() << std::endl;
     m_moe->setState(true);
     m_moe->getState(); 
 }
 
-void InteractionMediator::CurlyHitsMoe(Curly* in_curly) { 
-    std::cout << "Instigator: " << in_curly->getName() << std::endl;
+void InteractionMediator::CurlyHitsMoe(Curly* curly) { 
+    std::cout << "Instigator: " << curly->getName() << std::endl;
     m_moe->setState(true); 
     m_moe->getState(); 
 }
 
-void InteractionMediator::MoePokesCurly(Moe* in_moe) { 
-    std::cout << "Instigator: " << in_moe->getName() << std::endl;
+void InteractionMediator::MoePokesCurly(Moe* moe) { 
+    std::cout << "Instigator: " << moe->getName() << std::endl;
     m_curly->setState(true); 
     m_curly->getState(); 
 }
 
-void InteractionMediator::MoeSlapsLarry(Moe* in_moe) { 
-    std::cout << "Instigator: " << in_moe->getName() << std::endl;
+void InteractionMediator::MoeSlapsLarry(Moe* moe) { 
+    std::cout << "Instigator: " << moe->getName() << std::endl;
     m_larry->setState(true); 
     m_larry->getState(); 
 }
