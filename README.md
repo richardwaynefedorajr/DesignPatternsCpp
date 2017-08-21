@@ -1,4 +1,7 @@
 # DesignPatternsCpp
+# A set of implementations of common C++ design patterns proposed by the "Gang of Four" in Design Patterns: Elements of Reusable Object-Oriented Software [Vlissides, John, et al. "Design patterns: Elements of reusable object-oriented software." Reading: Addison-Wesley 49.120 (1995): 11.]
+
+# main.cpp contains the main test interface, with separation comments for each design pattern... uncomment the desired design pattern block to test
 
 # Factory.h/cpp
 # Implementation of the factory design pattern, in which factory method setLure of base class Lure creates instances of child class objects (representing different types of fishing lures in a tacklebox)
@@ -21,10 +24,10 @@
 # Mediator.h/cpp
 # Implementation of the mediator design pattern, in which the interaction between "stooge" objects, representing the classic slapstick comics The Three Stooges, is encapsulated in a mediator class
 
-# FINISHED MEMORY MANAGMENT AND RECOMMENTING UPDATES UP TO HERE
 # Decorator.h/cpp
 # Implementation of the decorator design pattern, in which assault rifle accessories are added to a base class dynamically
 
+# FINISHED MEMORY MANAGMENT AND RECOMMENTING UPDATES UP TO HERE
 # Bridge.h/cpp
 # Implementation of the bridge design pattern, in which the interface and implementation specifics for creating fishing lures are abstracted behind LureType and LureCharacteristic base classes
 

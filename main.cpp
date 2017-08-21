@@ -9,8 +9,8 @@
 //# include "Memento.h"
 //# include "Singleton.h"
 //# include "Facade.h"
-# include "Mediator.h"
-//# include "Decorator.h"
+//# include "Mediator.h"
+# include "Decorator.h"
 //# include "Bridge.h"
 //# include "CoR.h"
 //# include "Command.h"
@@ -139,27 +139,27 @@ int main(int argc, char *argv[]) {
     
     // MEDIATOR DESIGN PATTERN TEST
     
-    std::shared_ptr<InteractionMediator> im( new InteractionMediator() );
+    //std::shared_ptr<InteractionMediator> im( new InteractionMediator() );
 
-    std::shared_ptr<Larry> larry( new Larry(im) ); 
-    std::shared_ptr<Curly> curly( new Curly(im) );
-    std::shared_ptr<Moe> moe( new Moe(im) t head ahead of master);
-    
-    im->setStooges(larry, curly, moe);
+    //std::shared_ptr<Larry> larry( new Larry(im) ); 
+    //std::shared_ptr<Curly> curly( new Curly(im) );
+    //std::shared_ptr<Moe> moe( new Moe(im) t head ahead of master);
+    //
+    //im->setStooges(larry, curly, moe);
 
-    larry->accidentallyHitMoe();
-    curly->accidentallyHitMoe();
-    moe->pokeCurlysEyes();
-    moe->slapLarrysHead();
+    //larry->accidentallyHitMoe();
+    //curly->accidentallyHitMoe();
+    //moe->pokeCurlysEyes();
+    //moe->slapLarrysHead();
 
     // --- ######################################## --- 
     
     // DECORATOR DESIGN PATTERN TEST
     
-    //WeaponSystem *base_platform = new AssaultRifle("M4 ");
-    //WeaponSystem *with_scope = new Scope(new AssaultRifle("M4 "), "red dot ");
-    //WeaponSystem *with_scope_and_foregrip = new Foregrip(new Scope(new AssaultRifle("M4 "), "red dot "),"vertical foregrip ");
-    //WeaponSystem *with_scope_and_foregrip_and_suppressor = new Suppressor(new Foregrip(new Scope(new AssaultRifle("M4 "), "red dot "),"vertical foregrip "),"AAC M4-2000 ");
+    //std::shared_ptr<WeaponSystem> base_platform( new AssaultRifle("M4 ") );
+    //std::shared_ptr<WeaponSystem> with_scope( new Scope( base_platform, "red dot " ) );
+    //std::shared_ptr<WeaponSystem> with_scope_and_foregrip( new Foregrip( with_scope,"vertical foregrip " ) );
+    //std::shared_ptr<WeaponSystem> with_scope_and_foregrip_and_suppressor( new Suppressor( with_scope_and_foregrip, "AAC M4-2000 ") );
     //
     //base_platform->getWeaponSystem();
     //std::cout << std::endl; 
@@ -173,11 +173,6 @@ int main(int argc, char *argv[]) {
     //with_scope_and_foregrip_and_suppressor->getWeaponSystem();
     //std::cout << std::endl; 
 
-    //delete base_platform;
-    //delete with_scope;
-    //delete with_scope_and_foregrip;
-    //delete with_scope_and_foregrip_and_suppressor;
-    
     // --- ######################################## --- 
     
     // BRIDGE DESIGN PATTERN TEST
