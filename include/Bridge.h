@@ -1,5 +1,6 @@
 # include <string>
 # include <iostream>
+# include <memory>
 
 class LureCharacteristic {
     public:
@@ -44,34 +45,34 @@ class LureType {
 };
 
 class LeadJig : public LureType {
-    LureCharacteristic* m_color;
-    LureCharacteristic* m_weight;
+    std::shared_ptr<LureCharacteristic> m_color;
+    std::shared_ptr<LureCharacteristic> m_weight;
     public:
-        LeadJig(LureCharacteristic *in_color, LureCharacteristic *in_weight) : m_color(in_color), m_weight(in_weight) { }
+        LeadJig(std::shared_ptr<LureCharacteristic> in_color, std::shared_ptr<LureCharacteristic> in_weight) : m_color(in_color), m_weight(in_weight) { }
         void getLure();
 };
 
 class PlasticSoft : public LureType {
-    LureCharacteristic* m_color;
-    LureCharacteristic* m_length;
+    std::shared_ptr<LureCharacteristic> m_color;
+    std::shared_ptr<LureCharacteristic> m_length;
     public:
-        PlasticSoft(LureCharacteristic* in_color, LureCharacteristic* in_length) : m_color(in_color), m_length(in_length) { }
+        PlasticSoft(std::shared_ptr<LureCharacteristic> in_color, std::shared_ptr<LureCharacteristic> in_length) : m_color(in_color), m_length(in_length) { }
         void getLure();
 };
 
 class Crankbait : public LureType {
-    LureCharacteristic* m_color;
-    LureCharacteristic* m_length;
-    LureCharacteristic* m_depth;
+    std::shared_ptr<LureCharacteristic> m_color;
+    std::shared_ptr<LureCharacteristic> m_length;
+    std::shared_ptr<LureCharacteristic> m_depth;
     public:
-        Crankbait(LureCharacteristic* in_color, LureCharacteristic* in_length, LureCharacteristic* in_depth) : m_color(in_color), m_length(in_length), m_depth(in_depth) { }
+        Crankbait(std::shared_ptr<LureCharacteristic> in_color, std::shared_ptr<LureCharacteristic> in_length, std::shared_ptr<LureCharacteristic> in_depth) : m_color(in_color), m_length(in_length), m_depth(in_depth) { }
         void getLure();
 };
 
 class Spinnerbait : public LureType {
-    LureCharacteristic* m_color;
-    LureCharacteristic* m_weight;
+    std::shared_ptr<LureCharacteristic> m_color;
+    std::shared_ptr<LureCharacteristic> m_weight;
     public:
-        Spinnerbait(LureCharacteristic *in_color, LureCharacteristic *in_weight) : m_color(in_color), m_weight(in_weight) { }
+        Spinnerbait(std::shared_ptr<LureCharacteristic> in_color, std::shared_ptr<LureCharacteristic> in_weight) : m_color(in_color), m_weight(in_weight) { }
         void getLure();
 };

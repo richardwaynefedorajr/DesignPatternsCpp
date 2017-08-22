@@ -4,19 +4,19 @@
 
 enum MonitorState { STRING1, STRING2, DOUBLE1, DOUBLE2, INT1, INT2 };
 
-class Subject;
+class SubjectClass;
 
 class Observer {
     public:
-        Observer(Subject *subject, MonitorState state);
+        Observer(SubjectClass *subject, MonitorState state);
         template <class T>
         void reportState(T state, std::string name);
         MonitorState m_state;
 };
 
-class Subject {
+class SubjectClass {
     public:
-        Subject(std::string string1, std::string string2, double double1, double double2, int int1, int int2);
+        SubjectClass(std::string string1, std::string string2, double double1, double double2, int int1, int int2);
         void activateObserver(Observer *observer, MonitorState state);
         void publishState();
     private:

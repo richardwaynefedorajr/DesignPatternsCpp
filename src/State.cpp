@@ -1,7 +1,6 @@
 # include "State.h"
 
-Subject::~Subject() { delete m_state; }
-void Subject::setState(State *state) { m_state = state; }
+void Subject::setState(std::unique_ptr<State> state) { m_state = std::move(state); }
 void Subject::state1() { m_state->state1(this); }
 void Subject::state2() { m_state->state2(this); }
 void Subject::state3() { m_state->state3(this); }
@@ -25,21 +24,18 @@ void State::state3(Subject *subject) { subject->getState(); }
 
 void State1::state2(Subject *subject) {
     std::cout << "Switching to ";
-    subject->setState(new State2());
+    subject->setState(std::unique_ptr<State>( new State2() ) );
     subject->getState();
-    delete this;
 }
 
 void State2::state3(Subject *subject) {
     std::cout << "Switching to ";
-    subject->setState(new State3());
+    subject->setState(std::unique_ptr<State>( new State3() ) );
     subject->getState();
-    delete this;
 }
 
 void State3::state1(Subject *subject) {
     std::cout << "Switching to ";
-    subject->setState(new State1());
+    subject->setState(std::unique_ptr<State>( new State1() ) );
     subject->getState();
-    delete this;
 }

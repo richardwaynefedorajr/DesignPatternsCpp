@@ -2,11 +2,7 @@
 
 Rectangle::Rectangle(int height, int width) : m_height(height), m_width(width) { }
 
-RectangleFactory::~RectangleFactory() {
-    for ( int i = 0; i < m_existing_rectangles.size(); ++i) { delete m_existing_rectangles.at(i); }
-}
-
-Rectangle* RectangleFactory::getRectangle(int height, int width) {
+std::shared_ptr<Rectangle> RectangleFactory::getRectangle(int height, int width) {
    
     for (int i = 0; i < m_existing_rectangles.size(); ++i) {
         if ( m_existing_rectangles.at(i)->m_height == height && m_existing_rectangles.at(i)->m_width == width ) {
@@ -14,7 +10,7 @@ Rectangle* RectangleFactory::getRectangle(int height, int width) {
         }
     }
 
-    Rectangle *rect = new Rectangle(height,width);
+    std::shared_ptr<Rectangle> rect( new Rectangle(height,width) );
 
     m_existing_rectangles.push_back(rect);
 

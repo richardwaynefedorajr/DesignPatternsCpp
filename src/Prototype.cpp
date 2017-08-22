@@ -1,12 +1,12 @@
 # include "Prototype.h"
 
 Factory::Factory() {
-    m_A1 = new A1;
-    m_A2 = new A2;
-    m_A3 = new A3;
+    m_A1 = std::unique_ptr<A>( new A1 );
+    m_A2 = std::unique_ptr<A>( new A2 );
+    m_A3 = std::unique_ptr<A>( new A3 );
 }
 
-A* Factory::getA(Type type) {
+std::unique_ptr<A> Factory::getA(Type type) {
     switch ( type ) {
         case TYPEA1:
             return m_A1->clone();
@@ -17,11 +17,11 @@ A* Factory::getA(Type type) {
     }
 }
 
-A* A1::clone() { return new A1; }
+std::unique_ptr<A> A1::clone() { return std::move( std::unique_ptr<A> ( new A1 ) ); }
 void A1::action() { std::cout << "A1 action" << std::endl; }
 
-A* A2::clone() { return new A2; }
+std::unique_ptr<A> A2::clone() { return std::move( std::unique_ptr<A> ( new A2 ) ); }
 void A2::action() { std::cout << "A2 action" << std::endl; }
 
-A* A3::clone() { return new A3; }
+std::unique_ptr<A> A3::clone() { return std::move( std::unique_ptr<A> ( new A3 ) ); }
 void A3::action() { std::cout << "A3 action" << std::endl; }

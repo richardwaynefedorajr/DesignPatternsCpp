@@ -1,5 +1,6 @@
 # include <iostream>
 # include <string>
+# include <memory>
 
 class Hundred;
 class Ten;
@@ -13,9 +14,9 @@ class Interpreter {
         virtual void interpret();
         void setInput(int input);
     private:
-        Hundred *m_hundred;
-        Ten *m_ten;
-        One *m_one;
+        std::unique_ptr<Hundred> m_hundred;
+        std::unique_ptr<Ten> m_ten;
+        std::unique_ptr<One> m_one;
         int m_value;
         int m_input;
 };

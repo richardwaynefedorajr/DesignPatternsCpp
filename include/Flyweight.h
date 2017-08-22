@@ -1,6 +1,7 @@
 # include <string>
 # include <iostream>
 # include <vector>
+# include <memory>
 
 class Rectangle {
     public:
@@ -11,8 +12,7 @@ class Rectangle {
 
 class RectangleFactory {
     public:
-        ~RectangleFactory();
-        Rectangle *getRectangle(int height, int width);
+        std::shared_ptr<Rectangle> getRectangle(int height, int width);
     private:
-        std::vector<Rectangle*> m_existing_rectangles;
+        std::vector< std::shared_ptr<Rectangle> > m_existing_rectangles;
 };
