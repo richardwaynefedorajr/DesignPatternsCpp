@@ -76,15 +76,11 @@ Implementation of the memento design pattern, in which a Memento class encapsula
 
 # Issues
 
-FINISHED MEMORY MANAGMENT AND RECOMMENTING UPDATES UP TO HERE
-
 Update with Rule of 5 and test it
 
 Figure out if there is a better way to manage singleton memory, and if destructor needs to explicitly delete instance
 
 Anything else we can do with Facade?
-
-Update with std::memory_management, recomment
 
 Look at std::function for pointers to methods
 
@@ -101,20 +97,3 @@ Try Command using Memento to maintain state required to undo an operation
 Try combining Factory, Abstract Factory, and Bridge design classes with Composite to allow for access to various lure attributes in collection
 
 Update Prototype with Singleton to replace static in Source Making example
-
-Update with standard naming conventions:
-class ClassName { ... }  - class
-functionName(arg1, arg2, arg3) - function (same syntax for function calls)
-m_variable - member variablebstract Factory, Builder, Prototype, Facade, and State
-
-variable - input variable
-ENUM - enum member
-keyword ( arg, arg, arg ) - for, if, while, switch, etc.
-
-State dependencies (state std::libraries, don't need to link)
-BOOST, OpenCV type stuff link as well (version info)
-Latest continuous integration links
-Change documentation to website -> add cloning, compilation info, etc. 
-Add architecture/OS environment structure using Travis
-Start creating issues out of to-do work
-Update .gitignore

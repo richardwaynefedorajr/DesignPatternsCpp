@@ -10,7 +10,7 @@
 //# include "Singleton.h"
 //# include "Facade.h"
 //# include "Mediator.h"
-# include "Decorator.h"
+//# include "Decorator.h"
 //# include "Bridge.h"
 //# include "CoR.h"
 //# include "Command.h"
@@ -193,11 +193,11 @@ int main(int argc, char *argv[]) {
     //LureCharacteristic* medium_depth = new Depth ("4-8\'");
     //LureCharacteristic* deep_diver = new Depth ("8-12\'");
 
-    //LureType* big_bass_jig = new Jig(black, three_quarter_oz);
-    //LureType* finesse_jig = new Jig(pearl, quarter_oz);
+    //LureType* big_bass_jig = new LeadJig(black, three_quarter_oz);
+    //LureType* finesse_jig = new LeadJig(pearl, quarter_oz);
 
-    //LureType* big_plastic = new SoftPlastic(black, six_inch);
-    //LureType* small_plastic = new SoftPlastic(pearl, four_inch);
+    //LureType* big_plastic = new PlasticSoft(black, six_inch);
+    //LureType* small_plastic = new PlasticSoft(pearl, four_inch);
 
     //LureType* power_crank = new Crankbait(firetiger, six_inch, deep_diver);
     //
@@ -215,10 +215,10 @@ int main(int argc, char *argv[]) {
     //delete power_crank;
     //delete classic_spinnerbait;
 
-    //delete black, delete pearl, delete firetiger;
-    //delete quarter_oz, delete half_oz, delete three_quarter_oz;
-    //delete four_inch, delete five_inch, delete six_inch;
-    //delete shallow, delete medium_depth, delete deep_diver; 
+    delete black, delete pearl, delete firetiger;
+    delete quarter_oz, delete half_oz, delete three_quarter_oz;
+    delete four_inch, delete five_inch, delete six_inch;
+    delete shallow, delete medium_depth, delete deep_diver; 
     
     // --- ######################################## --- 
     
@@ -335,9 +335,9 @@ int main(int argc, char *argv[]) {
     // PROXY DESIGN PATTERN TEST
     
     //Proxy p;
-    //std::cout << "Subject state after lazy initialization: " << p.getSubjectState() << std::endl;
-    //p.setSubjectState(5);
-    //std::cout << "Subject state after setting state: " << p.getSubjectState() << std::endl;
+    //std::cout << "ProxySubject state after lazy initialization: " << p.getProxySubjectState() << std::endl;
+    //p.setProxySubjectState(5);
+    //std::cout << "ProxySubject state after setting state: " << p.getProxySubjectState() << std::endl;
     
     // --- ######################################## --- 
     

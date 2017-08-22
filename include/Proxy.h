@@ -1,9 +1,9 @@
 # include <string>
 # include <iostream>
 
-class Subject {
+class ProxySubject {
     public:
-        Subject();
+        ProxySubject();
         void setState(int state);
         int getState();
     private:
@@ -13,8 +13,8 @@ class Subject {
 class Proxy {
     public:
         Proxy();
-        int getSubjectState();
-        void setSubjectState(int state);
+        int getProxySubjectState();
+        void setProxySubjectState(int state);
     private:
-        Subject *m_subject; 
+        ProxySubject *m_subject; 
 };
