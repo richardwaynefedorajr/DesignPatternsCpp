@@ -3,9 +3,16 @@ A set of implementations of common C++ design patterns proposed by the "Gang of 
 
 main.cpp contains the main test interface, with separation comments for each design pattern... uncomment the desired design pattern block to test
 
-# Maintainer:
+# Maintainer
 Rich Fedora
 richardwaynefedorajr@gmail.com
+
+# Compilation
+g++ -std=c++11 source.cpp -o executable
+Ubuntu Mate 14.04 
+
+# Dependencies
+C++ Standard Library
 
 ## Factory.h/cpp
 Implementation of the factory design pattern, in which factory method setLure of base class Lure creates instances of child class objects (representing different types of fishing lures in a tacklebox)
@@ -110,3 +117,4 @@ Latest continuous integration links
 Change documentation to website -> add cloning, compilation info, etc. 
 Add architecture/OS environment structure using Travis
 Start creating issues out of to-do work
+Update .gitignore
