@@ -1,6 +1,6 @@
 # include "Observer.h"
 
-Observer::Observer(Subject *subject, MonitorState state) {
+Observer::Observer(SubjectClass *subject, MonitorState state) {
     m_state = state;
     subject->activateObserver(this, state);
 }
@@ -8,7 +8,7 @@ Observer::Observer(Subject *subject, MonitorState state) {
 template <class T>
 void Observer::reportState(T state, std::string name) { std::cout << name << " state: " << state << std::endl; }
 
-Subject::Subject(std::string string1, std::string string2, double double1, double double2, int int1, int int2) :
+SubjectClass::SubjectClass(std::string string1, std::string string2, double double1, double double2, int int1, int int2) :
  m_string1(string1), m_string2(string2), m_double1(double1), m_double2(double2), m_int1(int1), m_int2(int2) {
    
     m_string1_obs = NULL;
@@ -20,7 +20,7 @@ Subject::Subject(std::string string1, std::string string2, double double1, doubl
 
 };
 
-void Subject::activateObserver(Observer *observer, MonitorState state) {
+void SubjectClass::activateObserver(Observer *observer, MonitorState state) {
     switch ( state ) {
         case STRING1:
             m_string1_obs = observer;
@@ -43,7 +43,7 @@ void Subject::activateObserver(Observer *observer, MonitorState state) {
     }
 }
 
-void Subject::publishState() {
+void SubjectClass::publishState() {
     if ( m_string1_obs ) { m_string1_obs->reportState(m_string1, "String1"); }
     if ( m_string2_obs ) { m_string2_obs->reportState(m_string2, "String2"); }
     if ( m_double1_obs ) { m_double1_obs->reportState(m_double1, "Double1"); }

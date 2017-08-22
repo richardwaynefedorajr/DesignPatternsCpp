@@ -1,5 +1,6 @@
 # include <string>
 # include <iostream>
+# include <memory>
 
 class ProxySubject {
     public:
@@ -16,5 +17,5 @@ class Proxy {
         int getProxySubjectState();
         void setProxySubjectState(int state);
     private:
-        ProxySubject *m_subject; 
+        std::unique_ptr<ProxySubject> m_subject; 
 };

@@ -6,7 +6,7 @@ int ProxySubject::getState() { return m_state; }
 
 Proxy::Proxy() { m_subject = NULL; }
 int Proxy::getProxySubjectState() { 
-    if ( !m_subject ) { m_subject = new ProxySubject(); }
+    if ( !m_subject ) { m_subject = std::unique_ptr<ProxySubject>( new ProxySubject() ); }
     return m_subject->getState();
 }
 void Proxy::setProxySubjectState(int state) { m_subject->setState(state); }

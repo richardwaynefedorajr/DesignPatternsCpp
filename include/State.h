@@ -1,17 +1,17 @@
 # include <string>
 # include <iostream>
+# include <memory>
 
 class State;
 
 class Subject {
     public:
-        ~Subject();
-        void setState(State *state);
+        void setState(std::unique_ptr<State> state);
         void getState();
         void state1();
         void state2();
         void state3();
-        State *m_state;
+        std::unique_ptr<State> m_state;
 };
 
 class State {

@@ -22,7 +22,7 @@
 //# include "Proxy.h"
 //# include "State.h"
 //# include "Strategy.h"
-//# include "Visitor.h"
+# include "Visitor.h"
 
 int main(int argc, char *argv[]) {
 
@@ -177,31 +177,31 @@ int main(int argc, char *argv[]) {
     
     // BRIDGE DESIGN PATTERN TEST
     
-    //LureCharacteristic* black = new Color("black");
-    //LureCharacteristic* pearl = new Color("pearl");
-    //LureCharacteristic* firetiger = new Color("firetiger");
+    //std::shared_ptr<LureCharacteristic> black( new Color("black") );
+    //std::shared_ptr<LureCharacteristic> pearl( new Color("pearl") );
+    //std::shared_ptr<LureCharacteristic> firetiger( new Color("firetiger") );
 
-    //LureCharacteristic* quarter_oz = new Weight("1/4 oz."); 
-    //LureCharacteristic* half_oz = new Weight("1/2 oz."); 
-    //LureCharacteristic* three_quarter_oz = new Weight("3/4 oz."); 
+    //std::shared_ptr<LureCharacteristic> quarter_oz( new Weight("1/4 oz.") ); 
+    //std::shared_ptr<LureCharacteristic> half_oz( new Weight("1/2 oz.") ); 
+    //std::shared_ptr<LureCharacteristic> three_quarter_oz( new Weight("3/4 oz.") ); 
 
-    //LureCharacteristic* four_inch = new Length("4\"");
-    //LureCharacteristic* five_inch = new Length("5\"");
-    //LureCharacteristic* six_inch = new Length("6\"");
+    //std::shared_ptr<LureCharacteristic> four_inch( new Length("4\"") );
+    //std::shared_ptr<LureCharacteristic> five_inch( new Length("5\"") );
+    //std::shared_ptr<LureCharacteristic> six_inch( new Length("6\"") );
 
-    //LureCharacteristic* shallow = new Depth ("0-4\'");
-    //LureCharacteristic* medium_depth = new Depth ("4-8\'");
-    //LureCharacteristic* deep_diver = new Depth ("8-12\'");
+    //std::shared_ptr<LureCharacteristic> shallow( new Depth("0-4\'") );
+    //std::shared_ptr<LureCharacteristic> medium_depth( new Depth("4-8\'") );
+    //std::shared_ptr<LureCharacteristic> deep_diver( new Depth("8-12\'") );
 
-    //LureType* big_bass_jig = new LeadJig(black, three_quarter_oz);
-    //LureType* finesse_jig = new LeadJig(pearl, quarter_oz);
+    //std::unique_ptr<LureType> big_bass_jig( new LeadJig( black, three_quarter_oz ) );
+    //std::unique_ptr<LureType> finesse_jig( new LeadJig( pearl, quarter_oz ) );
+ 
+    //std::unique_ptr<LureType> big_plastic( new PlasticSoft( black, six_inch ) );
+    //std::unique_ptr<LureType> small_plastic( new PlasticSoft( pearl, four_inch ) );
 
-    //LureType* big_plastic = new PlasticSoft(black, six_inch);
-    //LureType* small_plastic = new PlasticSoft(pearl, four_inch);
-
-    //LureType* power_crank = new Crankbait(firetiger, six_inch, deep_diver);
+    //std::unique_ptr<LureType> power_crank( new Crankbait( firetiger, six_inch, deep_diver ) );
     //
-    //LureType* classic_spinnerbait = new Spinnerbait(pearl, half_oz);
+    //std::unique_ptr<LureType> classic_spinnerbait( new Spinnerbait( pearl, half_oz ) );
 
     //big_bass_jig->getLure();
     //finesse_jig->getLure();
@@ -210,16 +210,6 @@ int main(int argc, char *argv[]) {
     //power_crank->getLure();
     //classic_spinnerbait->getLure();
 
-    //delete big_bass_jig, delete finesse_jig;
-    //delete big_plastic, delete small_plastic;
-    //delete power_crank;
-    //delete classic_spinnerbait;
-
-    delete black, delete pearl, delete firetiger;
-    delete quarter_oz, delete half_oz, delete three_quarter_oz;
-    delete four_inch, delete five_inch, delete six_inch;
-    delete shallow, delete medium_depth, delete deep_diver; 
-    
     // --- ######################################## --- 
     
     // CHAIN OF RESPONSIBILITY DESIGN PATTERN TEST
@@ -281,11 +271,9 @@ int main(int argc, char *argv[]) {
     
     // FLYWEIGHT DESIGN PATTERN TEST
    
-    // UPDATE USING POINTERS
-
     //RectangleFactory rf;
-    //Rectangle *rect1 = rf.getRectangle(3,2);
-    //Rectangle *rect2 = rf.getRectangle(2,2);
+    //std::shared_ptr<Rectangle> rect1 = rf.getRectangle(3,2);
+    //std::shared_ptr<Rectangle> rect2 = rf.getRectangle(2,2);
     //rect1->draw(0,0);    
     //rect2->draw(1,1);    
 
@@ -296,14 +284,14 @@ int main(int argc, char *argv[]) {
     // INTERPRETER DESIGN PATTERN TEST
     
     //Interpreter i;
-    //i.setInput(0);
+    //i.setInput(55);
     //i.interpret();
     
     // --- ######################################## --- 
     
     // OBSERVER DESIGN PATTERN TEST
     
-    //Subject s("Hi", "Hello", 6.5, 5.0, 1, 3);
+    //SubjectClass s("Hi", "Hello", 6.5, 5.0, 1, 3);
     //Observer(&s, STRING1);
     //Observer(&s, INT1);
     //s.publishState();
@@ -313,23 +301,19 @@ int main(int argc, char *argv[]) {
     // PROTOTYPE DESIGN PATTERN TEST
     
     //Factory f;
-    //std::vector<A*> instances_A;
+    //std::vector< std::unique_ptr<A> > instances_A;
 
     //Type t1 = TYPEA1;
     //instances_A.push_back(f.getA(t1));
-    //t1 = TYPEA2;
-    //instances_A.push_back(f.getA(t1));
-    //t1 = TYPEA3;
-    //instances_A.push_back(f.getA(t1));
+    //Type t2 = TYPEA2;
+    //instances_A.push_back(f.getA(t2));
+    //Type t3 = TYPEA3;
+    //instances_A.push_back(f.getA(t3));
 
     //for (int i = 0; i < instances_A.size(); ++i) {
     //    instances_A.at(i)->action();
     //}
 
-    //for (int i = 0; i < instances_A.size(); ++i) {
-    //    delete instances_A.at(i);
-    //}
-    
     // --- ######################################## --- 
     
     // PROXY DESIGN PATTERN TEST
@@ -343,11 +327,14 @@ int main(int argc, char *argv[]) {
     
     // STATE DESIGN PATTERN TEST
     
-    //Subject *s = new Subject();
-    //s->setState(new State1());
-    //s->m_state->state1(s);
-    //s->m_state->state2(s);
-    //delete s;
+    //Subject s;
+    //s.setState( std::unique_ptr<State>( new State1() ) );
+    //s.m_state->state1(&s);
+    //s.m_state->state2(&s);
+    //s.m_state->state3(&s);
+    //s.m_state->state1(&s);
+    //s.m_state->state2(&s);
+    //s.m_state->state3(&s);
     
     // --- ######################################## --- 
     
@@ -382,7 +369,7 @@ int main(int argc, char *argv[]) {
     //for ( int i = 0; i < fish.size(); ++i ) {
     //    delete fish.at(i);
     //}
-    
+
     // --- ######################################## --- 
 
     return 0;

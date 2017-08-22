@@ -2,9 +2,9 @@
 
 Interpreter::Interpreter() {
     m_input = 0;
-    m_hundred = new Hundred(NULL);
-    m_ten = new Ten(NULL);
-    m_one = new One(NULL);
+    m_hundred = std::unique_ptr<Hundred>( new Hundred(NULL) );
+    m_ten = std::unique_ptr<Ten>( new Ten(NULL) );
+    m_one = std::unique_ptr<One>( new One(NULL) );
 }
 
 void Interpreter::setInput(int input) { m_input = input; }
@@ -12,7 +12,7 @@ void Interpreter::setInput(int input) { m_input = input; }
 void Interpreter::interpret() {
     if ( m_input < 1000 && m_input > 0 ) { 
         m_value = m_one->interpret(m_ten->interpret(m_hundred->interpret(m_input)));
-   
+
         if ( m_ten->m_tens == "teen" ) {
             switch ( m_value ) {
                 case 0:
@@ -56,8 +56,10 @@ void Interpreter::interpret() {
                     break;
             }
         
-            std::cout << m_input << ": " << m_hundred->m_hundreds << " " << m_ten->m_tens << " " << m_one->m_ones << std::endl;
         }
+        
+        std::cout << m_input << ": " << m_hundred->m_hundreds << " " << m_ten->m_tens << " " << m_one->m_ones << std::endl;
+    
     }
     
     else { std::cout << "Please set input between 0 and 1000!" << std::endl; }

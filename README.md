@@ -14,6 +14,9 @@ Ubuntu Mate 14.04
 # Dependencies
 C++ Standard Library
 
+# Contributing
+Pull from upstream, branch for issue, push branch, open pull request, merge, delete remote branch, pull merge, delete local branch
+
 ## Factory.h/cpp
 Implementation of the factory design pattern, in which factory method setLure of base class Lure creates instances of child class objects (representing different types of fishing lures in a tacklebox)
 
@@ -81,8 +84,6 @@ Update with Rule of 5 and test it
 Figure out if there is a better way to manage singleton memory, and if destructor needs to explicitly delete instance
 
 Anything else we can do with Facade?
-
-Look at std::function for pointers to methods
 
 Make sure public/private is correct, find places to use static, virtual, etc.
 
