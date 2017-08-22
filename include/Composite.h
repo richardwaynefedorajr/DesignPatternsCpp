@@ -3,21 +3,23 @@
 # include <string>
 # include <memory>
 
-class Lure {
+class CompositeLure {
     public:
         virtual void getLure() = 0;
+        virtual void addLure(std::unique_ptr<CompositeLure> lure) = 0;
 };
 
-class SingleLure : public Lure {
+class SingleLure : public CompositeLure {
     public:
         std::string m_name;
         SingleLure(std::string name);
         void getLure();
+        void addLure(std::unique_ptr<CompositeLure> lure) { }
 };
 
-class TackleBox : public Lure {
+class TackleBox : public CompositeLure {
     public:
-        std::vector < Lure* > m_tacklebox;
-        void addLure(Lure* lure);
+        std::vector < std::unique_ptr<CompositeLure> > m_tacklebox;
+        void addLure(std::unique_ptr<CompositeLure> lure);
         void getLure();
 };

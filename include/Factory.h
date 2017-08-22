@@ -13,9 +13,9 @@ class Lure {
 };
 
 // Declaration of derived lure classes of various types
-class Jig : public Lure {
+class FactoryJig : public Lure {
     public:
-        Jig(std::string characteristic1, std::string characteristic2, std::string characteristic3);
+        FactoryJig(std::string characteristic1, std::string characteristic2, std::string characteristic3);
         void getLure();
     private:
         // Jig characteristics
@@ -31,18 +31,18 @@ class Spinner : public Lure {
         std::string weight, blade_type, blade_pattern;
 };
 
-class Plug : public Lure {
+class FactoryPlug : public Lure {
     public:
-        Plug(std::string characteristic1, std::string characteristic2, std::string characteristic3);
+        FactoryPlug(std::string characteristic1, std::string characteristic2, std::string characteristic3);
         void getLure();
     private:
         // Plug characteristics
         std::string length, plug_type, color_pattern;
 };
 
-class Fly : public Lure {
+class FactoryFly : public Lure {
     public:
-        Fly(std::string characteristic1, std::string characteristic2, std::string characteristic3);
+        FactoryFly(std::string characteristic1, std::string characteristic2, std::string characteristic3);
         void getLure();
     private:
         // Fly characteristics

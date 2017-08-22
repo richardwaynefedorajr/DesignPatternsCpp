@@ -14,7 +14,7 @@
 //# include "Bridge.h"
 //# include "CoR.h"
 //# include "Command.h"
-//# include "Composite.h"
+# include "Composite.h"
 //# include "Flyweight.h"
 //# include "Interpreter.h"
 //# include "Observer.h"
@@ -259,13 +259,22 @@ int main(int argc, char *argv[]) {
 
     //int num_lure_types = names.size();
 
-    //std::vector<TackleBox> box;
-    //TackleBox tb;
+    //std::vector< std::unique_ptr<CompositeLure> > box;
 
-    //for (int i = 0; i < num_lure_types; ++i) { box.push_back(tb); }
-    //for (int i = 0; i < num_lure_types; ++i) { box.at(i).addLure(new SingleLure(names.at(i))); }
-    //for (int i = 1; i < num_lure_types; ++i) { box.at(0).addLure(&(box.at(i))); }
-    //for (int i = 0; i < num_lure_types; ++i) { box.at(i).getLure(); std::cout << std::endl; }
+    //for (int i = 0; i < num_lure_types; ++i) { 
+    //    box.push_back( std::move( std::unique_ptr<CompositeLure>( new TackleBox() ) ) ); 
+    //}
+    //
+    //for (int i = 0; i < num_lure_types; ++i) { 
+    //    box.at(i)->addLure( std::unique_ptr<CompositeLure>( new SingleLure(names.at(i)) ) ); 
+    //}
+    //
+    //for (int i = 1; i < num_lure_types; ++i) { 
+    //    box.at(0)->addLure( std::unique_ptr<CompositeLure>( new SingleLure(names.at(i)) ) ); 
+    //}
+
+    //
+    //for (int i = 0; i < num_lure_types; ++i) { box.at(i)->getLure(); std::cout << std::endl; }
 
     // --- ######################################## --- 
     
@@ -351,10 +360,10 @@ int main(int argc, char *argv[]) {
     
     // VISITOR DESIGN PATTERN TEST
     
-    //std::vector<Fish*> fish;
-    //fish.push_back(new Bass); 
-    //fish.push_back(new Trout); 
-    //fish.push_back(new Musky);
+    //std::vector< std::unique_ptr<Fish> > fish;
+    //fish.push_back( std::unique_ptr<Fish> ( new Bass() ) ); 
+    //fish.push_back( std::unique_ptr<Fish> ( new Trout() ) ); 
+    //fish.push_back( std::unique_ptr<Fish> ( new Musky() ) );
 
     //Jig jig;
     //Fly fly;
@@ -365,10 +374,6 @@ int main(int argc, char *argv[]) {
     //    fish.at(i)->seeLure(fly);
     //    fish.at(i)->seeLure(plug);
     //} 
-
-    //for ( int i = 0; i < fish.size(); ++i ) {
-    //    delete fish.at(i);
-    //}
 
     // --- ######################################## --- 
 
