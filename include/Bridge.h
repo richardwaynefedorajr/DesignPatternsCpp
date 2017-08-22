@@ -43,19 +43,19 @@ class LureType {
         virtual void getLure() = 0;
 };
 
-class Jig : public LureType {
+class LeadJig : public LureType {
     LureCharacteristic* m_color;
     LureCharacteristic* m_weight;
     public:
-        Jig(LureCharacteristic *in_color, LureCharacteristic *in_weight) : m_color(in_color), m_weight(in_weight) { }
+        LeadJig(LureCharacteristic *in_color, LureCharacteristic *in_weight) : m_color(in_color), m_weight(in_weight) { }
         void getLure();
 };
 
-class SoftPlastic : public LureType {
+class PlasticSoft : public LureType {
     LureCharacteristic* m_color;
     LureCharacteristic* m_length;
     public:
-        SoftPlastic(LureCharacteristic* in_color, LureCharacteristic* in_length) : m_color(in_color), m_length(in_length) { }
+        PlasticSoft(LureCharacteristic* in_color, LureCharacteristic* in_length) : m_color(in_color), m_length(in_length) { }
         void getLure();
 };
 

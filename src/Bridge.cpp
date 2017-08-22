@@ -10,9 +10,9 @@ std::string Weight::getCharacteristic() { return m_weight; }
 std::string Length::getCharacteristic() { return m_length; }
 std::string Depth::getCharacteristic() { return m_depth; }
 
-void Jig::getLure() { std::cout << m_weight->getCharacteristic() << " " << m_color->getCharacteristic() << " " << "jig" << std::endl; }
+void LeadJig::getLure() { std::cout << m_weight->getCharacteristic() << " " << m_color->getCharacteristic() << " " << "jig" << std::endl; }
 
-void SoftPlastic::getLure() { std::cout << m_color->getCharacteristic() << " " << m_length->getCharacteristic() << " " << "soft plastic" << std::endl; }
+void PlasticSoft::getLure() { std::cout << m_color->getCharacteristic() << " " << m_length->getCharacteristic() << " " << "soft plastic" << std::endl; }
 
 void Crankbait::getLure() { std::cout << m_length->getCharacteristic() << " " << m_color->getCharacteristic() << " " << m_depth->getCharacteristic() << " " << "crankbait" << std::endl; }
 
