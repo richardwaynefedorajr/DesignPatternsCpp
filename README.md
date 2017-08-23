@@ -81,23 +81,4 @@ Implementation of the visitor design pattern, in which a visitor lure class "vis
 Implementation of the memento design pattern, in which a Memento class encapsulates a "snapshot" of on object's state and provides access to previous states 
 
 # Issues
-
-Update with Rule of 5 and test it
-
-Figure out if there is a better way to manage singleton memory, and if destructor needs to explicitly delete instance
-
-Anything else we can do with Facade?
-
-Make sure public/private is correct, find places to use static, virtual, etc.
-
-Use templates whenever possible
-
-Try Singleton implementations of Abstract Factory, Builder, Prototype, Facade, and State
-
-Try Chain of Responsibility using Command to represent requests as objects
-
-Try Command using Memento to maintain state required to undo an operation
-
-Try combining Factory, Abstract Factory, and Bridge design classes with Composite to allow for access to various lure attributes in collection
-
-Update Prototype with Singleton to replace static in Source Making example
+Please refer to CONTRIBUTING.md and ISSUE_TEMPLATE.md
