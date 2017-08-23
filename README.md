@@ -5,17 +5,20 @@ main.cpp contains the main test interface, with separation comments for each des
 
 # Maintainer
 Rich Fedora
+
 richardwaynefedorajr@gmail.com
 
 # Compilation
 g++ -std=c++11 source.cpp -o executable
+
+gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3)
+
+cmake version 3.2.2
+
 Ubuntu Mate 14.04 
 
 # Dependencies
-C++ Standard Library
-
-# Contributing
-Pull from upstream, branch for issue, push branch, open pull request, merge, delete remote branch, pull merge, delete local branch
+C++ Standard Libraryw
 
 ## Factory.h/cpp
 Implementation of the factory design pattern, in which factory method setLure of base class Lure creates instances of child class objects (representing different types of fishing lures in a tacklebox)
