@@ -9,7 +9,9 @@ Rich Fedora
 richardwaynefedorajr@gmail.com
 
 # Compilation
-g++ -std=c++11 source.cpp -o executable
+Navigate to build folder and run
+cmake ..
+make
 
 gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3)
 
