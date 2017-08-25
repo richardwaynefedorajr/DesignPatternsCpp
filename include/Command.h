@@ -1,5 +1,6 @@
 # include <string>
 # include <iostream>
+# include <memory>
 
 class TeamMember;
 
@@ -16,8 +17,8 @@ class Command {
 class TeamMember {
     public:
         std::string m_name;
-        Command m_command;
-        TeamMember(std::string name, Command command);
+        std::unique_ptr<Command> m_command;
+        TeamMember(std::string name, std::unique_ptr<Command> command);
         void commandDrills();
         void runLaps(); 
         void runDBDrills();

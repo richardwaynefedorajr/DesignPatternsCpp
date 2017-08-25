@@ -4,7 +4,7 @@
 Command::Command(TeamMember *teammember, void(TeamMember::*action)()) : m_teammember(teammember), m_action(action) { }
 
 // Define execution class constructor (accept command instance as argument) 
-TeamMember::TeamMember(std::string name, Command command) : m_name(name), m_command(command) { } 
+TeamMember::TeamMember(std::string name, std::unique_ptr<Command> command) : m_name(name), m_command(std::move(command)) { } 
 
 // Define command method to call action method
 void Command::execute() { (m_teammember->*m_action)(); }
@@ -12,7 +12,7 @@ void Command::execute() { (m_teammember->*m_action)(); }
 // Define execution class functionality to call command functionality
 void TeamMember::commandDrills() { 
     std::cout << m_name << " makes ";
-    m_command.execute(); 
+    m_command->execute(); 
 }
 
 // Define execution class functionality (executed when called by command class instance)
