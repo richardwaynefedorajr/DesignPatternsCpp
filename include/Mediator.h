@@ -4,7 +4,7 @@
 
 class InteractionMediator;
 
-// Declarations of stooge objects with various interactions
+// Declare stooge objects with various interactions
 class Larry {
     public:
         Larry(std::shared_ptr<InteractionMediator> mediator);
@@ -45,7 +45,7 @@ class Moe {
         std::shared_ptr<InteractionMediator> m_mediator;
 };
 
-// Declaration of mediator to encapsulate interactions between stooge objects
+// Declare mediator to encapsulate interactions between stooge objects
 class InteractionMediator {
     public:
         InteractionMediator() { }

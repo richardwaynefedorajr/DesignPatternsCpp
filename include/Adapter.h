@@ -1,15 +1,15 @@
 # include <iostream>
 
-// Define gravitational constant
+// Declare gravitational constant
 # define M_G 9.81
 
-// Declaration of interface for weight of an entity 
+// Declare interface for weight of an entity 
 class Weight {
     public:
         virtual void getWeight() = 0;
 };
 
-// Declaration of incompatible class for mass of entity
+// Declare incompatible class for mass of entity
 class Mass {
     public:
         template<typename T>
@@ -20,7 +20,7 @@ class Mass {
         double entity_mass;
 };
 
-// Adapter to allow client expecting Weight to interact with Mass interface
+// Declare adapter to allow client expecting Weight to interact with Mass interface
 class weightAdapter : public Weight, private Mass {
     public:
         template<typename T>

@@ -2,11 +2,13 @@
 # include <iostream>
 # include <memory>
 
+// Declare implementation base class
 class LureCharacteristic {
     public:
         virtual std::string getCharacteristic() = 0;
 };
 
+// Declare implementation derived classes
 class Color : public LureCharacteristic {
     public:
         Color(std::string in_color);
@@ -39,11 +41,13 @@ class Depth : public LureCharacteristic {
         std::string m_depth;
 };
 
+// Declare abstraction interface base class
 class LureType {
     public:
         virtual void getLure() = 0;
 };
 
+// Declare abstraction interface derived classes
 class LeadJig : public LureType {
     std::shared_ptr<LureCharacteristic> m_color;
     std::shared_ptr<LureCharacteristic> m_weight;

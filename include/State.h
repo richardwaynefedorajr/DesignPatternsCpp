@@ -4,6 +4,7 @@
 
 class State;
 
+// Declare wrapper class for state class 
 class Subject {
     public:
         void setState(std::unique_ptr<State> state);
@@ -14,6 +15,7 @@ class Subject {
         std::unique_ptr<State> m_state;
 };
 
+// Declare base state class (pure virtual method accepts pointer to wrapper as argument)
 class State {
     public:
         State() { }
@@ -23,6 +25,7 @@ class State {
         std::string m_state;
 };
 
+// Declare derived state classes
 class State1 : public State {
     public:
         State1();

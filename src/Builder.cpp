@@ -1,6 +1,6 @@
 # include "Builder.h"
 
-// Product class method definitions
+// Define product class get/set methods
 void Truck::setMake(const std::string& make) { m_make = make; }
 void Truck::setDoors(const std::string& doors) { m_doors = doors; }
 void Truck::setEngine(const std::string& engine) { m_engine = engine; }
@@ -9,11 +9,11 @@ void Truck::printStats(){
     std::cout << m_drive << " " << m_make << " with " << m_engine << " and " << m_doors << std::endl; 
 }
 
-// Abstract builder class method definitions
+// Define abstract builder class methods
 std::unique_ptr<Truck> TruckBuilder::getTruck() { return std::move(m_truck); }
 void TruckBuilder::createNewTruck() { m_truck = std::unique_ptr<Truck>(new Truck); }
 
-// Derived builder class methods definitions 
+// Define derived builder class methods
 // Derived builder class methods call product class methods
 void RamBuilder::buildMake() { m_truck->setMake("RAM"); }
 void RamBuilder::buildDoors() { m_truck->setDoors("4 door extended cab"); }
@@ -25,7 +25,7 @@ void FordBuilder::buildDoors() { m_truck->setDoors("4 door crew cab"); }
 void FordBuilder::buildEngine() { m_truck->setEngine("V8 EcoBoost"); }
 void FordBuilder::buildDrive() { m_truck->setDrive("4WD"); }
 
-// Client method definitions
+// Define client method
 // Argument of makeTruck() is derived builder object which encapsulates desired product characteristics and calls base class methods to build
 void TruckDealership::lookAtTruck() { m_truckBuilder->getTruck()->printStats(); }
 void TruckDealership::makeTruck(std::unique_ptr<TruckBuilder> tb) {

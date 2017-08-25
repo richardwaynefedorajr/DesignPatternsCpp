@@ -2,7 +2,7 @@
 # include <string>
 # include <ctime>
 
-// Declaration of date subsystem class
+// Declare date subsystem class
 class DateClass {
     public:
         void getDate();
@@ -11,7 +11,7 @@ class DateClass {
         struct tm * m_time_now;
 };
 
-// Declaration of time subsystem class
+// Declare time subsystem class
 class TimeClass {
     public:
         void getTime();
@@ -20,7 +20,7 @@ class TimeClass {
         struct tm * m_time_now;
 };
 
-// Declaration of facade class to interface with time and date functionality
+// Declare facade class to interface with subsystem functionality
 class FacadeClass {
     public:
         void getDateAndTime();

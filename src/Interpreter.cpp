@@ -1,5 +1,6 @@
 # include "Interpreter.h"
 
+// Define constructor for base class interpreter: initialize derived classes for parsing
 Interpreter::Interpreter() {
     m_input = 0;
     m_hundred = std::unique_ptr<Hundred>( new Hundred(NULL) );
@@ -7,12 +8,15 @@ Interpreter::Interpreter() {
     m_one = std::unique_ptr<One>( new One(NULL) );
 }
 
+// Define method to set input to be parsed
 void Interpreter::setInput(int input) { m_input = input; }
 
+// Define interpreter/parsing functionality (delegate to overridden method of member instances of derived classes)
 void Interpreter::interpret() {
     if ( m_input < 1000 && m_input > 0 ) { 
         m_value = m_one->interpret(m_ten->interpret(m_hundred->interpret(m_input)));
 
+        // Handle incorrect output if values are in the "teens"
         if ( m_ten->m_tens == "teen" ) {
             switch ( m_value ) {
                 case 0:
@@ -66,6 +70,7 @@ void Interpreter::interpret() {
 
 }
 
+// Define overridden interpreter/parsing functionality (delegated by base class of which derived class is member)
 int Hundred::interpret(int number) { 
 
     switch ( number / 100 ) {

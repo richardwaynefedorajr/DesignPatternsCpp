@@ -3,6 +3,7 @@
 # include <vector>
 # include <memory>
 
+// Declare product class
 class Rectangle {
     public:
         Rectangle(int height, int width);
@@ -10,6 +11,7 @@ class Rectangle {
         int m_height, m_width;
 };
 
+// Declare flyweight to manage product instances
 class RectangleFactory {
     public:
         std::shared_ptr<Rectangle> getRectangle(int height, int width);

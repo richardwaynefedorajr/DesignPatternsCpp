@@ -1,10 +1,10 @@
 # include "Memento.h"
 
-// Set and get mementos of state
+// Define constructor and get functionality for memento class
 Memento::Memento(State state) { m_state = state; }
 State Memento::getState() { return m_state; }
 
-// Initialize state in constructor
+// Define constructor for person class: initialize state in constructor
 Person::Person() { 
     m_index = -1;
     m_state.m_height = 0;
@@ -14,7 +14,7 @@ Person::Person() {
     setMemento();
 }
 
-// Traverse stored mementos, set and get state
+// Define functionality to traverse stored mementos, set and get state
 // Note: if previous states are returned to and a new state is set, states which were saved before the regression will be deleted
 void Person::setMemento() { m_history.push_back( std::unique_ptr<Memento>( new Memento(m_state) ) ); ++m_index; }
 void Person::backState() { 
@@ -36,6 +36,7 @@ void Person::setState(int height, int weight, double bmi, double bodyfat) {
     setMemento();
 }
 
+// Define functionality to print state
 void Person::printState() {
     std::cout << "Height: " << m_state.m_height << " ";
     std::cout << "Weight: " << m_state.m_weight << " ";

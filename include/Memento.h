@@ -3,7 +3,7 @@
 # include <vector>
 # include <memory>
 
-// Declaration of struct storing an individual's body measurements
+// Declare state struct
 struct State {
     int m_height;
     int m_weight;
@@ -13,7 +13,7 @@ struct State {
 
 class Memento;
 
-// Declaration of class to store and traverse states of individual's body measurements 
+// Declare class to store and traverse state structs
 class Person {
     public:
         Person();
@@ -28,7 +28,7 @@ class Person {
         int m_index;
 };
 
-// Declaration of class to encapsulate mementos of Person class states
+// Declare class to encapsulate mementos of Person class states
 class Memento {
     public:
         Memento(State state);

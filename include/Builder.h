@@ -2,7 +2,7 @@
 # include <iostream>
 # include <memory>
 
-// Product class declaration
+// Declare product class
 class Truck {
     public:
         void setMake(const std::string& make);
@@ -14,7 +14,7 @@ class Truck {
         std::string m_make, m_doors, m_engine, m_drive;
 };
 
-// Abstract builder class declaration
+// Declare abstract builder class
 class TruckBuilder {
     public:
         virtual ~TruckBuilder() { };
@@ -28,7 +28,7 @@ class TruckBuilder {
         std::unique_ptr<Truck> m_truck;
 };
 
-// Derived builder class declarations
+// Declare derived builder class
 class RamBuilder : public TruckBuilder {
     public:
         virtual ~RamBuilder() { };
@@ -47,7 +47,7 @@ class FordBuilder : public TruckBuilder {
         virtual void buildDrive();
 };
 
-// Builder client declaration
+// Declare builder client
 // Argument of makeTruck() is derived builder object which encapsulates desired product
 class TruckDealership {
     public:

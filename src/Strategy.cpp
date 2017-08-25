@@ -1,12 +1,15 @@
 # include "Strategy.h"
 
+// Define interface and derived strategy constructors
 Interface::Interface() : m_strategy(NULL) { }
 Fibonacci::Fibonacci() : Sequence() { m_name = "Fibonacci"; }
 Triangle::Triangle() : Sequence() { m_name = "Triangle"; }
 Square::Square() : Sequence() { m_name = "Square"; }
 
+// Define method for client to set strategy
 void Interface::setStrategy(Sequence *strategy) { m_strategy = strategy; }
 
+// Define method for client to use strategy
 void Interface::getSequence(int num_elem) { 
     m_strategy->generateSequence(num_elem, m_sequence);
     std::cout << "First " << num_elem << " elements of the " << m_strategy->m_name << " Sequence: ";
@@ -17,6 +20,7 @@ void Interface::getSequence(int num_elem) {
     m_sequence.clear();
 }
 
+// Define derived strategy implementations
 void Fibonacci::generateSequence(int num_elem, std::vector<int> &sequence) { 
     static int num_iter = 0;
     while ( num_iter <= num_elem ) {

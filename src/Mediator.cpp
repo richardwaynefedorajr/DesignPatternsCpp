@@ -1,11 +1,11 @@
 # include "Mediator.h"
 
-// Constructors for stooge objects: states and mediator initialized
+// Define constructors for stooge objects: states and mediator initialized
 Larry::Larry(std::shared_ptr<InteractionMediator> mediator) { name = "Larry"; m_mediator = mediator; head_slapped = false; } 
 Curly::Curly(std::shared_ptr<InteractionMediator> mediator) { name = "Curly"; m_mediator = mediator; eyes_water = false; } 
 Moe::Moe(std::shared_ptr<InteractionMediator> mediator) { name = "Moe"; m_mediator = mediator; accidentally_hit = false; } 
 
-// Stooge interaction definitions and set/get utilities
+// Define stooge interaction and set/get utilities
 void Larry::accidentallyHitMoe() { m_mediator->LarryHitsMoe(this); }
 void Larry::getState() {
     if (head_slapped) { std::cout << name << "'s head slapped" << std::endl; }
@@ -31,14 +31,14 @@ void Moe::getState() {
 std::string Moe::getName() { return name; }
 void Moe::setState(bool state) { accidentally_hit = state; }
 
-// Definition of functionality to set managed stooges
+// Define functionality to set managed stooges
 void InteractionMediator::setStooges(std::shared_ptr<Larry> larry, std::shared_ptr<Curly> curly, std::shared_ptr<Moe> moe) {
     m_larry = larry;
     m_curly = curly;
     m_moe = moe;
 }
 
-// Definitions of mediator interactions
+// Define mediator interactions
 void InteractionMediator::LarryHitsMoe(Larry* larry) { 
     std::cout << "Instigator: " << larry->getName() << std::endl;
     m_moe->setState(true);

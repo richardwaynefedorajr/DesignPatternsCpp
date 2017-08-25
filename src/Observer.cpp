@@ -1,13 +1,16 @@
 # include "Observer.h"
 
+// Define observer constructor: initialize subject and state to be observed
 Observer::Observer(SubjectClass *subject, MonitorState state) {
     m_state = state;
     subject->activateObserver(this, state);
 }
 
+// Define observer method to get state being observed
 template <class T>
 void Observer::reportState(T state, std::string name) { std::cout << name << " state: " << state << std::endl; }
 
+// Define constructor for object to be observed: initialize states and observers
 SubjectClass::SubjectClass(std::string string1, std::string string2, double double1, double double2, int int1, int int2) :
  m_string1(string1), m_string2(string2), m_double1(double1), m_double2(double2), m_int1(int1), m_int2(int2) {
    
@@ -20,6 +23,7 @@ SubjectClass::SubjectClass(std::string string1, std::string string2, double doub
 
 };
 
+// Define method to set observer based on state to be observed: called by observer passing pointer to self as argument
 void SubjectClass::activateObserver(Observer *observer, MonitorState state) {
     switch ( state ) {
         case STRING1:
@@ -43,6 +47,7 @@ void SubjectClass::activateObserver(Observer *observer, MonitorState state) {
     }
 }
 
+// Define method to call observer methods to get each observed state
 void SubjectClass::publishState() {
     if ( m_string1_obs ) { m_string1_obs->reportState(m_string1, "String1"); }
     if ( m_string2_obs ) { m_string2_obs->reportState(m_string2, "String2"); }

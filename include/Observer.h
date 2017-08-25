@@ -2,10 +2,12 @@
 # include <iostream>
 # include <vector>
 
+// Declare enum to indicate state to observe
 enum MonitorState { STRING1, STRING2, DOUBLE1, DOUBLE2, INT1, INT2 };
 
 class SubjectClass;
 
+// Declare observer class
 class Observer {
     public:
         Observer(SubjectClass *subject, MonitorState state);
@@ -14,6 +16,7 @@ class Observer {
         MonitorState m_state;
 };
 
+// Declare class to be observed
 class SubjectClass {
     public:
         SubjectClass(std::string string1, std::string string2, double double1, double double2, int int1, int int2);
