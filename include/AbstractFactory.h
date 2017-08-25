@@ -6,7 +6,7 @@
 
 enum bankType {WF, BOA}; 
 
-// Abstract product class declaration
+// Declare abstract product class
 class Account {
     public:
         double m_balance;
@@ -15,7 +15,7 @@ class Account {
         virtual void getBalance() = 0;
 };
 
-// Abstract factory class declaration
+// Declare abstract factory class
 class Bank {
     public:
         Bank();
@@ -26,7 +26,7 @@ class Bank {
         virtual void getName() = 0;
 };
 
-// Derived product class declarations
+// Declare derived product classes
 class SavingsAccount : public Account { 
     public: 
         std::string m_account_type;
@@ -51,7 +51,7 @@ class CreditAccount : public Account {
         void getBalance();
 };
 
-// Derived factory class declarations
+// Declare derived factory classes
 class WellsFargo : public Bank { 
     public:
         std::string m_bank_name;
@@ -74,7 +74,7 @@ class BankOfAmerica : public Bank {
         void getName();
 };
 
-// Client interface declaration
+// Declare client interface
 class BankPatron {
     private:
         std::unique_ptr<Bank> m_bank;

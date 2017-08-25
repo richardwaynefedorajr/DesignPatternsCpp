@@ -2,6 +2,7 @@
 # include <iostream>
 # include <memory>
 
+// Declare subject to be handled by proxy 
 class ProxySubject {
     public:
         ProxySubject();
@@ -11,6 +12,7 @@ class ProxySubject {
         int m_state;
 };
 
+// Declare proxy to handle subject
 class Proxy {
     public:
         Proxy();

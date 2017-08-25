@@ -1,6 +1,6 @@
 # include <string>
 
-// Declarations of a singleton class implementation
+// Declare singleton class
 class SingletonClass {
     public:
         std::string m_string;

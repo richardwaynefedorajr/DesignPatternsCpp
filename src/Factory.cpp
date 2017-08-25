@@ -1,6 +1,6 @@
 # include "Factory.h"
 
-// Construct derived lure class instances given input characteristics
+// Define constructors for derived product classes
 FactoryJig::FactoryJig(std::string char1, std::string char2, std::string char3){
     weight = char1;
     head_type = char2;
@@ -31,14 +31,14 @@ SoftPlastic::SoftPlastic(std::string char1, std::string char2, std::string char3
     color_pattern = char3;
 }
 
-// Overridden methods of lure base class to print lure characteristics
+// Define overridden methods of base product class to print product characteristics
 void FactoryJig::getLure() { std::cout << weight << " " << head_type << " jig with " << trailer_type << " trailer" << std::endl; }
 void Spinner::getLure() { std::cout << weight << " spinner with " << blade_pattern << " " << blade_type << " blade" << std::endl; }
 void FactoryPlug::getLure() { std::cout << length << " " << color_pattern << " " << plug_type << std::endl; }
 void FactoryFly::getLure() { std::cout << length << " " << color_pattern << " " << tied_pattern << std::endl; }
 void SoftPlastic::getLure() { std::cout << length << " " << color_pattern << " " << style << std::endl; }
 
-// Lure class factory method to fill tackle box with different lures
+// Define base class factory method to produce various derived class product instances
 std::unique_ptr<Lure> Lure::setLure(lureTypes type, const std::string& char1, const std::string& char2, const std::string& char3) {
     if (type == JIG) { return std::unique_ptr<Lure> ( new FactoryJig(char1, char2, char3) ); }
     else if (type == SPINNER) { return std::unique_ptr<Lure>( new Spinner(char1, char2, char3) ); }

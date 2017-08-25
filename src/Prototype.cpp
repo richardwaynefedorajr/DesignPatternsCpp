@@ -1,11 +1,13 @@
 # include "Prototype.h"
 
+// Define factory class: initialize derived prototype instances
 Factory::Factory() {
     m_A1 = std::unique_ptr<A>( new A1 );
     m_A2 = std::unique_ptr<A>( new A2 );
     m_A3 = std::unique_ptr<A>( new A3 );
 }
 
+// Define factory method to create additional instances of derived prototype classes
 std::unique_ptr<A> Factory::getA(Type type) {
     switch ( type ) {
         case TYPEA1:
@@ -17,6 +19,7 @@ std::unique_ptr<A> Factory::getA(Type type) {
     }
 }
 
+// Define derived prototype class methods: return new instance of self
 std::unique_ptr<A> A1::clone() { return std::move( std::unique_ptr<A> ( new A1 ) ); }
 void A1::action() { std::cout << "A1 action" << std::endl; }
 

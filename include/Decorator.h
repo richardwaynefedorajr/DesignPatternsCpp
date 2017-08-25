@@ -2,13 +2,13 @@
 # include <iostream>
 # include <memory>
 
-// Declaration of "super" base class parent to base class to be decorated and decorator base class
+// Declare "super" base class parent to base class to be decorated and decorator base class
 class WeaponSystem {
     public:
         virtual void getWeaponSystem() = 0;
 };
 
-// Declaration of base class to be decorated
+// Declare base class to be decorated (inherit from "super" base class)
 class AssaultRifle : public WeaponSystem {
     public:
         AssaultRifle (std::string in_platform);
@@ -17,7 +17,7 @@ class AssaultRifle : public WeaponSystem {
         std::string m_platform;
 };
 
-// Declaration of decorator base class
+// Declare decorator base class (inherit from "super" base class)
 class WeaponAccessories : public WeaponSystem {
     public:
         WeaponAccessories(std::shared_ptr<WeaponSystem> in_platform);
@@ -26,7 +26,7 @@ class WeaponAccessories : public WeaponSystem {
         std::shared_ptr<WeaponSystem> m_platform;
 };
 
-// Declaration of derived decorator classes
+// Declare derived decorator classes
 class Scope : public WeaponAccessories {
     public:
         Scope(std::shared_ptr<WeaponSystem> in_platform, std::string in_scope) : WeaponAccessories(in_platform) { 

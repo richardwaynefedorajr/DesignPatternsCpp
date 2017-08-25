@@ -1,6 +1,7 @@
 # include <iostream>
 # include <vector>
 
+// Declare base strategy class
 class Sequence {
     public:
         Sequence() { }
@@ -8,6 +9,7 @@ class Sequence {
         std::string m_name;
 };
 
+// Declare interface class accessible to client
 class Interface {
     public:
         Interface();
@@ -18,6 +20,7 @@ class Interface {
         std::vector<int> m_sequence;
 };
 
+// Declare derived strategy classes
 class Fibonacci : public Sequence {
     public:
         Fibonacci();

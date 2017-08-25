@@ -3,16 +3,17 @@
 # include <string>
 # include <memory>
 
+// Declare enum corresponding to different lure types
 enum lureTypes {JIG, SPINNER, PLUG, FLY, SOFTPLASTIC};
 
-// Declaration of a lure base class to create derived class instances
+// Declare product base class
 class Lure {
     public:
         static std::unique_ptr<Lure> setLure(lureTypes type, const std::string& char1, const std::string& char2, const std::string& char3);
         virtual void getLure() = 0;
 };
 
-// Declaration of derived lure classes of various types
+// Declare derived product classes
 class FactoryJig : public Lure {
     public:
         FactoryJig(std::string characteristic1, std::string characteristic2, std::string characteristic3);

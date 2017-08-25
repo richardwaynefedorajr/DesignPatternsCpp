@@ -6,6 +6,7 @@ class Hundred;
 class Ten;
 class One;
 
+// Declare base interpreter class to manage derived classes for parsing inputs
 class Interpreter {
     public:
         Interpreter();
@@ -21,6 +22,7 @@ class Interpreter {
         int m_input;
 };
 
+// Declare derived interpreter classes for parsing
 class Hundred : public Interpreter {
     public:
         Hundred(int *dummy) : Interpreter(NULL) { }

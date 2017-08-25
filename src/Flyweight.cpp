@@ -1,7 +1,9 @@
 # include "Flyweight.h"
 
+// Define product constructor
 Rectangle::Rectangle(int height, int width) : m_height(height), m_width(width) { }
 
+// Define functionality to return existing or new product instance depending on whether an instance exists with desired parameters or not
 std::shared_ptr<Rectangle> RectangleFactory::getRectangle(int height, int width) {
    
     for (int i = 0; i < m_existing_rectangles.size(); ++i) {
@@ -18,6 +20,7 @@ std::shared_ptr<Rectangle> RectangleFactory::getRectangle(int height, int width)
 
 }
 
+// Define functionality to display product
 void Rectangle::draw(int x_corner, int y_corner) {
 
     std::cout << m_height << "x" << m_width << " rectangle at " << x_corner << "," << y_corner << std::endl;

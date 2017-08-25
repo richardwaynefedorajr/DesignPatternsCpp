@@ -3,14 +3,17 @@
 # include <vector>
 # include <memory>
 
+// Declare enums corresponding to derived prototypes
 enum Type { TYPEA1, TYPEA2, TYPEA3 };
 
+// Declare base prototype class
 class A {
     public:
         virtual std::unique_ptr<A> clone() = 0;
         virtual void action() = 0;
 };
 
+// Declare derived prototype classes
 class A1 : public A {
     public:
         std::unique_ptr<A> clone();
@@ -29,6 +32,7 @@ class A3 : public A {
         void action();
 };
 
+// Declare factory class to maintain prototype instances 
 class Factory {
     public:
         Factory();

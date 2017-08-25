@@ -3,6 +3,7 @@
 
 class LureVisitor;
 
+// Declaration of visited base element (pure virtual method accepts reference to visitor object as argument)
 class Fish {
     public:
         Fish() { }
@@ -10,6 +11,7 @@ class Fish {
         std::string m_species;
 };
 
+// Declare derived visited elements
 class Bass : public Fish {
     public: 
         Bass();
@@ -28,7 +30,7 @@ class Musky : public Fish {
         void seeLure(LureVisitor &lure);
 };
 
-// Visitor
+// Declare visitor base class (pure virtual method overloaded to accept pointer to each derived visited element)
 class LureVisitor {
     public:
         LureVisitor() { }
@@ -38,6 +40,7 @@ class LureVisitor {
         std::string m_name;
 };
 
+// Declare derived visitor classes
 class Jig : public LureVisitor {
     public:
         Jig();
