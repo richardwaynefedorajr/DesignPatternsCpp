@@ -13,7 +13,7 @@
 //# include "Decorator.h"
 //# include "Bridge.h"
 //# include "CoR.h"
-# include "Command.h"
+//# include "Command.h"
 //# include "Composite.h"
 //# include "Flyweight.h"
 //# include "Interpreter.h"
@@ -23,6 +23,7 @@
 //# include "State.h"
 //# include "Strategy.h"
 //# include "Visitor.h"
+//# include "FunctionPointers.h"
 
 int main(int argc, char *argv[]) {
 
@@ -374,6 +375,35 @@ int main(int argc, char *argv[]) {
     //    fish.at(i)->seeLure(fly);
     //    fish.at(i)->seeLure(plug);
     //} 
+
+    // --- ######################################## --- 
+    
+    // FUNCTION POINTER TEST CASES
+
+    // Test free function
+    //std::function<void(std::string)> freeFunction = testFunction;
+    //freeFunction("free function input");
+
+    //// Test lambda
+    //int i = 0, j = 0;
+    //std::function<void(int,int)> lambdaFunction = [&](int i, int j) { 
+    //    std::cout << "Values: " << i << " " << j << std::endl; 
+    //};
+
+    //lambdaFunction(i,j);
+
+    //// Test std::bind
+    //std::function<void()> bindFunction = std::bind(testFunction, "std::bind input");
+    //bindFunction();
+
+    //// Test member function
+    //std::function<void(classMemberMethod&, std::string)> memberFunction = &classMemberMethod::memberMethod;
+    //classMemberMethod Class1("Class1 input");
+    //memberFunction(Class1, "Class1 member method input");
+    //
+    //// Test functor
+    //std::function<void()> functorFunction = FunctorClass();
+    //functorFunction();
 
     // --- ######################################## --- 
 
