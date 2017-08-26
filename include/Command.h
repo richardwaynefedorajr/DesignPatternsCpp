@@ -9,7 +9,10 @@ class Command {
     public:
         TeamMember *m_teammember;
         void(TeamMember::*m_action)();
-        Command(TeamMember *teammember = 0, void(TeamMember::*in_action)() = 0);
+        // std::function
+        // lambda
+        // typedef typedef void(TeamMember::*m_actionTYPEDEF)();
+        Command(TeamMember *teammember = 0, void(TeamMember::*action)() = 0);
         void execute();
 };
 

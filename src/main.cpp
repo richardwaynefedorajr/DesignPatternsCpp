@@ -13,7 +13,7 @@
 //# include "Decorator.h"
 //# include "Bridge.h"
 //# include "CoR.h"
-//# include "Command.h"
+# include "Command.h"
 //# include "Composite.h"
 //# include "Flyweight.h"
 //# include "Interpreter.h"
