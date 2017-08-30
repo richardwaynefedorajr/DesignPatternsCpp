@@ -23,6 +23,8 @@
 //# include "State.h"
 //# include "Strategy.h"
 //# include "Visitor.h"
+//# include "FunctionPointers.h"
+//# include "PointerVariations.h"
 
 int main(int argc, char *argv[]) {
 
@@ -379,6 +381,77 @@ int main(int argc, char *argv[]) {
     //    fish.at(i)->seeLure(plug);
     //} 
 
+    // --- ######################################## --- 
+    
+    // FUNCTION POINTER TEST CASES
+
+    // Test free function
+    //std::function<void(std::string)> freeFunction = testFunction;
+    //freeFunction("free function input");
+
+    //// Test lambda
+    //int i = 0, j = 0;
+    //std::function<void(int,int)> lambdaFunction = [&](int i, int j) { 
+    //    std::cout << "Values: " << i << " " << j << std::endl; 
+    //};
+
+    //lambdaFunction(i,j);
+
+    //// Test std::bind
+    //std::function<void()> bindFunction = std::bind(testFunction, "std::bind input");
+    //bindFunction();
+
+    //// Test member function
+    //std::function<void(classMemberMethod&, std::string)> memberFunction = &classMemberMethod::memberMethod;
+    //classMemberMethod Class1("Class1 input");
+    //memberFunction(Class1, "Class1 member method input");
+    //
+    //// Test functor
+    //std::function<void()> functorFunction = FunctorClass();
+    //functorFunction();
+
+    // --- ######################################## --- 
+    
+    // TEST CASES FOR C++ FUNCTIONALITY
+
+    // Create scope to see what happens when things go out of scope
+    
+    //std::unique_ptr<int> unique_value( new int(1) );
+    //std::shared_ptr<int> shared_value( new int(2) );
+    //std::cout << "Shared pointer location: " << shared_value.get() << " value: " << *shared_value << " usage count: " << shared_value.use_count() << std::endl;
+    //int *value = new int(3);
+
+    //{
+
+    //    TestPointer tp1( std::unique_ptr<int> (new int(1) ), std::shared_ptr<int> (new int(2) ), new int(3) );
+    //           
+    //    TestPointer tp2(std::move(unique_value), shared_value, value);
+
+    //    std::cout << "Pointers initialized in argument:" << std::endl;
+    //    tp1.printPointers();
+    //    std::cout << "Pointers initialized outside of class and passed as arguments:" << std::endl;
+    //    tp2.printPointers();
+
+    //    // Check for dangling pointers
+    //    if (unique_value.get()) {
+    //        std::cout << "Unique pointer location: " << unique_value.get() << " value: " << *unique_value << std::endl;
+    //    }
+    //    else { std::cout << "Unique ptr is now nullptr: watch out for dangling pointers!" << std::endl; }
+    //    std::cout << "Shared pointer location: " << shared_value.get() << " value: " << *shared_value << " usage count: " << shared_value.use_count() << std::endl;
+    //    std::cout << "Raw pointer location: " << value << " value: " << *value << std::endl;
+
+    //}
+
+    //if (unique_value.get()) {
+    //    std::cout << "Unique pointer location: " << unique_value.get() << " value: " << *unique_value << std::endl;
+    //}
+    //else { std::cout << "Unique ptr is now nullptr: watch out for dangling pointers!" << std::endl; }
+    //std::cout << "Shared pointer location: " << shared_value.get() << " value: " << *shared_value << " usage count: " << shared_value.use_count() << std::endl;
+    //std::cout << "Raw pointer location: " << value << " value: " << *value << std::endl;
+
+
+    // Potential memory leak -> TestPointer class does not manage resource, just maintains pointer 
+    //delete value; 
     // --- ######################################## --- 
 
     return 0;
