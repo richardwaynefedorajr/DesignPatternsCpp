@@ -62,13 +62,12 @@ int main(int argc, char *argv[]) {
     // BUILDER DESIGN PATTERN TEST
     
     //TruckDealership dealer;
-    //std::unique_ptr<RamBuilder> ram( new RamBuilder() );
-    //std::unique_ptr<FordBuilder> ford( new FordBuilder() );
 
-    //dealer.makeTruck(std::move(ram));
+    //// TruckDealership instance takes ownership of builder instance
+    //dealer.makeTruck( std::unique_ptr<RamBuilder> ( new RamBuilder() ) );
     //dealer.lookAtTruck();
 
-    //dealer.makeTruck(std::move(ford));
+    //dealer.makeTruck( std::unique_ptr<FordBuilder> ( new FordBuilder() ) );
     //dealer.lookAtTruck();
 
     // --- ######################################## --- 
@@ -79,14 +78,19 @@ int main(int argc, char *argv[]) {
     //double savingsDeposit = 1000;
     //double checkingDeposit = 2500;
     //double creditLine = 2500;
-    //
-    //std::unique_ptr<Bank> bank;
-    //
-    //if (whichBank == WF) { bank = std::unique_ptr<Bank>( new WellsFargo ); }
-    //else { bank = std::unique_ptr<Bank>( new BankOfAmerica ); }
+   
+    //std::unique_ptr<BankPatron> patron;
 
-    //BankPatron patron(std::move(bank), savingsDeposit, checkingDeposit, creditLine);
-    //patron.viewAccounts();
+    //if (whichBank == WF) { 
+    //    patron.reset( new BankPatron(std::unique_ptr<Bank>( new WellsFargo ), savingsDeposit, checkingDeposit, creditLine) );
+    //}
+    //
+    //else { 
+    //    patron.reset( new BankPatron(std::unique_ptr<Bank>( new BankOfAmerica ), savingsDeposit, checkingDeposit, creditLine) );
+ 
+    //}
+
+    //patron->viewAccounts();
     
     // --- ######################################## --- 
     
@@ -144,7 +148,7 @@ int main(int argc, char *argv[]) {
 
     //std::shared_ptr<Larry> larry( new Larry(im) ); 
     //std::shared_ptr<Curly> curly( new Curly(im) );
-    //std::shared_ptr<Moe> moe( new Moe(im) t head ahead of master);
+    //std::shared_ptr<Moe> moe( new Moe(im) );
     //
     //im->setStooges(larry, curly, moe);
 
@@ -263,7 +267,7 @@ int main(int argc, char *argv[]) {
     //std::vector< std::unique_ptr<CompositeLure> > box;
 
     //for (int i = 0; i < num_lure_types; ++i) { 
-    //    box.push_back( std::move( std::unique_ptr<CompositeLure>( new TackleBox() ) ) ); 
+    //    box.push_back( std::unique_ptr<CompositeLure>( new TackleBox() ) ); 
     //}
     //
     //for (int i = 0; i < num_lure_types; ++i) { 
