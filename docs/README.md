@@ -28,6 +28,8 @@ Implementation of the decorator design pattern, in which assault rifle accessori
 ## Bridge.h/cpp
 Implementation of the bridge design pattern, in which the interface and implementation specifics for creating fishing lures are abstracted behind LureType and LureCharacteristic base classes
 
+In test implementation (main.cpp), prefer std::unique_ptr for LureType instantiation because in a real application, another object instance may need to manage the resource using a base class pointer 
+
 ## CoR.h/cpp
 Implementation of the chain of responsibility design pattern, in which a base class manages a pointer to the next object instance in the chain of responsibiity for processing fast food orders
 
