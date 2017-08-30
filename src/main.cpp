@@ -24,6 +24,7 @@
 //# include "Strategy.h"
 //# include "Visitor.h"
 //# include "FunctionPointers.h"
+# include "PointerVariations.h"
 
 int main(int argc, char *argv[]) {
 
@@ -409,6 +410,12 @@ int main(int argc, char *argv[]) {
     //std::function<void()> functorFunction = FunctorClass();
     //functorFunction();
 
+    // --- ######################################## --- 
+    
+    // TEST CASES FOR C++ FUNCTIONALITY
+
+    
+    
     // --- ######################################## --- 
 
     return 0;
