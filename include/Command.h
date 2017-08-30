@@ -9,7 +9,7 @@ class Command {
     public:
         TeamMember *m_teammember;
         void(TeamMember::*m_action)();
-        Command(TeamMember *teammember = 0, void(TeamMember::*in_action)() = 0);
+        Command(TeamMember *teammember = 0, void(TeamMember::*action)() = 0);
         void execute();
 };
 
