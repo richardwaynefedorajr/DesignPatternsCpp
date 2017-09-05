@@ -1,3 +1,6 @@
+// This file belongs to DesignPatternsCpp, a project designed to test and explore various C++ design patterns
+// This source code is available under the MIT License
+// Description:
 # include "Command.h"
 
 // Define command class constructor (accept pointers to actor and action to execute as arguments)

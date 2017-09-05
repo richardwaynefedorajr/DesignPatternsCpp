@@ -1,3 +1,6 @@
+// This file belongs to DesignPatternsCpp, a project designed to test and explore various C++ design patterns
+// This source code is available under the MIT License
+// Description:
 # include "PointerVariations.h"
 
 TestPointer::TestPointer(std::unique_ptr<int> unique_value, std::shared_ptr<int> shared_value, int *value) {
