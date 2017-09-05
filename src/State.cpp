@@ -1,3 +1,6 @@
+// This file belongs to DesignPatternsCpp, a project designed to test and explore various C++ design patterns
+// This source code is available under the MIT License
+// Description:
 # include "State.h"
 
 // Define wrapper functionality to get, set, and delegate to state instances (passing pointer to self in the case of delegation)

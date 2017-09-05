@@ -1,3 +1,6 @@
+// This file belongs to DesignPatternsCpp, a project designed to test and explore various C++ design patterns
+// This source code is available under the MIT License
+// Description:
 # include "Mediator.h"
 
 // Define constructors for stooge objects: states and mediator initialized
