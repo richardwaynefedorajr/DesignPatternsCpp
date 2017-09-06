@@ -1,6 +1,7 @@
 // This file belongs to DesignPatternsCpp, a project designed to test and explore various C++ design patterns
 // This source code is available under the MIT License
-// Description
+// Description: Declarations for implementation of the state design pattern, in which states are represented in derived classes owned by a member pointer of the subject class
+
 # include <string>
 # include <iostream>
 # include <memory>

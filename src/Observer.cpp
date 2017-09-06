@@ -1,6 +1,7 @@
 // This file belongs to DesignPatternsCpp, a project designed to test and explore various C++ design patterns
 // This source code is available under the MIT License
-// Description:
+// Description: Definitions for implementation of the observer design pattern, in which a subject class uses an object class interface to provide updates on the state of its members
+
 # include "Observer.h"
 
 // Define observer constructor: initialize subject and state to be observed

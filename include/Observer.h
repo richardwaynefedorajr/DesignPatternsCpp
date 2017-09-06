@@ -1,6 +1,7 @@
 // This file belongs to DesignPatternsCpp, a project designed to test and explore various C++ design patterns
 // This source code is available under the MIT License
-// Description
+// Description: Declarations for implementation of the observer design pattern, in which a subject class uses an object class interface to provide updates on the state of its members
+
 # include <string>
 # include <iostream>
 # include <vector>

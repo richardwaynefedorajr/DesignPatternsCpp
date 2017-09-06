@@ -1,6 +1,7 @@
 // This file belongs to DesignPatternsCpp, a project designed to test and explore various C++ design patterns
 // This source code is available under the MIT License
-// Description:
+// Description: Definitions for implementation of the state design pattern, in which states are represented in derived classes owned by a member pointer of the subject class
+
 # include "State.h"
 
 // Define wrapper functionality to get, set, and delegate to state instances (passing pointer to self in the case of delegation)

@@ -1,6 +1,7 @@
 // This file belongs to DesignPatternsCpp, a project designed to test and explore various C++ design patterns
 // This source code is available under the MIT License
-// Description:
+// Description: Definitions for implementation of the interpreter design pattern, in which the rules to translate an integer into text are distributed accross derived interpreter subclasses
+
 # include "Interpreter.h"
 
 // Define constructor for base class interpreter: initialize derived classes for parsing

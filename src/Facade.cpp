@@ -1,6 +1,7 @@
 // This file belongs to DesignPatternsCpp, a project designed to test and explore various C++ design patterns
 // This source code is available under the MIT License
-// Description:
+// Description: Definitions for implementation of the facade design pattern, in which an instance of the FacadeClass provides a single interface to subsystems which provide the current date and time
+
 # include "Facade.h"
 
 // Define facade interface: encapsulate subsystem functionality
