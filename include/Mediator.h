@@ -1,6 +1,7 @@
 // This file belongs to DesignPatternsCpp, a project designed to test and explore various C++ design patterns
 // This source code is available under the MIT License
-// Description
+// Description: Declarations for implementation of the mediator design pattern, in which the interaction between "stooge" objects, representing the classic slapstick comics The Three Stooges, is encapsulated in a mediator class
+
 # include <string>
 # include <iostream>
 # include <memory>

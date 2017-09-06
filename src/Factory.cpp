@@ -1,6 +1,7 @@
 // This file belongs to DesignPatternsCpp, a project designed to test and explore various C++ design patterns
 // This source code is available under the MIT License
-// Description:
+// Description: Definitions for implementation of the factory design pattern, in which factory method setLure of base class Lure creates instances of child class objects (representing different types of fishing lures in a tacklebox)
+
 # include "Factory.h"
 
 // Define constructors for derived product classes

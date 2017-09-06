@@ -1,6 +1,7 @@
 // This file belongs to DesignPatternsCpp, a project designed to test and explore various C++ design patterns
 // This source code is available under the MIT License
-// Description
+// Description: Declarations for implementation of the chain of responsibility design pattern, in which a base class manages a pointer to the next object instance in the chain of responsibiity for processing fast food orders
+
 # include <string>
 # include <iostream>
 

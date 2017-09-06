@@ -1,6 +1,7 @@
 // This file belongs to DesignPatternsCpp, a project designed to test and explore various C++ design patterns
 // This source code is available under the MIT License
-// Description:
+// Description: Definitions for implementation of the prototype design pattern, in which a factory class maintains a set of prototype instances of a derived class which clone themselves to produce additional instances
+
 # include "Prototype.h"
 
 // Define factory class: initialize derived prototype instances

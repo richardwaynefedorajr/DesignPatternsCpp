@@ -1,6 +1,7 @@
 // This file belongs to DesignPatternsCpp, a project designed to test and explore various C++ design patterns
 // This source code is available under the MIT License
-// Description:
+// Description: Definitions for implementation of the builder design pattern, in which a truck's characteristics are defined by the member functions of a builder object, which is used by the dealership object to create and supply the truck to the client
+
 # include "Builder.h"
 
 // Define product class get/set methods

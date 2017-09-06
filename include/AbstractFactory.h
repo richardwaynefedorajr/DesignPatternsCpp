@@ -1,6 +1,7 @@
 // This file belongs to DesignPatternsCpp, a project designed to test and explore various C++ design patterns
 // This source code is available under the MIT License
-// Description
+// Description: Declarations for implementation of the abstract factory design pattern, in which a bank base class is overloaded for various branch names and produces a set of accounts
+
 # include <iostream>
 # include <stdio.h>
 # include <string>

@@ -1,6 +1,7 @@
 // This file belongs to DesignPatternsCpp, a project designed to test and explore various C++ design patterns
 // This source code is available under the MIT License
-// Description
+// Description: Declarations for implementation of the decorator design pattern, in which assault rifle accessories are added to a base class dynamically
+
 # include <string>
 # include <iostream>
 # include <memory>

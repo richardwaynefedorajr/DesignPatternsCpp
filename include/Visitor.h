@@ -1,6 +1,7 @@
 // This file belongs to DesignPatternsCpp, a project designed to test and explore various C++ design patterns
 // This source code is available under the MIT License
-// Description
+// Description: Declarations for implementation of the visitor design pattern, in which a visitor lure class "visits" a fish class and either catches or does not catch them depending on the derived class of each
+
 # include <string>
 # include <iostream>
 

@@ -1,6 +1,7 @@
 // This file belongs to DesignPatternsCpp, a project designed to test and explore various C++ design patterns
 // This source code is available under the MIT License
-// Description:
+// Description: Definitions for implementation of the proxy design pattern, in which a proxy provides the client "read/write" access to a subject
+
 # include "Proxy.h"
 
 // Define subject funtionality
