@@ -48,3 +48,40 @@ void Person::printState() {
     std::cout << "Bodyfat: " << m_state.m_bodyfat << std::endl;
     std::cout << "Index: " << m_index << " Mementos: " << m_history.size() << std::endl;
 }
+
+int main(int argc, char *argv[]) {
+
+    std::cout << "Memento design pattern test:" << std::endl;
+    
+    Person person;
+    person.printState();
+    person.setState(70, 200, 25.0, 30.0);
+    person.printState();
+    person.setState(70, 210, 25.0, 30.0);
+    person.printState();
+    person.setState(70, 220, 25.0, 30.0);
+    person.printState();
+    person.setState(70, 230, 25.0, 30.0);
+    person.printState();
+    person.backState();
+    person.printState();
+    person.backState();
+    person.printState();
+    person.forwardState();
+    person.printState();
+    person.setState(70, 180, 25.0, 30.0);
+    person.printState();
+    person.forwardState();
+    person.printState();
+    person.forwardState();
+    person.printState();
+    person.forwardState();
+    person.printState();
+    person.backState();
+    person.printState();
+    person.forwardState();
+    person.printState();
+
+    return 0;
+
+} 

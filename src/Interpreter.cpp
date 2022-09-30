@@ -190,3 +190,15 @@ int One::interpret(int number) {
 
     return number; 
 }
+
+int main(int argc, char *argv[]) {
+   
+    std::cout << "Interpreter design pattern test:" << std::endl;
+
+    Interpreter i;
+    i.setInput(55);
+    i.interpret();
+    
+    return 0;
+
+} 

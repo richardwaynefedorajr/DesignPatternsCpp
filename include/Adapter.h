@@ -3,6 +3,7 @@
 // Description: Declarations for implementation of the adapter design pattern, in which a client using weight in pounds may interact through the adapter with an interface expecting mass in kilograms
 
 # include <iostream>
+# include <memory>
 
 // Declare gravitational constant
 # define M_G 9.81

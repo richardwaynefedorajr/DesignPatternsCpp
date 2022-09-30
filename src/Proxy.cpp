@@ -16,3 +16,16 @@ int Proxy::getProxySubjectState() {
     return m_subject->getState();
 }
 void Proxy::setProxySubjectState(int state) { m_subject->setState(state); }
+
+int main(int argc, char *argv[]) {
+   
+    std::cout << "Proxy design pattern test:" << std::endl;
+
+    Proxy p;
+    std::cout << "ProxySubject state after lazy initialization: " << p.getProxySubjectState() << std::endl;
+    p.setProxySubjectState(5);
+    std::cout << "ProxySubject state after setting state: " << p.getProxySubjectState() << std::endl;
+
+    return 0;
+
+} 

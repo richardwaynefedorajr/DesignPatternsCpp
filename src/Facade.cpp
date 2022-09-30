@@ -25,3 +25,14 @@ void TimeClass::getTime() {
     m_time_now = localtime( & m_time );
     std::cout << m_time_now->tm_hour << ":" << m_time_now->tm_min << ":" << m_time_now->tm_sec << std::endl; 
 }
+
+int main(int argc, char *argv[]) {
+
+    std::cout << "Facade design pattern test:" << std::endl;
+
+    FacadeClass DateAndTimeInterface;
+    DateAndTimeInterface.getDateAndTime();
+
+    return 0;
+
+}

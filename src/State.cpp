@@ -47,3 +47,20 @@ void State3::state1(Subject *subject) {
     subject->setState(std::unique_ptr<State>( new State1() ) );
     subject->getState();
 }
+
+int main(int argc, char *argv[]) {
+   
+    std::cout << "State design pattern test:" << std::endl;
+
+    Subject s;
+    s.setState( std::unique_ptr<State>( new State1() ) );
+    s.m_state->state1(&s);
+    s.m_state->state2(&s);
+    s.m_state->state3(&s);
+    s.m_state->state1(&s);
+    s.m_state->state2(&s);
+    s.m_state->state3(&s);
+    
+    return 0;
+
+} 
