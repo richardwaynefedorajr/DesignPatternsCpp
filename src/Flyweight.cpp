@@ -43,3 +43,19 @@ void Rectangle::draw(int x_corner, int y_corner) {
         std::cout << std::endl;
     }
 } 
+
+int main(int argc, char *argv[]) {
+   
+    std::cout << "Flyweight design pattern test:" << std::endl;
+
+    RectangleFactory rf;
+    std::shared_ptr<Rectangle> rect1 = rf.getRectangle(3,2);
+    std::shared_ptr<Rectangle> rect2 = rf.getRectangle(2,2);
+    rect1->draw(0,0);    
+    rect2->draw(1,1);    
+
+    std::cout << "Check pointers: rect1 - " << rect1 << " rect2 - " << rect2 << std::endl;
+    
+    return 0;
+
+} 

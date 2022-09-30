@@ -50,3 +50,18 @@ void Square::generateSequence(int num_elem, std::vector<int> &sequence) {
         sequence.push_back( (i+1)*(i+1) );
     }
 }
+
+int main(int argc, char *argv[]) {
+   
+    std::cout << "Strategy design pattern test:" << std::endl;
+
+    Interface i;
+    Fibonacci f;
+    Triangle t;
+    Square s;
+    i.setStrategy(&s);
+    i.getSequence(10); 
+
+    return 0;
+
+} 

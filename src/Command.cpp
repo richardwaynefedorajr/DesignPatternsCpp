@@ -24,6 +24,21 @@ void TeamMember::runLaps() { std::cout << m_name << " run laps" << std::endl; }
 void TeamMember::runDBDrills() { std::cout << m_name << " run DB drills" << std::endl; } 
 void TeamMember::runLinemanDrills() { std::cout << m_name << " run lineman drills" << std::endl; } 
 
+int main(int argc, char *argv[]) {
+   
+    std::cout << "Command design pattern test:" << std::endl;
 
+    TeamMember db("Defensive back", std::unique_ptr<Command> ( new Command() ) );
+    TeamMember rb("Running back", std::unique_ptr<Command> ( new Command() ) );
+    TeamMember ol("Offensive line", std::unique_ptr<Command> ( new Command() ) );
+    TeamMember db_coach("Defensive backs coach", std::unique_ptr<Command> ( new Command(&db, &TeamMember::runDBDrills) ) );
+    TeamMember rb_coach("Running backs coach", std::unique_ptr<Command> ( new Command(&rb, &TeamMember::runLaps) ) );
+    TeamMember ol_coach("Offensive line coach", std::unique_ptr<Command> ( new Command(&ol, &TeamMember::runLinemanDrills) ) );
 
+    db_coach.commandDrills();
+    rb_coach.commandDrills();
+    ol_coach.commandDrills();
+    
+    return 0;
 
+} 

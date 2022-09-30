@@ -32,3 +32,26 @@ void Fly::present(Musky *musky) { std::cout << musky->m_species << " does not st
 void Plug::present(Bass *bass) { std::cout << bass->m_species << " does not strike " << m_name << std::endl; }
 void Plug::present(Trout *trout) { std::cout << trout->m_species << " does not strike " << m_name << std::endl; }
 void Plug::present(Musky *musky) { std::cout << musky->m_species << " strikes " << m_name << std::endl; }
+
+int main(int argc, char *argv[]) {
+   
+    std::cout << "Visitor design pattern test:" << std::endl;
+
+    std::vector< std::unique_ptr<Fish> > fish;
+    fish.push_back( std::unique_ptr<Fish> ( new Bass() ) ); 
+    fish.push_back( std::unique_ptr<Fish> ( new Trout() ) ); 
+    fish.push_back( std::unique_ptr<Fish> ( new Musky() ) );
+
+    Jig jig;
+    Fly fly;
+    Plug plug;
+
+    for ( int i = 0; i < fish.size(); ++i ) {
+        fish.at(i)->seeLure(jig);
+        fish.at(i)->seeLure(fly);
+        fish.at(i)->seeLure(plug);
+    } 
+
+    return 0;
+
+} 

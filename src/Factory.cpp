@@ -3,6 +3,7 @@
 // Description: Definitions for implementation of the factory design pattern, in which factory method setLure of base class Lure creates instances of child class objects (representing different types of fishing lures in a tacklebox)
 
 # include "Factory.h"
+# include <vector>
 
 // Define constructors for derived product classes
 FactoryJig::FactoryJig(std::string char1, std::string char2, std::string char3){
@@ -53,4 +54,24 @@ std::unique_ptr<Lure> Lure::setLure(lureTypes type, const std::string& char1, co
         std::cout << "Warning: lure type is not supported, default to SoftPlastic" << std::endl; 
         return std::unique_ptr<Lure>( new SoftPlastic(char1, char2, char3) );
     }
+}
+
+int main(int argc, char *argv[]) {
+
+    std::cout << "Factory design pattern test:" << std::endl;
+
+    // Add several lures to tacklebox to test Factory class implementation
+    std::vector< std::unique_ptr<Lure> > tackleBox;
+    tackleBox.push_back(Lure::setLure(JIG, "3/8th oz.","football head","Rage Craw"));
+    tackleBox.push_back(Lure::setLure(SPINNER,"1/4 oz.","willow leaf","gold"));
+    tackleBox.push_back(Lure::setLure(PLUG,"6 inch","Rapala","Fire Tiger"));
+    tackleBox.push_back(Lure::setLure(FLY,"3 inch","streamer","blue over white"));
+    tackleBox.push_back(Lure::setLure(SOFTPLASTIC,"6 inch","stick bait","watermelon flake"));
+
+    for (int i = 0; i < tackleBox.size(); ++i){
+        tackleBox.at(i)->getLure();
+    }
+
+    return 0;
+
 }

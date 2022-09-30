@@ -60,3 +60,16 @@ void SubjectClass::publishState() {
     if ( m_int1_obs ) { m_int1_obs->reportState(m_int1, "Int1"); }
     if ( m_int2_obs ) { m_int2_obs->reportState(m_int2, "Int2"); }
 }
+
+int main(int argc, char *argv[]) {
+   
+    std::cout << "Observer design pattern test:" << std::endl;
+
+    SubjectClass s("Hi", "Hello", 6.5, 5.0, 1, 3);
+    Observer(&s, STRING1);
+    Observer(&s, INT1);
+    s.publishState();
+
+    return 0;
+
+} 

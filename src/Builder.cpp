@@ -40,3 +40,20 @@ void TruckDealership::makeTruck(std::unique_ptr<TruckBuilder> tb) {
     m_truckBuilder->buildEngine();
     m_truckBuilder->buildDrive();
 }
+
+int main(int argc, char *argv[]) {
+
+    std::cout << "Builder design pattern test:" << std::endl;
+
+    TruckDealership dealer;
+
+    // TruckDealership instance takes ownership of builder instance
+    dealer.makeTruck( std::unique_ptr<RamBuilder> ( new RamBuilder() ) );
+    dealer.lookAtTruck();
+
+    dealer.makeTruck( std::unique_ptr<FordBuilder> ( new FordBuilder() ) );
+    dealer.lookAtTruck();
+
+    return 0;
+
+}

@@ -63,4 +63,31 @@ void BankPatron::viewAccounts() {
     m_bank->getName();
     std::cout << " account summary: " << std::endl;
     for (int i = 0; i < m_portfolio.size(); ++i) { m_portfolio.at(i)->getBalance(); } 
+
+}   
+
+int main(int argc, char *argv[]) {
+
+    std::cout << "Abstract factory design pattern test:" << std::endl;
+    
+    bankType whichBank = BOA;
+    double savingsDeposit = 1000;
+    double checkingDeposit = 2500;
+    double creditLine = 2500;
+   
+    std::unique_ptr<BankPatron> patron;
+
+    if (whichBank == WF) { 
+        patron.reset( new BankPatron(std::unique_ptr<Bank>( new WellsFargo ), savingsDeposit, checkingDeposit, creditLine) );
+    }
+    
+    else { 
+        patron.reset( new BankPatron(std::unique_ptr<Bank>( new BankOfAmerica ), savingsDeposit, checkingDeposit, creditLine) );
+ 
+    }
+
+    patron->viewAccounts();
+    
+    return 0;
+
 }

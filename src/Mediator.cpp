@@ -66,3 +66,24 @@ void InteractionMediator::MoeSlapsLarry(Moe* moe) {
     m_larry->setState(true); 
     m_larry->getState(); 
 }
+
+int main(int argc, char *argv[]) {
+
+    std::cout << "Mediator design pattern test:" << std::endl;
+
+    std::shared_ptr<InteractionMediator> im( new InteractionMediator() );
+
+    std::shared_ptr<Larry> larry( new Larry(im) ); 
+    std::shared_ptr<Curly> curly( new Curly(im) );
+    std::shared_ptr<Moe> moe( new Moe(im) );
+    
+    im->setStooges(larry, curly, moe);
+
+    larry->accidentallyHitMoe();
+    curly->accidentallyHitMoe();
+    moe->pokeCurlysEyes();
+    moe->slapLarrysHead();
+
+    return 0;
+
+}

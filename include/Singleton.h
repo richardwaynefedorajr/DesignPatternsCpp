@@ -3,6 +3,7 @@
 // Description: Declaration for implementation of the singleton design pattern, in which a single instance of class SingletonClass is ensured and provides "read/write" access to member string
 
 # include <string>
+# include <iostream>
 
 // Declare singleton class
 class SingletonClass {

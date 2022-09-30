@@ -16,3 +16,15 @@ SingletonClass* SingletonClass::getInstance() {
 // Define member access methods
 void SingletonClass::setString(std::string in_string) { m_string = in_string; }
 std::string SingletonClass::getString() { return m_string; }
+
+int main(int argc, char *argv[]) {
+
+    std::cout << "Singleton design pattern test:" << std::endl;
+
+    std::cout << "Singleton class member string initialized as: " << SingletonClass::getInstance()->getString() << std::endl; 
+    SingletonClass::getInstance()->setString("Hello world");
+    std::cout << "Singleton class member string set to: " << SingletonClass::getInstance()->getString() << std::endl; 
+
+    return 0;
+
+}

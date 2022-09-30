@@ -24,3 +24,44 @@ void PlasticSoft::getLure() { std::cout << m_color->getCharacteristic() << " " <
 void Crankbait::getLure() { std::cout << m_length->getCharacteristic() << " " << m_color->getCharacteristic() << " " << m_depth->getCharacteristic() << " " << "crankbait" << std::endl; }
 
 void Spinnerbait::getLure() { std::cout << m_weight->getCharacteristic() << " " << m_color->getCharacteristic() << " " << "spinnerbait" << std::endl; }
+
+int main(int argc, char *argv[]) {
+   
+    std::cout << "Bridge design pattern test:" << std::endl;
+
+    std::shared_ptr<LureCharacteristic> black( new Color("black") );
+    std::shared_ptr<LureCharacteristic> pearl( new Color("pearl") );
+    std::shared_ptr<LureCharacteristic> firetiger( new Color("firetiger") );
+
+    std::shared_ptr<LureCharacteristic> quarter_oz( new Weight("1/4 oz.") ); 
+    std::shared_ptr<LureCharacteristic> half_oz( new Weight("1/2 oz.") ); 
+    std::shared_ptr<LureCharacteristic> three_quarter_oz( new Weight("3/4 oz.") ); 
+
+    std::shared_ptr<LureCharacteristic> four_inch( new Length("4\"") );
+    std::shared_ptr<LureCharacteristic> five_inch( new Length("5\"") );
+    std::shared_ptr<LureCharacteristic> six_inch( new Length("6\"") );
+
+    std::shared_ptr<LureCharacteristic> shallow( new Depth("0-4\'") );
+    std::shared_ptr<LureCharacteristic> medium_depth( new Depth("4-8\'") );
+    std::shared_ptr<LureCharacteristic> deep_diver( new Depth("8-12\'") );
+
+    std::unique_ptr<LureType> big_bass_jig( new LeadJig( black, three_quarter_oz ) );
+    std::unique_ptr<LureType> finesse_jig( new LeadJig( pearl, quarter_oz ) );
+ 
+    std::unique_ptr<LureType> big_plastic( new PlasticSoft( black, six_inch ) );
+    std::unique_ptr<LureType> small_plastic( new PlasticSoft( pearl, four_inch ) );
+
+    std::unique_ptr<LureType> power_crank( new Crankbait( firetiger, six_inch, deep_diver ) );
+    
+    std::unique_ptr<LureType> classic_spinnerbait( new Spinnerbait( pearl, half_oz ) );
+
+    big_bass_jig->getLure();
+    finesse_jig->getLure();
+    big_plastic->getLure();
+    small_plastic->getLure();
+    power_crank->getLure();
+    classic_spinnerbait->getLure();
+
+    return 0;
+
+}

@@ -32,3 +32,25 @@ void A2::action() { std::cout << "A2 action" << std::endl; }
 
 std::unique_ptr<A> A3::clone() { return std::move( std::unique_ptr<A> ( new A3 ) ); }
 void A3::action() { std::cout << "A3 action" << std::endl; }
+
+int main(int argc, char *argv[]) {
+   
+    std::cout << "Prototype design pattern test:" << std::endl;
+
+    Factory f;
+    std::vector< std::unique_ptr<A> > instances_A;
+
+    Type t1 = TYPEA1;
+    instances_A.push_back(f.getA(t1));
+    Type t2 = TYPEA2;
+    instances_A.push_back(f.getA(t2));
+    Type t3 = TYPEA3;
+    instances_A.push_back(f.getA(t3));
+
+    for (int i = 0; i < instances_A.size(); ++i) {
+        instances_A.at(i)->action();
+    }
+
+    return 0;
+
+}
